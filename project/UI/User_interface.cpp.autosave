@@ -1,0 +1,23 @@
+#include "User_interface.h"
+#include "ui_start_page.h"
+
+Start_page::Start_page(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::Start_page)
+{
+    ui->setupUi(this);
+    Ui_Window=new MainWindow(this);
+    Ui_Window->Gameplay_ui();
+    Ui_Window->hide();
+}
+
+Start_page::~Start_page()
+{
+    delete ui;
+
+}
+
+void Start_page::on_Start_button_clicked()
+{
+    Ui_Window->show();
+}

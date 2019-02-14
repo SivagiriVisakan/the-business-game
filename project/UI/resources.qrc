@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>tab.obj</file>
+        <file>Wood_009_Mahogany_COLOR.png</file>
+        <file>519187-PJUJ2Y-348.jpg</file>
+        <file>man1.obj</file>
+        <file>man1_texture.jpg</file>
+        <file>man_2.jpg</file>
+        <file>man_2.obj</file>
+        <file>photos/PtPmibV-3d-cube-wallpaper.jpg</file>
+        <file>photos/3d_dice_06-wallpaper-1920x1080.jpg</file>
+        <file>photos/416323.jpg</file>
+        <file>123.mtl</file>
+        <file>123.obj</file>
+        <file>Palette.jpg</file>
+    </qresource>
+</RCC>

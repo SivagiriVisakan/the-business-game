@@ -1,0 +1,21 @@
+# Blender MTL File: 'untitled.blend'
+# Material Count: 2
+
+newmtl None
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+
+newmtl rp_eric_rigged_001_mat
+Ns 19.607843
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.015000 0.015000 0.015000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd F:\\Monopoly\\Resources\\rp_free_rigged_people_FBX\\rp_eric_rigged_001_FBX\\tex\\rp_eric_rigged_001_dif.jpg

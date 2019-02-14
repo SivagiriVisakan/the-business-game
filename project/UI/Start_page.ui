@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Start_page</class>
+ <widget class="QMainWindow" name="Start_page">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+background-image: url(:/photos/3d_dice_06-wallpaper-1920x1080.jpg);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="Start_button">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>520</y>
+      <width>381</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QPushButton#Start_button {
+	font: 20pt &quot;Segoe Print&quot;;	
+	color: rgb(0, 255, 255);
+	     
+	background-color: transparent;
+    border-radius: 15px;
+}
+QPushButton#Start_button:hover:!pressed
+{
+  border: 1px black;
+}
+QPushButton#Start_button:hover {
+	
+	color: rgb(0, 0, 0);
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(76, 168, 224, 255), stop:1 rgba(255, 255, 255, 255));
+	
+}</string>
+    </property>
+    <property name="text">
+     <string>Start game</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Exit">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>750</y>
+      <width>381</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::StrongFocus</enum>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::DefaultContextMenu</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QPushButton#Exit {
+	font: 20pt &quot;Segoe Print&quot;;
+	
+	color: rgb(0, 255, 255);
+     
+	background-color: transparent;
+	border: 1px solid black;
+    border-radius: 15px;
+}
+QPushButton#Exit:hover:!pressed
+{
+  border: 1px black;
+}
+QPushButton#Exit:hover {
+	
+	color: rgb(0, 0, 0);
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(76, 168, 224, 255), stop:1 rgba(255, 255, 255, 255));
+	
+}</string>
+    </property>
+    <property name="text">
+     <string>Exit</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Settings_button">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>640</y>
+      <width>381</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QPushButton#Settings_button {
+	font: 20pt &quot;Segoe Print&quot;;
+	
+	color: rgb(0, 255, 255);
+     
+	background-color: transparent;
+	border: 1px solid black;
+    border-radius: 15px;
+}
+QPushButton#Settings_button:hover:!pressed
+{
+  border: 1px black;
+}
+QPushButton#Settings_button:hover {
+	
+	color: rgb(0, 0, 0);
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(76, 168, 224, 255), stop:1 rgba(255, 255, 255, 255));
+	
+}</string>
+    </property>
+    <property name="text">
+     <string>Settings</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>Start_button</tabstop>
+  <tabstop>Settings_button</tabstop>
+  <tabstop>Exit</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>Exit</sender>
+   <signal>clicked()</signal>
+   <receiver>Start_page</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>303</x>
+     <y>783</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>564</x>
+     <y>820</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
