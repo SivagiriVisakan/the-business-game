@@ -1,0 +1,49 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>cityfinal_.mtl</file>
+        <file>cityfinal_.obj</file>
+        <file>jail.jpg</file>
+        <file>jail.mtl</file>
+        <file>jail.obj</file>
+        <file>Palette.jpg</file>
+        <file>photos/3d_dice_06-wallpaper-1920x1080.jpg</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>spaceship.mtl</file>
+        <file>spaceship.obj</file>
+        <file>spaceship_tex.png</file>
+        <file>stadium.mtl</file>
+        <file>stadium.obj</file>
+        <file>10093_Wembley_stadion_V1_Diffuse.jpg</file>
+        <file>nuclear.mtl</file>
+        <file>nuclear.obj</file>
+        <file>10078_Nuclear_Power_Plant_v1_Diffuse.jpg</file>
+        <file>Buildingnearnuclear.mtl</file>
+        <file>Buildingnearnuclear.obj</file>
+        <file>Buildingnearstadium.mtl</file>
+        <file>Buildingnearstadium.obj</file>
+        <file>tex_06.jpg</file>
+        <file>smallchest.mtl</file>
+        <file>smallchest.obj</file>
+        <file>chest.jpg</file>
+        <file>chest.mtl</file>
+        <file>chest.obj</file>
+        <file>Buildingnearprison.mtl</file>
+        <file>Buildingnearprison.obj</file>
+        <file>buildingnearprison.jpg</file>
+        <file>buildingnearchest.obj</file>
+        <file>buildnearchest.jpg</file>
+        <file>buildnearnuclear (.jpg</file>
+        <file>buildingneartrain.mtl</file>
+        <file>buildingneartrain.obj</file>
+        <file>buildingnearchest.mtl</file>
+        <file>car1_1.mtl</file>
+        <file>car1_1.obj</file>
+        <file>car1_2.mtl</file>
+        <file>car1_2.obj</file>
+        <file>car2_1.mtl</file>
+        <file>car2_1.obj</file>
+        <file>car2_2.mtl</file>
+        <file>car2_2.obj</file>
+    </qresource>
+</RCC>

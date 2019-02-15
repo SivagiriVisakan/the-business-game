@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>tab.obj</file>
+        <file>Wood_009_Mahogany_COLOR.png</file>
+        <file>man1.obj</file>
+        <file>man1_texture.jpg</file>
+        <file>man_2.jpg</file>
+        <file>man_2.obj</file>
+        <file>photos/PtPmibV-3d-cube-wallpaper.jpg</file>
+        <file>Palette.jpg</file>
+        <file>cityfinal_.mtl</file>
+        <file>cityfinal_.obj</file>
+        <file>jail.jpg</file>
+        <file>jail.mtl</file>
+        <file>photos/3d_dice_06-wallpaper-1920x1080.jpg</file>
+        <file>jail.obj</file>
+    </qresource>
+</RCC>

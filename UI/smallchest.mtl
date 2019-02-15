@@ -1,0 +1,14 @@
+# Blender MTL File: 'cityfinal.blend'
+# Material Count: 1
+
+newmtl _10803_TreasureChest_v2_L3material12
+Ns 41.176471
+Ka 0.300000 0.300000 0.300000
+Kd 0.700000 0.700000 0.700000
+Ks 0.470000 0.470000 0.470000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd E:\TreasureChest_v2_L3.123c5b4249fc-a18b-4453-afc1-661a6b421f86\TreasureChest_v2_L3.123c5b4249fc-a18b-4453-afc1-661a6b421f86\chest.jpg
+map_Ka E:\\TreasureChest_v2_L3.123c5b4249fc-a18b-4453-afc1-661a6b421f86\\TreasureChest_v2_L3.123c5b4249fc-a18b-4453-afc1-661a6b421f86\\chest.jpg
