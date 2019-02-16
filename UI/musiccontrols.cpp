@@ -12,7 +12,7 @@ MusicControls::MusicControls(QWidget *parent) :
 
     playlist = new QMediaPlaylist(this);
 
-    playlist->addMedia(QUrl::fromLocalFile("/E:/songs/Yaakai.mp3"));
+    playlist->addMedia(QUrl("qrc:/Theme.mp3"));
     playlist->setPlaybackMode(QMediaPlaylist::Loop);
     player1->setPlaylist(playlist);
     player1->play();

@@ -17,9 +17,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-background-image: url(:/photos/3d_dice_06-wallpaper-1920x1080.jpg);
-background-image: url(:/new/prefix1/photos/3d_dice_06-wallpaper-1920x1080.jpg);</string>
+   <string notr="true">background-image: url(:/new/prefix1/photos/3d_dice_06-wallpaper-1920x1080.jpg);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="Start_button">

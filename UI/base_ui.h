@@ -15,7 +15,7 @@ public:
 
     void Board_rotate();
 
-    void Players_ui_creater(int car_number_player1=0,int car_number_player2=0);
+    void Players_ui_creater();
 
     void Player_animation(QVector3D Current_pos, QVector3D Final_pos, int Player_number );
     ~Base_ui();

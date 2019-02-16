@@ -33,7 +33,6 @@
         <file>buildingnearprison.jpg</file>
         <file>buildingnearchest.obj</file>
         <file>buildnearchest.jpg</file>
-        <file>buildnearnuclear (.jpg</file>
         <file>buildingneartrain.mtl</file>
         <file>buildingneartrain.obj</file>
         <file>buildingnearchest.mtl</file>
@@ -45,5 +44,9 @@
         <file>car2_1.obj</file>
         <file>car2_2.mtl</file>
         <file>car2_2.obj</file>
+        <file>buildnearnuclear.jpg</file>
+        <file>photos/untitled.png</file>
+        <file>photos/untitled1.png</file>
+        <file>Theme.mp3</file>
     </qresource>
 </RCC>

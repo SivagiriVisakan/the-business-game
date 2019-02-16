@@ -76,7 +76,7 @@ Base_ui::Base_ui()
     Buildingnearnuclear->Resources_transform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(1.0f, 0.0f, 0.0f), 0.0f)); // x,y,z axis and degree rotation
     Buildingnearnuclear->Resources_transform->setTranslation(QVector3D(0.0f, 0.0f, -0.0f));
 
-    Buildingnearnuclear->Texture_loader->setSource(QUrl(QStringLiteral("qrc:/buildnearnuclear(.jpg")));
+    Buildingnearnuclear->Texture_loader->setSource(QUrl(QStringLiteral("qrc:/buildnearnuclear.jpg")));
 
     Buildingnearnuclear->Add_resources_components();
 
@@ -200,38 +200,34 @@ void Base_ui::Board_rotate()
     City->Resources_transform->setRotationY(180);
 }
 
-void Base_ui::Players_ui_creater(int car_number_player1,int car_number_player2)
+void Base_ui::Players_ui_creater()
 {
-//        if()
-//        {
-//            Player[0]=new Resources_ui(Prison->Resources_Entity);
 
-//            Player[0]-> Resources_ui_mesh->setSource(QUrl(QStringLiteral("qrc:/man1.obj")));
+            Player[0]=new Resources_ui(Prison->Resources_Entity);
 
-//            Player[0]->Resources_transform->setScale(1.00f);       // size
-//            Player[0]->Resources_transform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(0.0f, 1.0f, 0.0f),- 90.0f)); // x,y,z axis and degree rotation
-//            Player[0]->Resources_transform->setTranslation(QVector3D(0.0f, 0.14f, 0.0f));
+            Player[0]-> Resources_ui_mesh->setSource(QUrl(QStringLiteral("qrc:/car2_1.obj")));
 
-//            Player[0]->Texture_loader->setSource(QUrl(QStringLiteral("qrc:/man1_texture.jpg")));
+            Player[0]->Resources_transform->setScale(1.00f);       // size
+            Player[0]->Resources_transform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(0.0f, 1.0f, 0.0f),- 90.0f)); // x,y,z axis and degree rotation
+            Player[0]->Resources_transform->setTranslation(QVector3D(0.0f, 0.14f, 0.0f));
 
-//            Player[0]->Add_resources_components();
-//        }
-//        if(car_number==2)
-//        {
+            Player[0]->Texture_loader->setSource(QUrl(QStringLiteral("qrc:/new/prefix1/Palette.jpg")));
 
-//            Player[1]=new Resources_ui(Prison->Resources_Entity);
+            Player[0]->Add_resources_components();
 
-//            Player[1]-> Resources_ui_mesh->setSource(QUrl(QStringLiteral("qrc:/man_2.obj")));
+            Player[1]=new Resources_ui(Prison->Resources_Entity);
 
-//            Player[1]->Resources_transform->setScale(1.80f);       // size
-//            Player[1]->Resources_transform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(0.0f, 1.0f, 0.0f), -90.0f)); // x,y,z axis and degree rotation
-//            Player[1]->Resources_transform->setTranslation(QVector3D(-0.7f, 0.14f, 0.0f));
+            Player[1]-> Resources_ui_mesh->setSource(QUrl(QStringLiteral("qrc:/car2_2.obj")));
 
-//            Player[1]->Texture_loader->setSource(QUrl(QStringLiteral("qrc:/man_2.jpg")));
+            Player[1]->Resources_transform->setScale(1.80f);       // size
+            Player[1]->Resources_transform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(0.0f, 1.0f, 0.0f), -90.0f)); // x,y,z axis and degree rotation
+            Player[1]->Resources_transform->setTranslation(QVector3D(-0.7f, 0.14f, 0.0f));
 
-//            Player[1]->Add_resources_components();
+            Player[1]->Texture_loader->setSource(QUrl(QStringLiteral("qrc:/new/prefix1/Palette.jpg")));
 
-//        }
+            Player[1]->Add_resources_components();
+
+
 }
 
 void Base_ui::Player_animation(QVector3D Current_pos, QVector3D Final_pos, int Player_number)
