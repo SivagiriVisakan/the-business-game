@@ -1,5 +1,5 @@
 #include "Start_page.h"
-#include "ui_start_page.h"
+#include "ui_Start_page.h"
 
 Start_page::Start_page(QWidget *parent) :
     QMainWindow(parent),
