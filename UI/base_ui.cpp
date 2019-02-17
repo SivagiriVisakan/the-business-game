@@ -203,25 +203,25 @@ void Base_ui::Board_rotate()
 void Base_ui::Players_ui_creater()
 {
 
-            Player[0]=new Resources_ui(Prison->Resources_Entity);
+            Player[0]=new Resources_ui(City->Resources_Entity);
 
-            Player[0]-> Resources_ui_mesh->setSource(QUrl(QStringLiteral("qrc:/car2_1.obj")));
+            Player[0]-> Resources_ui_mesh->setSource(QUrl(QStringLiteral("qrc:/car1_1.obj")));
 
             Player[0]->Resources_transform->setScale(1.00f);       // size
             Player[0]->Resources_transform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(0.0f, 1.0f, 0.0f),- 90.0f)); // x,y,z axis and degree rotation
-            Player[0]->Resources_transform->setTranslation(QVector3D(0.0f, 0.14f, 0.0f));
+            Player[0]->Resources_transform->setTranslation(QVector3D(0.0f, 0.0f, 0.0f));
 
             Player[0]->Texture_loader->setSource(QUrl(QStringLiteral("qrc:/new/prefix1/Palette.jpg")));
 
             Player[0]->Add_resources_components();
 
-            Player[1]=new Resources_ui(Prison->Resources_Entity);
+            Player[1]=new Resources_ui(City->Resources_Entity);
 
-            Player[1]-> Resources_ui_mesh->setSource(QUrl(QStringLiteral("qrc:/car2_2.obj")));
+            Player[1]-> Resources_ui_mesh->setSource(QUrl(QStringLiteral("qrc:/car1_2.obj")));
 
-            Player[1]->Resources_transform->setScale(1.80f);       // size
+            Player[1]->Resources_transform->setScale(1.0f);       // size
             Player[1]->Resources_transform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(0.0f, 1.0f, 0.0f), -90.0f)); // x,y,z axis and degree rotation
-            Player[1]->Resources_transform->setTranslation(QVector3D(-0.7f, 0.14f, 0.0f));
+            Player[1]->Resources_transform->setTranslation(QVector3D(-0.0f, 0.0f, 0.0f));
 
             Player[1]->Texture_loader->setSource(QUrl(QStringLiteral("qrc:/new/prefix1/Palette.jpg")));
 
@@ -245,7 +245,7 @@ Base_ui::~Base_ui()
 {
     delete view;
     delete Prison;
-    delete Player[3];
+    delete Player[2];
     delete Playeranimation;
     delete sceneRoot;
     delete cameraEntity;

@@ -33,7 +33,8 @@ SOURCES += \
     mainwindow.cpp \
     player_selection.cpp \
     Start_page.cpp \
-    musiccontrols.cpp
+    musiccontrols.cpp \
+    cube_ui.cpp
 
 HEADERS += \
     resources_ui.h \
@@ -41,13 +42,15 @@ HEADERS += \
     mainwindow.h \
     player_selection.h \
     Start_page.h \
-    musiccontrols.h
+    musiccontrols.h \
+    cube_ui.h
 
 FORMS += \
     mainwindow.ui \
     player_selection.ui \
     Start_page.ui \
-    musiccontrols.ui
+    musiccontrols.ui \
+    cube_ui.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

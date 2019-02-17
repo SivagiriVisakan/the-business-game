@@ -5,6 +5,8 @@
 #include"player_selection.h"
 #include"musiccontrols.h"
 
+
+
 namespace Ui {
 class Start_page;
 }
@@ -23,6 +25,7 @@ private slots:
 
 
 private:
+
     Ui::Start_page *ui;
     MusicControls *music;
     Player_selection *Ui_Player;

@@ -24,7 +24,7 @@ public:
 private:
     Resources_ui *Prison,*Ufo,*Stadium,*Nuclear,*Buildingnearnuclear,*Buildingnearstadium,*smallchest,*chest,*Buildingnearprison,*buldingnearchest,*buldingneartrain;
     Resources_ui *City;
-    Resources_ui *Player[3];
+    Resources_ui *Player[2];
 
 private:
 

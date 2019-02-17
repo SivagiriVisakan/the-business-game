@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 #include"base_ui.h"
+
+#include "cube_ui.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -17,6 +20,9 @@ public:
 
     void Gameplay_ui();
 
+private slots:
+    void on_RollDIces_clicked();
+
 private:
     Ui::MainWindow *ui;
 
@@ -24,6 +30,7 @@ private:
 
     Base_ui Board;
 
+    Cube_ui *cube;
 };
 
 #endif // UI_FOR_MAINWINDOW_H

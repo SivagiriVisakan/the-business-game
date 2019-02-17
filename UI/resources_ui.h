@@ -33,6 +33,7 @@ private:
 
     friend class Base_ui ;
     friend class Player_selection;
+    friend class Cube_ui;
 
 };
 

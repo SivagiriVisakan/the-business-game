@@ -27,5 +27,5 @@ void Start_page::on_Start_button_clicked()
 
 void Start_page::on_Settings_button_clicked()
 {
-    music->show();
+       music->show();
 }

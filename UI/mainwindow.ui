@@ -154,6 +154,22 @@ background-color: rgb(170, 255, 255);</string>
      <string>minimize</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="RollDIces">
+    <property name="geometry">
+     <rect>
+      <x>1290</x>
+      <y>1010</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 170, 255);</string>
+    </property>
+    <property name="text">
+     <string>Roll Dices</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

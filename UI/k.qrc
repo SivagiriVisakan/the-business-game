@@ -48,5 +48,7 @@
         <file>photos/untitled.png</file>
         <file>photos/untitled1.png</file>
         <file>Theme.mp3</file>
+        <file>dices.mtl</file>
+        <file>dices.obj</file>
     </qresource>
 </RCC>

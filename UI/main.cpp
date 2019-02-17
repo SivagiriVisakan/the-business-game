@@ -16,6 +16,5 @@ int main(int argc, char* argv[])
 
     Start_page w;
     w.show();
-
     return app.exec();
 }
