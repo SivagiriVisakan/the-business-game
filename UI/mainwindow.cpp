@@ -41,6 +41,7 @@ void MainWindow::Gameplay_ui()
 void MainWindow::on_RollDIces_clicked()
 {
     cube=new Cube_ui (this);
-    cube->Roll_Dices(1,1);
     cube->show();
+    cube->Roll_Dices(4,6);
+
 }

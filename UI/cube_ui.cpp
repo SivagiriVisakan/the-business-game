@@ -36,6 +36,8 @@ Cube_ui::Cube_ui(QWidget *parent) :
     Dice2->Add_resources_components();
 
     Setup_ui();
+
+    x1=x2=z1=z2=0;
 }
 
 Cube_ui::~Cube_ui()
@@ -84,6 +86,53 @@ void Cube_ui::Setup_ui()
     ui->Dice_widget->show();
 }
 
+
+void Cube_ui::Roll_Dices(int number1,int number2)
+{
+    switch(number1)
+    {
+    case 1: z1=90;break;
+    case 2: break;
+    case 3:x1=90;break;
+    case 4:x1=270;break;
+    case 5:x1=180;break;
+    case 6:z1=270;break;
+    }
+
+    switch(number2)
+    {
+    case 1: z2=90;break;
+    case 2: break;
+    case 3:x2=90;break;
+    case 4:x2=270;break;
+    case 5:x2=180;break;
+    case 6:z2=270;break;
+    }
+
+
+    roll=0;count=0;
+    Diceanimation=new QTimer(this);
+    connect(Diceanimation,SIGNAL(timeout()),this,SLOT(Rolling_fun()));
+    Diceanimation->start(100);
+}
+void Cube_ui::Rolling_fun()
+{
+    Dice1->Resources_transform->setRotationX(roll+90+x1);
+    Dice1->Resources_transform->setRotationY(roll+90);
+    Dice1->Resources_transform->setRotationZ(roll+90+z1);
+
+    Dice2->Resources_transform->setRotationX(roll+90+x2);
+    Dice2->Resources_transform->setRotationY(roll+90);
+    Dice2->Resources_transform->setRotationZ(roll+90+z2);
+
+    roll+=90%360;
+    count+=1;
+    if(count==20)
+     {
+        Diceanimation->stop();
+      }
+}
+
 // ///////rotate 90 with z  1
 ///Dices present Number 2
 ///Dices rotate 90 with x 3
@@ -91,23 +140,3 @@ void Cube_ui::Setup_ui()
 ///      180 with x 5
 ///      270 with z 6
 
-void Cube_ui::Roll_Dices(int number1,int number2)
-{
-
-    Playeranimation =new QPropertyAnimation(Dice1->Resources_transform,"rotation");
-    Playeranimation->setDuration(200);
-    Playeranimation->setStartValue(QQuaternion::fromAxisAndAngle(QVector3D(1.0f, 0.0f, 0.0f), 90.0f));
-    Playeranimation->setEndValue(QQuaternion::fromAxisAndAngle(QVector3D(1.0f, 0.0f, 0.0f), 90.0f));
-    Playeranimation->setEasingCurve(QEasingCurve::InBounce);
-    Playeranimation->setLoopCount(-1);
-    Playeranimation->start();
-
-//    Playeranimation =new QPropertyAnimation(Player[Player_number]->Resources_transform,"translation");
-//    Playeranimation->setDuration(5000);
-//    Playeranimation->setStartValue(0);
-//    Playeranimation->setEndValue(90);
-//    Playeranimation->setEasingCurve(QEasingCurve::InBounce);
-//    Playeranimation->setLoopCount(10);
-//    Playeranimation->start();
-
-}
