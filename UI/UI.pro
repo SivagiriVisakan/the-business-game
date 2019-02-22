@@ -25,6 +25,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 CONFIG += c++11
+CONFIG += resources_big
 
 SOURCES += \
         main.cpp \
@@ -34,7 +35,8 @@ SOURCES += \
     player_selection.cpp \
     Start_page.cpp \
     musiccontrols.cpp \
-    cube_ui.cpp
+    cube_ui.cpp \
+    ../core/player.cpp
 
 HEADERS += \
     resources_ui.h \
@@ -43,7 +45,9 @@ HEADERS += \
     player_selection.h \
     Start_page.h \
     musiccontrols.h \
-    cube_ui.h
+    cube_ui.h \
+    ../core/player.h \
+    ../core/BaseField.h
 
 FORMS += \
     mainwindow.ui \

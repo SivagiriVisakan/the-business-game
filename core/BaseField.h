@@ -1,3 +1,4 @@
+#include "player.h"
 
 class BaseField
 {
@@ -5,7 +6,9 @@ class BaseField
         char name[20];
     public:
         BaseField(char *name);
-        // The method that will be called whenever a player lands on this particular field.
-        // Has to be overriden from the sub-class.
-        void onTokenLanded(/*Player player*/);
-}
+        /**
+         * The method that will be called whenever a player lands on this particular field.
+         * Has to be overriden from the sub-class.
+         */
+        virtual void onTokenLanded(Player &player) = 0;
+};
