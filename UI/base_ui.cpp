@@ -156,6 +156,7 @@ Base_ui::Base_ui()
     buldingneartrain->Texture_loader->setSource(QUrl(QStringLiteral("qrc:/tex_06.jpg")));
 
     buldingneartrain->Add_resources_components();
+
 }
 
 void Base_ui::Setup_ui()
@@ -166,16 +167,15 @@ void Base_ui::Setup_ui()
     view->setFlag(Qt::FramelessWindowHint,Qt::KeepAspectRatio);
     view->setWidth(1470);
     view->setHeight(1000);
-//    Qt3DInput::QInputAspect *input = new Qt3DInput::QInputAspect;
-//   view->registerAspect(input);
 
      cameraEntity = view->camera();
 
     cameraEntity->lens()->setProjectionType(Qt3DRender::QCameraLens::PerspectiveProjection);
     cameraEntity->setUpVector(QVector3D(0.0f, 1.0f,0.0f));
-    cameraEntity->setViewCenter(QVector3D(0.0f, -0.0f, 0.0f));
-    cameraEntity->setPosition(QVector3D(0.0f, 5.0f, 5.0f));
-    cameraEntity->rotate(QQuaternion::fromAxisAndAngle(QVector3D(0.0f, 0.0f, 0.0f), -3.0f));
+    cameraEntity->setViewCenter(QVector3D(0.0f, 0.0f, 0.0f));
+    cameraEntity->setPosition(QVector3D(0.0f, 10.0f, -35.0f));
+
+    //Add A Starting Animation To the close up car
 
     lightEntity = new Qt3DCore::QEntity(sceneRoot);
     Qt3DRender::QPointLight *light = new Qt3DRender::QPointLight(lightEntity);
@@ -191,55 +191,152 @@ void Base_ui::Setup_ui()
     camController->setCamera(cameraEntity);
 
     view->setRootEntity(sceneRoot);
-//    view->show();
 
-}
-
-void Base_ui::Board_rotate()
-{
-    City->Resources_transform->setRotationY(180);
 }
 
 void Base_ui::Players_ui_creater()
 {
+
+
+    Player_Position[0]=QVector3D(0,0.15f,0);
+    Camera_Position[0]=QVector3D(-0.5,0.25f,0);
+    Camera_Viewcenter[0]=QVector3D(1,0,0);
+
+
+    Player_Position[1]=QVector3D(0,0.15f,0);
+    Camera_Position[1]=QVector3D(-0.5,0.25f,0);
+    Camera_Viewcenter[1]=QVector3D(1,0,0);
+
 
             Player[0]=new Resources_ui(City->Resources_Entity);
 
             Player[0]-> Resources_ui_mesh->setSource(QUrl(QStringLiteral("qrc:/car1_1.obj")));
 
             Player[0]->Resources_transform->setScale(1.00f);       // size
-            Player[0]->Resources_transform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(0.0f, 1.0f, 0.0f),- 90.0f)); // x,y,z axis and degree rotation
-            Player[0]->Resources_transform->setTranslation(QVector3D(0.0f, 0.0f, 0.0f));
+            Player[0]->Resources_transform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(0.0f, 0.0f, 0.0f), 180.0f)); // x,y,z axis and degree rotation
+            Player[0]->Resources_transform->setTranslation(Player_Position[0]);
 
             Player[0]->Texture_loader->setSource(QUrl(QStringLiteral("qrc:/new/prefix1/Palette.jpg")));
 
             Player[0]->Add_resources_components();
+
+
 
             Player[1]=new Resources_ui(City->Resources_Entity);
 
             Player[1]-> Resources_ui_mesh->setSource(QUrl(QStringLiteral("qrc:/car1_2.obj")));
 
             Player[1]->Resources_transform->setScale(1.0f);       // size
-            Player[1]->Resources_transform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(0.0f, 1.0f, 0.0f), -90.0f)); // x,y,z axis and degree rotation
-            Player[1]->Resources_transform->setTranslation(QVector3D(-0.0f, 0.0f, 0.0f));
+            Player[1]->Resources_transform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(0.0f, 0.0f, 0.0f), -90.0f)); // x,y,z axis and degree rotation
+            Player[1]->Resources_transform->setTranslation(Player_Position[1]);
 
             Player[1]->Texture_loader->setSource(QUrl(QStringLiteral("qrc:/new/prefix1/Palette.jpg")));
 
             Player[1]->Add_resources_components();
 
+}
+
+void Base_ui::Player_movement(int Position, int Player_number)
+{
+    count=0;
+    Player_animation(QVector3D(2,0.15f,0),0);
+    connect(&timer,SIGNAL(timeout()),this,SLOT(fun()));
+    timer.start(5003);
 
 }
 
-void Base_ui::Player_animation(QVector3D Current_pos, QVector3D Final_pos, int Player_number)
+void Base_ui::Player_animation(QVector3D Final_pos, int Player_number)
 {
+    if(count==1)
+        Rotation_Player(-90,0);
+    count++;
     Playeranimation =new QPropertyAnimation(Player[Player_number]->Resources_transform,"translation");
     Playeranimation->setDuration(5000);
-    Playeranimation->setStartValue(Current_pos);
+    Playeranimation->setStartValue(Player_Position[Player_number]);
     Playeranimation->setEndValue(Final_pos);
-    Playeranimation->setEasingCurve(QEasingCurve::InBounce);
-    Playeranimation->setLoopCount(10);
-    Playeranimation->start();
+
+    Cameraanimation =new QPropertyAnimation(cameraEntity,"viewCenter");
+    Cameraanimation->setDuration(5000);
+    Cameraanimation->setStartValue(Camera_Viewcenter[Player_number]);
+    Cameraanimation->setEndValue((Final_pos-Player_Position[Player_number])+Camera_Viewcenter[Player_number]);
+
+    Cameraanimation1 =new QPropertyAnimation(cameraEntity,"position");
+    Cameraanimation1->setDuration(5000);
+    Cameraanimation1->setStartValue(Camera_Position[Player_number]);
+    Cameraanimation1->setEndValue((Final_pos-Player_Position[Player_number])+Camera_Position[Player_number]);
+
+    group = new QParallelAnimationGroup(this);
+    group->addAnimation(Playeranimation);
+    group->addAnimation(Cameraanimation);
+    group->addAnimation(Cameraanimation1);
+
+    group->start();
+
+
+
+    Player_Position[Player_number]=Final_pos;
+    Camera_Viewcenter[Player_number]=(Final_pos-Player_Position[Player_number])+Camera_Viewcenter[Player_number];
+    Camera_Position[Player_number]=(Final_pos-Player_Position[Player_number])+Camera_Position[Player_number];
 }
+
+void Base_ui::Rotation_Player(int degree,int Player_Number)
+{
+    switch (degree)
+    {
+        case 0:
+     {
+        Player[Player_Number]->Resources_transform->setRotationY(degree);
+        Camera_Viewcenter[Player_Number]=Player_Position[Player_Number]+QVector3D(1,-0.15f,0);
+        Camera_Position[Player_Number]=Player_Position[Player_Number]+QVector3D(-0.5f,0.10f,0);
+        break;
+     }
+       case 90:
+    {
+
+        Player[Player_Number]->Resources_transform->setRotationY(degree);
+        Camera_Viewcenter[Player_Number]=Player_Position[Player_Number]+QVector3D(0,-0.15f,-1);
+        Camera_Position[Player_Number]=Player_Position[Player_Number]+QVector3D(0,0.10f,0.5f);
+        break;
+    }
+
+    case -90:
+  {
+
+
+     Player[Player_Number]->Resources_transform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(0.0f, 1.0f, 0.0f), -90.0f));
+     Camera_Viewcenter[Player_Number]=Player_Position[Player_Number]+QVector3D(0,-0.15f,1);
+     Camera_Position[Player_Number]=Player_Position[Player_Number]+QVector3D(0,0.10f,-0.5f);
+    break;
+    }
+    case 180:
+ {
+    Player[Player_Number]->Resources_transform->setRotationY(degree);
+    Camera_Viewcenter[Player_Number]=Player_Position[Player_Number]+QVector3D(-1,-0.15f,0);
+    Camera_Position[Player_Number]=Player_Position[Player_Number]+QVector3D(0.5f,0.10f,0);
+    break;
+    }
+
+    }
+}
+
+// Camera Note important:
+//     Object Car in 0,0,0
+//     Make that to 0,0.15,0 height (increased)
+
+//     For camera works ...... view center
+//       For 0 degree rotation is (1,0,0)
+//       then position of camera (-0.5,0.25,0)
+
+//       For -90 degree rotation viewcenter(0,0,1)
+//       position of camera (0,0.25,-0.5)
+
+//        For 180 degree rortation viewceenter(-1,0,0)
+//        position of camera (0.5,0.25,0)
+
+//        For 90 deg rot viewcenter(0,0,-1)
+//        pos of cam (0,0.25,0.5)
+
+
 
 Base_ui::~Base_ui()
 {
@@ -251,4 +348,15 @@ Base_ui::~Base_ui()
     delete cameraEntity;
     delete lightEntity;
     delete camController;
+    delete group;
+    delete Playeranimation;
+    delete Cameraanimation;
+    delete Cameraanimation1;
+}
+
+void Base_ui::fun()
+{
+    Player_animation(QVector3D(0,0.0f,2)+Player_Position[0],0);
+    timer.stop();
+
 }

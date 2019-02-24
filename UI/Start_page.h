@@ -4,8 +4,8 @@
 #include <QMainWindow>
 #include"player_selection.h"
 #include"musiccontrols.h"
-
-
+#include<QCursor>
+#include<QPixmap>
 
 namespace Ui {
 class Start_page;
@@ -25,6 +25,7 @@ private slots:
 
 
 private:
+
 
     Ui::Start_page *ui;
     MusicControls *music;

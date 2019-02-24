@@ -36,10 +36,6 @@
         <file>buildingneartrain.mtl</file>
         <file>buildingneartrain.obj</file>
         <file>buildingnearchest.mtl</file>
-        <file>car1_1.mtl</file>
-        <file>car1_1.obj</file>
-        <file>car1_2.mtl</file>
-        <file>car1_2.obj</file>
         <file>car2_1.mtl</file>
         <file>car2_1.obj</file>
         <file>car2_2.mtl</file>
@@ -50,5 +46,10 @@
         <file>Theme.mp3</file>
         <file>dices.mtl</file>
         <file>dices.obj</file>
+        <file>cursor.png</file>
+        <file>car1_1.mtl</file>
+        <file>car1_1.obj</file>
+        <file>car1_2.mtl</file>
+        <file>car1_2.obj</file>
     </qresource>
 </RCC>

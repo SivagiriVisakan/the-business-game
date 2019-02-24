@@ -7,12 +7,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    m=new Map();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
     delete Ui_board;
+    delete m;
 
 }
 
@@ -21,9 +23,7 @@ void MainWindow::Gameplay_ui()
     this->setWindowFlag(Qt::FramelessWindowHint,Qt::KeepAspectRatio);
     Board.Setup_ui();
     Board.Players_ui_creater();
-    Board.Board_rotate();
-    Board.Player_animation(QVector3D(0,0,0),QVector3D(2,0,0),1);
-    Board.Player_animation(QVector3D(0,0,0),QVector3D(2,0,0),0);
+//    Board.Board_rotate();
 
     ui->Ui_board= QWidget::createWindowContainer(Board.view,this);
     QSize screenSize = Board.view->screen()->size();
@@ -43,5 +43,13 @@ void MainWindow::on_RollDIces_clicked()
     cube=new Cube_ui (this);
     cube->show();
     cube->Roll_Dices(4,6);
+    Board.Player_movement(0,0);
 
+
+}
+
+void MainWindow::on_Map_Button_clicked()
+{
+
+    m->show();
 }

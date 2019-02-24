@@ -6,6 +6,7 @@ Start_page::Start_page(QWidget *parent) :
     ui(new Ui::Start_page)
 {
     ui->setupUi(this);
+
     this->setWindowFlag(Qt::FramelessWindowHint);
     music=new MusicControls(this);
     Ui_Player=new Player_selection();
@@ -15,7 +16,6 @@ Start_page::Start_page(QWidget *parent) :
 Start_page::~Start_page()
 {
     delete ui;
-
 }
 
 void Start_page::on_Start_button_clicked()

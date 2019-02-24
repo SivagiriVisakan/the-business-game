@@ -17,7 +17,9 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/new/prefix1/photos/3d_dice_06-wallpaper-1920x1080.jpg);</string>
+   <string notr="true">#centralwidget{
+border-image: url(:/new/prefix1/photos/3d_dice_06-wallpaper-1920x1080.jpg);
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="Start_button">
@@ -76,7 +78,6 @@ QPushButton#Exit {
 	color: rgb(0, 255, 255);
      
 	background-color: transparent;
-	border: 1px solid black;
     border-radius: 15px;
 }
 QPushButton#Exit:hover:!pressed
@@ -111,7 +112,6 @@ QPushButton#Settings_button {
 	color: rgb(0, 255, 255);
      
 	background-color: transparent;
-	border: 1px solid black;
     border-radius: 15px;
 }
 QPushButton#Settings_button:hover:!pressed

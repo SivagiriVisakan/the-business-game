@@ -17,7 +17,10 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">
+	background-color: rgb(0, 0, 0);
+
+</string>
   </property>
   <widget class="Line" name="line">
    <property name="geometry">
@@ -38,19 +41,38 @@
      <x>1000</x>
      <y>120</y>
      <width>911</width>
-     <height>111</height>
+     <height>61</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <property name="spacing">
+     <number>0</number>
+    </property>
     <item>
      <widget class="QLabel" name="label_4">
+      <property name="styleSheet">
+       <string notr="true">font: 20pt &quot;Segoe Print&quot;;
+	color:rgb(38, 58, 75); 
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(170, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+</string>
+      </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>NAME</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="lineEdit_2"/>
+     <widget class="QLineEdit" name="lineEdit_2">
+      <property name="styleSheet">
+       <string notr="true">font: 20pt &quot;Segoe Print&quot;;
+	color:rgb(38, 58, 75); 
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(170, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+</string>
+      </property>
+      <property name="placeholderText">
+       <string>                   Enter the name</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -63,8 +85,30 @@
      <height>51</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">
+
+QPushButton {
+	
+	font: 20pt &quot;Segoe Print&quot;;
+	
+color: white;
+     
+	background-color: transparent;
+	border: 1px solid black;
+     border-radius: 5px;
+}
+QPushButton:!pressed
+{
+  border: 1px black;
+}
+QPushButton:hover {
+	color:rgb(38, 58, 75); 
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(170, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+}</string>
+   </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>PLAY</string>
    </property>
   </widget>
   <widget class="QWidget" name="layoutWidget">
@@ -79,8 +123,14 @@
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QLabel" name="label">
+      <property name="styleSheet">
+       <string notr="true">font: 20pt &quot;Segoe Print&quot;;
+	color:rgb(38, 58, 75); 
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(170, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+</string>
+      </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>                               PLAYER 1</string>
       </property>
      </widget>
     </item>
@@ -99,8 +149,14 @@
     </item>
     <item>
      <widget class="QLabel" name="label_2">
+      <property name="styleSheet">
+       <string notr="true">font: 20pt &quot;Segoe Print&quot;;
+	color:rgb(38, 58, 75); 
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(170, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+</string>
+      </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>                              PLAYER 2</string>
       </property>
      </widget>
     </item>
@@ -112,19 +168,38 @@
      <x>30</x>
      <y>120</y>
      <width>911</width>
-     <height>111</height>
+     <height>65</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <property name="spacing">
+     <number>0</number>
+    </property>
     <item>
      <widget class="QLabel" name="label_3">
+      <property name="styleSheet">
+       <string notr="true">font: 20pt &quot;Segoe Print&quot;;
+	color:rgb(38, 58, 75); 
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(170, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+</string>
+      </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>NAME</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="lineEdit"/>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="styleSheet">
+       <string notr="true">font: 20pt &quot;Segoe Print&quot;;
+	color:rgb(38, 58, 75); 
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(170, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+</string>
+      </property>
+      <property name="placeholderText">
+       <string>               Enter the name</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -132,14 +207,36 @@
    <property name="geometry">
     <rect>
      <x>1710</x>
-     <y>1040</y>
+     <y>1038</y>
      <width>195</width>
-     <height>30</height>
+     <height>32</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <widget class="QPushButton" name="pushButton_2">
+      <property name="styleSheet">
+       <string notr="true">
+
+QPushButton {
+	
+	font: 10pt &quot;Segoe Print&quot;;
+	
+color: white;
+     
+	background-color: transparent;
+	border: 1px solid black;
+     border-radius: 5px;
+}
+QPushButton:!pressed
+{
+  border: 1px black;
+}
+QPushButton:hover {
+	color:rgb(38, 58, 75); 
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(170, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+}</string>
+      </property>
       <property name="text">
        <string>minimize</string>
       </property>
@@ -147,6 +244,28 @@
     </item>
     <item row="0" column="1">
      <widget class="QPushButton" name="pushButton">
+      <property name="styleSheet">
+       <string notr="true">
+
+QPushButton {
+	
+	font: 10pt &quot;Segoe Print&quot;;
+	
+color: white;
+     
+	background-color: transparent;
+	border: 1px solid black;
+     border-radius: 5px;
+}
+QPushButton:!pressed
+{
+  border: 1px black;
+}
+QPushButton:hover {
+	color:rgb(38, 58, 75); 
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(170, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+}</string>
+      </property>
       <property name="text">
        <string>quit</string>
       </property>
