@@ -1,6 +1,6 @@
 #include "player.h"
 
-class BaseField
+class Field
 {
     private:
         char name[20];
