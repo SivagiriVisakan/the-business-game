@@ -4,6 +4,8 @@ class Field
 {
     private:
         char name[20];
+    protected:
+        Player &owner;
     public:
         Field(char *name);
         /**
