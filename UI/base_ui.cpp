@@ -173,14 +173,15 @@ void Base_ui::Setup_ui()
     cameraEntity->lens()->setProjectionType(Qt3DRender::QCameraLens::PerspectiveProjection);
     cameraEntity->setUpVector(QVector3D(0.0f, 1.0f,0.0f));
     cameraEntity->setViewCenter(QVector3D(0.0f, 0.0f, 0.0f));
-    cameraEntity->setPosition(QVector3D(0.0f, 10.0f, -35.0f));
+//    cameraEntity->setPosition(QVector3D(0.0f, 10.0f, -35.0f));
+    cameraEntity->setPosition(QVector3D(0.0f, 10.0f, 1.0f));
 
     //Add A Starting Animation To the close up car
 
     lightEntity = new Qt3DCore::QEntity(sceneRoot);
     Qt3DRender::QPointLight *light = new Qt3DRender::QPointLight(lightEntity);
-    light->setColor("white");
-    light->setIntensity(5);
+    light->setColor("yellow");
+    light->setIntensity(2);
     lightEntity->addComponent(light);
     Qt3DCore::QTransform *lightTransform = new Qt3DCore::QTransform(lightEntity);
     lightTransform->setTranslation(cameraEntity->position());
@@ -198,12 +199,12 @@ void Base_ui::Players_ui_creater()
 {
 
 
-    Player_Position[0]=QVector3D(0,0.15f,0);
-    Camera_Position[0]=QVector3D(-0.5,0.25f,0);
-    Camera_Viewcenter[0]=QVector3D(1,0,0);
+    Player_Position[0]=QVector3D(-8,0.1f,0.125f);
+    Camera_Position[0]=QVector3D(-8.5,0.20f,0.125);
+    Camera_Viewcenter[0]=QVector3D(-7,-0.05f,0.125f);
 
 
-    Player_Position[1]=QVector3D(0,0.15f,0);
+    Player_Position[1]=QVector3D(0,0.1f,0);
     Camera_Position[1]=QVector3D(-0.5,0.25f,0);
     Camera_Viewcenter[1]=QVector3D(1,0,0);
 
@@ -239,36 +240,35 @@ void Base_ui::Players_ui_creater()
 void Base_ui::Player_movement(int Position, int Player_number)
 {
     count=0;
-    Player_animation(QVector3D(2,0.15f,0),0);
+    Player_animation(QVector3D(-6.62f,0.1f,0.125f),0);
     connect(&timer,SIGNAL(timeout()),this,SLOT(fun()));
-    timer.start(5003);
+    timer.start(103);
 
 }
 
 void Base_ui::Player_animation(QVector3D Final_pos, int Player_number)
 {
-    if(count==1)
-        Rotation_Player(-90,0);
-    count++;
+        count+=1;
+
     Playeranimation =new QPropertyAnimation(Player[Player_number]->Resources_transform,"translation");
-    Playeranimation->setDuration(5000);
+    Playeranimation->setDuration(100);
     Playeranimation->setStartValue(Player_Position[Player_number]);
     Playeranimation->setEndValue(Final_pos);
 
     Cameraanimation =new QPropertyAnimation(cameraEntity,"viewCenter");
-    Cameraanimation->setDuration(5000);
+    Cameraanimation->setDuration(100);
     Cameraanimation->setStartValue(Camera_Viewcenter[Player_number]);
     Cameraanimation->setEndValue((Final_pos-Player_Position[Player_number])+Camera_Viewcenter[Player_number]);
 
     Cameraanimation1 =new QPropertyAnimation(cameraEntity,"position");
-    Cameraanimation1->setDuration(5000);
+    Cameraanimation1->setDuration(100);
     Cameraanimation1->setStartValue(Camera_Position[Player_number]);
     Cameraanimation1->setEndValue((Final_pos-Player_Position[Player_number])+Camera_Position[Player_number]);
 
     group = new QParallelAnimationGroup(this);
     group->addAnimation(Playeranimation);
-    group->addAnimation(Cameraanimation);
-    group->addAnimation(Cameraanimation1);
+//    group->addAnimation(Cameraanimation);
+//    group->addAnimation(Cameraanimation1);
 
     group->start();
 
@@ -286,15 +286,15 @@ void Base_ui::Rotation_Player(int degree,int Player_Number)
         case 0:
      {
         Player[Player_Number]->Resources_transform->setRotationY(degree);
-        Camera_Viewcenter[Player_Number]=Player_Position[Player_Number]+QVector3D(1,-0.15f,0);
+        Camera_Viewcenter[Player_Number]=Player_Position[Player_Number]+QVector3D(1,-0.10f,0);
         Camera_Position[Player_Number]=Player_Position[Player_Number]+QVector3D(-0.5f,0.10f,0);
         break;
      }
        case 90:
     {
 
-        Player[Player_Number]->Resources_transform->setRotationY(degree);
-        Camera_Viewcenter[Player_Number]=Player_Position[Player_Number]+QVector3D(0,-0.15f,-1);
+       Player[Player_Number]->Resources_transform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(0.0f, 1.0f, 0.0f), 90.0f));
+        Camera_Viewcenter[Player_Number]=Player_Position[Player_Number]+QVector3D(0,-0.1f,-1);
         Camera_Position[Player_Number]=Player_Position[Player_Number]+QVector3D(0,0.10f,0.5f);
         break;
     }
@@ -304,14 +304,14 @@ void Base_ui::Rotation_Player(int degree,int Player_Number)
 
 
      Player[Player_Number]->Resources_transform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(0.0f, 1.0f, 0.0f), -90.0f));
-     Camera_Viewcenter[Player_Number]=Player_Position[Player_Number]+QVector3D(0,-0.15f,1);
+     Camera_Viewcenter[Player_Number]=Player_Position[Player_Number]+QVector3D(0,-0.1f,1);
      Camera_Position[Player_Number]=Player_Position[Player_Number]+QVector3D(0,0.10f,-0.5f);
     break;
     }
     case 180:
  {
     Player[Player_Number]->Resources_transform->setRotationY(degree);
-    Camera_Viewcenter[Player_Number]=Player_Position[Player_Number]+QVector3D(-1,-0.15f,0);
+    Camera_Viewcenter[Player_Number]=Player_Position[Player_Number]+QVector3D(-1,-0.1f,0);
     Camera_Position[Player_Number]=Player_Position[Player_Number]+QVector3D(0.5f,0.10f,0);
     break;
     }
@@ -338,6 +338,84 @@ void Base_ui::Rotation_Player(int degree,int Player_Number)
 
 
 
+//DATAS
+
+
+//INITIAL
+//Player_Position[0]=QVector3D(-8,0.1f,0.125f);
+//Camera_Position[0]=QVector3D(-8.5,0.20f,0.125);
+//Camera_Viewcenter[0]=QVector3D(-7,-0.05f,0.125f);
+
+//Player_animation(QVector3D(-6.62,0.1f,0.125),0);
+
+//1
+//Rotation_Player(-90,0);
+//Player_animation(QVector3D(-6.62f,0.1f,0.125f+3.8f),0);
+
+//2
+//Rotation_Player(0,0);
+//Player_animation(QVector3D(1.55f,0.1f,0.125f+3.8f),0);
+
+//3
+//Rotation_Player(90,0);
+//Player_animation(QVector3D(1.55f,0.1f,0.125f+3.8f-1.8f),0);
+
+//4
+//Rotation_Player(180,0);
+//Player_animation(QVector3D(-1.7f,0.1f,0.125f+3.8f-1.8f),0);
+
+//5
+//Rotation_Player(90,0);
+//Player_animation(QVector3D(-1.7f,0.1f,0.125f),0);
+
+//6
+//Rotation_Player(0,0);
+//Player_animation(QVector3D(1.95f,0.1f,0.125f),0);
+
+//7
+//Rotation_Player(90,0);
+//Player_animation(QVector3D(1.95f,0.1f,-1.7f),0);
+
+//8
+//Rotation_Player(180,0);
+//Player_animation(QVector3D(-5.80f,0.1f,-1.7f),0);
+
+//9
+//Rotation_Player(90,0);
+// Player_animation(QVector3D(-5.80f,0.1f,-1.7f-1.866f),0);
+
+//10
+//Rotation_Player(0,0);
+//Player_animation(QVector3D(5.8f,0.1f,-1.7f-1.866f),0);
+
+//11
+//Rotation_Player(90,0);
+//Player_animation(QVector3D(5.8f,0.1f,-1.7f-3.8f),0);
+
+//12
+//Rotation_Player(180,0);
+//Player_animation(QVector3D(1.9f,0.1f,-1.7f-3.8f),0);
+
+//13
+//Rotation_Player(-90,0);
+//Player_animation(QVector3D(1.9f,0.1f,-1.7f-2.8f),0);
+
+//14
+//Rotation_Player(180,0);
+//Player_animation(QVector3D(-4.5f,0.1f,-1.7f-2.8f),0);
+
+//15
+//Rotation_Player(90,0);
+//Player_animation(QVector3D(-4.5f,0.1f,-1.7f-4.1f),0);
+
+//16
+//Rotation_Player(0,0);
+//Player_animation(QVector3D(2.0f,0.1f,-1.7f-4.1f),0);
+
+//17
+//Rotation_Player(90,0);
+//Player_animation(QVector3D(2.0f,0.1f,-1.7f-6.1f),0);
+
 Base_ui::~Base_ui()
 {
     delete view;
@@ -356,7 +434,101 @@ Base_ui::~Base_ui()
 
 void Base_ui::fun()
 {
-    Player_animation(QVector3D(0,0.0f,2)+Player_Position[0],0);
-    timer.stop();
+    if(count==1)
+  {
+    Rotation_Player(-90,0);
+    Player_animation(QVector3D(-6.62f,0.1f,0.125f+3.8f),0);
+
+    }
+
+    if(count==2)
+    {
+        Rotation_Player(0,0);
+        Player_animation(QVector3D(1.55f,0.1f,0.125f+3.8f),0);
+
+     }
+    if(count==3)
+    {
+        Rotation_Player(90,0);
+        Player_animation(QVector3D(1.55f,0.1f,0.125f+3.8f-1.8f),0);
+
+
+    }
+    if(count==4)
+    {
+        Rotation_Player(180,0);
+        Player_animation(QVector3D(-1.7f,0.1f,0.125f+3.8f-1.8f),0);
+
+    }
+    if(count==5)
+    {
+        Rotation_Player(90,0);
+        Player_animation(QVector3D(-1.7f,0.1f,0.125f),0);
+
+    }
+    if(count==6)
+    {
+        Rotation_Player(0,0);
+        Player_animation(QVector3D(1.95f,0.1f,0.125f),0);
+    }
+    if(count==7)
+    {
+        Rotation_Player(90,0);
+        Player_animation(QVector3D(1.95f,0.1f,-1.7f),0);
+
+    }
+    if(count==8)
+    {
+        Rotation_Player(180,0);
+        Player_animation(QVector3D(-5.80f,0.1f,-1.7f),0);
+    }
+    if(count==9)
+    {
+        Rotation_Player(90,0);
+        Player_animation(QVector3D(-5.80f,0.1f,-1.7f-1.866f),0);
+    }
+    if(count==10)
+    {
+        Rotation_Player(0,0);
+        Player_animation(QVector3D(5.8f,0.1f,-1.7f-1.866f),0);
+    }
+    if(count==11)
+    {
+        Rotation_Player(90,0);
+        Player_animation(QVector3D(5.8f,0.1f,-1.7f-3.8f),0);
+    }
+    if(count==12)
+    {
+        Rotation_Player(180,0);
+        Player_animation(QVector3D(1.9f,0.1f,-1.7f-3.8f),0);
+    }
+    if(count==13)
+    {
+        Rotation_Player(-90,0);
+        Player_animation(QVector3D(1.9f,0.1f,-1.7f-2.8f),0);
+    }
+    if(count==14)
+    {
+        Rotation_Player(180,0);
+        Player_animation(QVector3D(-4.5f,0.1f,-1.7f-2.8f),0);
+
+    }
+    if(count==15)
+    {
+        Rotation_Player(90,0);
+        Player_animation(QVector3D(-4.5f,0.1f,-1.7f-4.1f),0);
+
+    }
+    if(count==16)
+    {
+        Rotation_Player(0,0);
+        Player_animation(QVector3D(2.0f,0.1f,-1.7f-4.1f),0);
+    }
+    if(count==17)
+    {
+        Rotation_Player(90,0);
+        Player_animation(QVector3D(2.0f,0.1f,-1.7f-6.1f),0);
+         timer.stop();
+    }
 
 }

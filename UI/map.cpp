@@ -6,7 +6,7 @@ Map::Map(QWidget *parent) :
     ui(new Ui::Map)
 {
     ui->setupUi(this);
-    this->setGeometry(235,0,1000,1000);
+    this->setGeometry(235,0,990,1000);
     this->setWindowFlags(Qt::FramelessWindowHint);
 
 }

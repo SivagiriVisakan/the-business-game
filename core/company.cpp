@@ -1,11 +1,11 @@
 #include "company.h"
 
-Company::Company()
-{
+//Company::Company()
+//{
 
-}
+//}
 
-void Company::onTokenLanded(Player &player)
-{
+//void Company::onTokenLanded(Player &player)
+//{
 
-}
+//}
