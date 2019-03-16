@@ -1,12 +1,12 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     m=new Map();
 }
 
@@ -37,6 +37,12 @@ void MainWindow::Gameplay_ui()
     this->show();
 }
 
+void MainWindow::Updatefun(QString a, QString b)
+{
+    ui->label->setText(a);
+    ui->label_2->setText(b);
+}
+
 
 void MainWindow::on_RollDIces_clicked()
 {
@@ -50,6 +56,5 @@ void MainWindow::on_RollDIces_clicked()
 
 void MainWindow::on_Map_Button_clicked()
 {
-
     m->show();
 }

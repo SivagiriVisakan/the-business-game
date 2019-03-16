@@ -17,6 +17,8 @@ public:
     explicit Player_selection(QWidget *parent = nullptr);
     ~Player_selection();
 
+
+
 private slots:
 
 
@@ -27,6 +29,8 @@ private slots:
 
 
 private:
+
+
     Ui::Player_selection *ui;
     MainWindow *Ui_Window;
 

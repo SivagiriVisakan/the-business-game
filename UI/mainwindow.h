@@ -20,10 +20,9 @@ public:
 
     void Gameplay_ui();
      Map *m;
-
+    void Updatefun(QString,QString);
 private slots:
     void on_RollDIces_clicked();
-
     void on_Map_Button_clicked();
 
 private:

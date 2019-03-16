@@ -37,7 +37,7 @@ SOURCES += \
     musiccontrols.cpp \
     cube_ui.cpp \
     map.cpp \
-    ../core/company.cpp \
+#    ../core/Company.cpp \
     ../core/player.cpp
 
 HEADERS += \
@@ -49,8 +49,8 @@ HEADERS += \
     musiccontrols.h \
     cube_ui.h \
     map.h \
-    ../core/BaseField.h \
-    ../core/company.h \
+#    ../core/BaseField.h \
+    ../core/Company.h \
     ../core/player.h
 
 FORMS += \

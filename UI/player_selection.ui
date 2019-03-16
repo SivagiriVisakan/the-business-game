@@ -41,7 +41,7 @@
      <x>1000</x>
      <y>120</y>
      <width>911</width>
-     <height>61</height>
+     <height>65</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -62,7 +62,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="lineEdit_2">
+     <widget class="QLineEdit" name="name2">
       <property name="styleSheet">
        <string notr="true">font: 20pt &quot;Segoe Print&quot;;
 	color:rgb(38, 58, 75); 
@@ -189,7 +189,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="name1">
       <property name="styleSheet">
        <string notr="true">font: 20pt &quot;Segoe Print&quot;;
 	color:rgb(38, 58, 75); 

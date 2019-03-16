@@ -57,11 +57,12 @@
         <x>0</x>
         <y>0</y>
         <width>451</width>
-        <height>41</height>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 85, 127);</string>
+       <string notr="true">background-color: rgb(255, 85, 127);
+font: 26pt &quot;MS Shell Dlg 2&quot;;</string>
       </property>
       <property name="text">
        <string>name</string>
@@ -72,12 +73,12 @@
        <rect>
         <x>0</x>
         <y>60</y>
-        <width>55</width>
+        <width>451</width>
         <height>16</height>
        </rect>
       </property>
       <property name="text">
-       <string>money</string>
+       <string>Amt remaining</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_3">
@@ -107,6 +108,36 @@
       <string notr="true">background-color: rgb(255, 85, 0);
 background-color: rgb(170, 255, 255);</string>
      </property>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>451</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 85, 127);
+font: 26pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>name</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>50</y>
+        <width>451</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Amt remaining</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="widget_4" native="true">
      <property name="geometry">
