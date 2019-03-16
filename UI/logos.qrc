@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/">
+        <file>cars/fiat.png</file>
+        <file>cars/ford.png</file>
+        <file>cars/jeep.png</file>
+        <file>cars/renault.png</file>
+        <file>cars/volkswagen.png</file>
+        <file>food/burger.png</file>
+        <file>food/cadbury.jpg</file>
+        <file>food/Dominos_Pizza_logo.png</file>
+        <file>food/Kfc_logo-2.png</file>
+        <file>food/mcdonalds_PNG9.png</file>
+        <file>Logos/Airport.jpg</file>
+        <file>online shopping/amazon_PNG24.png</file>
+        <file>online shopping/ebay.png</file>
+        <file>online shopping/Myntra_logo.png</file>
+        <file>online shopping/snapdeal.png</file>
+        <file>online shopping/walmart.png</file>
+        <file>social networks/facebook.png</file>
+        <file>social networks/insta.jpg</file>
+        <file>social networks/snapchat.png</file>
+        <file>social networks/twitter.png</file>
+        <file>social networks/whatsapp.png</file>
+        <file>software/google_PNG19631.png</file>
+        <file>software/infosys_logo-768x283.png</file>
+        <file>software/Wipro-Icon-PNG-715x715.png</file>
+        <file>software/yahoo.jpg</file>
+    </qresource>
+</RCC>
