@@ -16,7 +16,7 @@ public:
     * owned by the given Player
     * TODO: Try and make this dynamic
     */
-    Field fieldsOwned[20];
+    // Field fieldsOwned[20];
 
 
     /**
