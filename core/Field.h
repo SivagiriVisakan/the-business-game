@@ -1,4 +1,5 @@
-
+#ifndef FIELD_H
+#define FIELD_H
 
 enum FieldLevel {NotUpgradable = -1, LevelOne = 1, LevelTwo = 2, LevelThree = 3}; 
   
@@ -13,9 +14,16 @@ class Field
 
     public:
         Field(char *name);
-        enum FieldLevel getCurrentLevel(){return level;}
-        int getRent() { return rent; }
+        Field(const Field& f);
+        virtual ~Field();
+
+        enum FieldLevel getCurrentLevel() const {return level;}
+        int getRent() const { return rent; }
+        int getCost() const { return cost; }
+        char* getName() const { return name; }
         virtual void setCost(int c)=0;
         virtual void calculateRent()=0;
 
 };
+
+#endif // FIELD_H
