@@ -6,43 +6,204 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1220</width>
-    <height>724</height>
+    <width>778</width>
+    <height>591</height>
    </rect>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::StrongFocus</enum>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLabel" name="Companyname">
+  <property name="styleSheet">
+   <string notr="true">
+background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0.189055 rgba(8, 174, 234, 255), stop:0.776119 rgba(42, 245, 142, 255));
+
+</string>
+  </property>
+  <widget class="QWidget" name="Headwidget" native="true">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>30</y>
-     <width>301</width>
-     <height>131</height>
+     <x>40</x>
+     <y>49</y>
+     <width>261</width>
+     <height>491</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 170, 127);</string>
+    <string notr="true">background-color: rgb(255, 0, 0);</string>
+   </property>
+   <widget class="QLabel" name="Companyname">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>241</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 18pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Company Name</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Companylogo">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>140</y>
+      <width>151</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 28pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>LOGO</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Cost">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>380</y>
+      <width>181</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Cost</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="Tailwidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>49</y>
+     <width>431</width>
+     <height>491</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(254, 254, 254, 255);</string>
+   </property>
+   <widget class="QLabel" name="Rent">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>35</y>
+      <width>351</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Rent</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BuySell">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>420</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> QPushButton {
+     background-color: transparent;
+	border-radius:10px
+ }
+ QPushButton:pressed {
+     background-color: rgb(224, 0, 0);     
+ }
+ QPushButton:hover {
+     background-color:  rgb(0, 0, 0);
+ }</string>
+    </property>
+    <property name="text">
+     <string>Buy/Sell</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Upgrade">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>420</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> QPushButton {
+     background-color: transparent;
+	border-radius:10px
+ }
+ QPushButton:pressed {
+     background-color: rgb(224, 0, 0);     
+ }
+ QPushButton:hover {
+     background-color:  rgb(0, 0, 0);
+ }</string>
+    </property>
+    <property name="text">
+     <string>Upgrade</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Levels">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>110</y>
+      <width>341</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Remaining</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="Closebutton">
+   <property name="geometry">
+    <rect>
+     <x>720</x>
+     <y>30</y>
+     <width>31</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/photos/icons8-delete-64.png);
+background-color:transparent;</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>220</y>
-     <width>55</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>TextLabel</string>
-   </property>
-  </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>Closebutton</sender>
+   <signal>clicked()</signal>
+   <receiver>Token</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>733</x>
+     <y>37</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>664</x>
+     <y>11</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

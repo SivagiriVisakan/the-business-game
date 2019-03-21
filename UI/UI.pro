@@ -71,7 +71,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     k.qrc \
-    logos.qrc
+    logo.qrc
 
 DISTFILES += \
     ../core/README.md

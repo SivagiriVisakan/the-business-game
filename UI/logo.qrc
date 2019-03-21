@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Logos/Airport.jpg</file>
+        <file>photos/icons8-delete-64.png</file>
+        <file>photos/Moneybag.jpg.png</file>
+    </qresource>
+</RCC>

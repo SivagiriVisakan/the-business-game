@@ -6,6 +6,8 @@ Token::Token(QWidget *parent) :
     ui(new Ui::Token)
 {
     ui->setupUi(this);
+
+    this->setWindowFlag(Qt::FramelessWindowHint);
 }
 
 Token::~Token()

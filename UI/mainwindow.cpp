@@ -23,7 +23,6 @@ void MainWindow::Gameplay_ui()
     this->setWindowFlag(Qt::FramelessWindowHint,Qt::KeepAspectRatio);
     Board.Setup_ui();
     Board.Players_ui_creater();
-//    Board.Board_rotate();
 
     ui->Ui_board= QWidget::createWindowContainer(Board.view,this);
     QSize screenSize = Board.view->screen()->size();
