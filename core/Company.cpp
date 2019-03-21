@@ -2,10 +2,11 @@
 #include "Company.h"
 
 
-Company::Company(char *name, int cost): Field(name)
+Company::Company(char *name, int cost, CompanyCategory category): Field(name)
 {
     setCost(cost);
     level = LevelOne;
+    this->category = category;
     calculateRent();
 }
 

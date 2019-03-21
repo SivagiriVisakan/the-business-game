@@ -2,10 +2,18 @@
 #define COMPANY_H
 #include "Field.h"
 
+enum CompanyCategory{
+    SOCIAL_MEDIA = 1,
+    TECH_INDUSTRY = 2,
+    AUTOMOTIVE_INDUSTRY = 3,
+    GAMING = 4,
+    RETAIL_INDUSTRY = 5
+};
+
 class Company : public Field
 {
 public:
-    Company(char *name, int cost);
+    Company(char *name, int cost, CompanyCategory category);
     void setCost(int c);
     void calculateRent();
 
@@ -14,6 +22,9 @@ public:
      * changes the currentLevel
     */
     void upgradeCompany();
+    CompanyCategory getCategory(){ return category; }
+private:
+    CompanyCategory category;
 };
 
 #endif // COMPANY_H

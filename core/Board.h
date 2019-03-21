@@ -31,14 +31,19 @@ public:
     {
         return allCompanies[i];
     }
+
+    void setPlayerPosition(int playerIndex, int companyPositionIndex);
+    Company getPlayerCurrentPosition(int playerId);
+
 private:
     std::vector<Company> allCompanies;
+
+    int playerPositions[2]; // Hold the current company to hold the position of the players
 
     /**
      * Utitlity method for initially adding companies into the vector about the companies
      */
-    void addCompany(char *name, int cost);
-
+    void addCompany(char *name, int cost, CompanyCategory category);
 };
 
 #endif // BOARD_H
