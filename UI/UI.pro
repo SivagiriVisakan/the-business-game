@@ -38,7 +38,8 @@ SOURCES += \
     cube_ui.cpp \
     map.cpp \
 #    ../core/Company.cpp \
-    ../core/player.cpp
+    ../core/player.cpp \
+    token.cpp
 
 HEADERS += \
     resources_ui.h \
@@ -51,7 +52,8 @@ HEADERS += \
     map.h \
 #    ../core/BaseField.h \
     ../core/Company.h \
-    ../core/player.h
+    ../core/player.h \
+    token.h
 
 FORMS += \
     mainwindow.ui \
@@ -59,7 +61,8 @@ FORMS += \
     Start_page.ui \
     musiccontrols.ui \
     cube_ui.ui \
-    map.ui
+    map.ui \
+    token.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

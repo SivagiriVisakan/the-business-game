@@ -157,6 +157,7 @@ Base_ui::Base_ui()
 
     buldingneartrain->Add_resources_components();
 
+    Animation= new QSequentialAnimationGroup(this);
 }
 
 void Base_ui::Setup_ui()
@@ -200,7 +201,7 @@ void Base_ui::Players_ui_creater()
 
 
     Player_Position[0]=QVector3D(-8,0.1f,0.125f);
-    Camera_Position[0]=QVector3D(-8.5,0.20f,0.125);
+    Camera_Position[0]=QVector3D(-11.5,1.20f,0.125);
     Camera_Viewcenter[0]=QVector3D(-7,-0.05f,0.125f);
 
 
@@ -239,40 +240,38 @@ void Base_ui::Players_ui_creater()
 
 void Base_ui::Player_movement(int Position, int Player_number)
 {
-    count=0;
     Player_animation(QVector3D(-6.62f,0.1f,0.125f),0);
-    connect(&timer,SIGNAL(timeout()),this,SLOT(fun()));
-    timer.start(103);
 
+    count=1;
+    fun();
+
+    Animation->start();
 }
 
 void Base_ui::Player_animation(QVector3D Final_pos, int Player_number)
 {
-        count+=1;
-
     Playeranimation =new QPropertyAnimation(Player[Player_number]->Resources_transform,"translation");
-    Playeranimation->setDuration(100);
+    Playeranimation->setDuration(5000);
     Playeranimation->setStartValue(Player_Position[Player_number]);
     Playeranimation->setEndValue(Final_pos);
 
     Cameraanimation =new QPropertyAnimation(cameraEntity,"viewCenter");
-    Cameraanimation->setDuration(100);
+    Cameraanimation->setDuration(5000);
     Cameraanimation->setStartValue(Camera_Viewcenter[Player_number]);
     Cameraanimation->setEndValue((Final_pos-Player_Position[Player_number])+Camera_Viewcenter[Player_number]);
 
     Cameraanimation1 =new QPropertyAnimation(cameraEntity,"position");
-    Cameraanimation1->setDuration(100);
+    Cameraanimation1->setDuration(5000);
     Cameraanimation1->setStartValue(Camera_Position[Player_number]);
     Cameraanimation1->setEndValue((Final_pos-Player_Position[Player_number])+Camera_Position[Player_number]);
 
     group = new QParallelAnimationGroup(this);
     group->addAnimation(Playeranimation);
-//    group->addAnimation(Cameraanimation);
-//    group->addAnimation(Cameraanimation1);
-
-    group->start();
+    group->addAnimation(Cameraanimation);
+    group->addAnimation(Cameraanimation1);
 
 
+    Animation->addAnimation(group);
 
     Player_Position[Player_number]=Final_pos;
     Camera_Viewcenter[Player_number]=(Final_pos-Player_Position[Player_number])+Camera_Viewcenter[Player_number];
@@ -281,39 +280,105 @@ void Base_ui::Player_animation(QVector3D Final_pos, int Player_number)
 
 void Base_ui::Rotation_Player(int degree,int Player_Number)
 {
+    Rotationplayer=new QPropertyAnimation(Player[Player_Number]->Resources_transform,"rotationY");
+    Rotationplayer->setDuration(100);
+    Rotationplayer->setStartValue(0);
+
+    Rotationcamera =new QPropertyAnimation(cameraEntity,"viewCenter");
+    Rotationcamera->setDuration(100);
+    Rotationcamera->setStartValue(Camera_Viewcenter[Player_Number]);
+
+    Rotationcamera1 =new QPropertyAnimation(cameraEntity,"position");
+    Rotationcamera1->setDuration(100);
+    Rotationcamera1->setStartValue(Camera_Position[Player_Number]);
+
     switch (degree)
     {
         case 0:
      {
-        Player[Player_Number]->Resources_transform->setRotationY(degree);
+        Rotationplayer->setEndValue(0);
+
+       Rotationcamera->setEndValue(Player_Position[Player_Number]+QVector3D(1,-0.10f,0));
+
+       Rotationcamera1->setEndValue(Player_Position[Player_Number]+QVector3D(-3.5f,1.10f,0));
+
+        group = new QParallelAnimationGroup(this);
+        group->addAnimation(Rotationplayer);
+        group->addAnimation(Rotationcamera);
+        group->addAnimation(Rotationcamera1);
+
+        Animation->addAnimation(group);
+
         Camera_Viewcenter[Player_Number]=Player_Position[Player_Number]+QVector3D(1,-0.10f,0);
-        Camera_Position[Player_Number]=Player_Position[Player_Number]+QVector3D(-0.5f,0.10f,0);
+        Camera_Position[Player_Number]=Player_Position[Player_Number]+QVector3D(-3.5f,1.10f,0);
+
         break;
-     }
+
+    }
        case 90:
     {
 
-       Player[Player_Number]->Resources_transform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(0.0f, 1.0f, 0.0f), 90.0f));
+        Rotationplayer->setEndValue(90);
+
+        Rotationcamera->setEndValue(Player_Position[Player_Number]+QVector3D(0,-0.1f,-1));
+
+        Rotationcamera1->setEndValue(Player_Position[Player_Number]+QVector3D(0,1.10f,3.5f));
+
+        group = new QParallelAnimationGroup(this);
+        group->addAnimation(Rotationplayer);
+        group->addAnimation(Rotationcamera);
+        group->addAnimation(Rotationcamera1);
+
+
+        Animation->addAnimation(group);
+
         Camera_Viewcenter[Player_Number]=Player_Position[Player_Number]+QVector3D(0,-0.1f,-1);
-        Camera_Position[Player_Number]=Player_Position[Player_Number]+QVector3D(0,0.10f,0.5f);
+        Camera_Position[Player_Number]=Player_Position[Player_Number]+QVector3D(0,1.10f,3.5f);
+
         break;
     }
 
     case -90:
   {
+     Rotationplayer->setEndValue(-90);
+
+     Rotationcamera->setEndValue(Player_Position[Player_Number]+QVector3D(0,-0.1f,1));
+
+     Rotationcamera1->setEndValue(Player_Position[Player_Number]+QVector3D(0,1.10f,-3.5f));
+
+     group = new QParallelAnimationGroup(this);
+     group->addAnimation(Rotationplayer);
+     group->addAnimation(Rotationcamera);
+     group->addAnimation(Rotationcamera1);
 
 
-     Player[Player_Number]->Resources_transform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(0.0f, 1.0f, 0.0f), -90.0f));
+     Animation->addAnimation(group);
+
      Camera_Viewcenter[Player_Number]=Player_Position[Player_Number]+QVector3D(0,-0.1f,1);
-     Camera_Position[Player_Number]=Player_Position[Player_Number]+QVector3D(0,0.10f,-0.5f);
-    break;
+     Camera_Position[Player_Number]=Player_Position[Player_Number]+QVector3D(0,1.10f,-3.5f);
+
+     break;
     }
     case 180:
  {
-    Player[Player_Number]->Resources_transform->setRotationY(degree);
-    Camera_Viewcenter[Player_Number]=Player_Position[Player_Number]+QVector3D(-1,-0.1f,0);
-    Camera_Position[Player_Number]=Player_Position[Player_Number]+QVector3D(0.5f,0.10f,0);
-    break;
+        Rotationplayer->setEndValue(-180);
+
+        Rotationcamera->setEndValue(Player_Position[Player_Number]+QVector3D(-1,-0.1f,0));
+
+        Rotationcamera1->setEndValue(Player_Position[Player_Number]+QVector3D(3.5f,1.10f,0));
+
+        group = new QParallelAnimationGroup(this);
+        group->addAnimation(Rotationplayer);
+        group->addAnimation(Rotationcamera);
+        group->addAnimation(Rotationcamera1);
+
+
+        Animation->addAnimation(group);
+
+        Camera_Viewcenter[Player_Number]=Player_Position[Player_Number]+QVector3D(-1,-0.1f,0);
+        Camera_Position[Player_Number]=Player_Position[Player_Number]+QVector3D(3.5f,1.10f,0);
+
+        break;
     }
 
     }
@@ -434,97 +499,97 @@ Base_ui::~Base_ui()
 
 void Base_ui::fun()
 {
-    if(count==1)
+    if(count)
   {
     Rotation_Player(-90,0);
     Player_animation(QVector3D(-6.62f,0.1f,0.125f+3.8f),0);
 
     }
 
-    if(count==2)
+    if(count)
     {
         Rotation_Player(0,0);
         Player_animation(QVector3D(1.55f,0.1f,0.125f+3.8f),0);
 
      }
-    if(count==3)
+    if(count)
     {
         Rotation_Player(90,0);
         Player_animation(QVector3D(1.55f,0.1f,0.125f+3.8f-1.8f),0);
 
 
     }
-    if(count==4)
+    if(count)
     {
         Rotation_Player(180,0);
         Player_animation(QVector3D(-1.7f,0.1f,0.125f+3.8f-1.8f),0);
 
     }
-    if(count==5)
+    if(count)
     {
         Rotation_Player(90,0);
         Player_animation(QVector3D(-1.7f,0.1f,0.125f),0);
 
     }
-    if(count==6)
+    if(count)
     {
         Rotation_Player(0,0);
         Player_animation(QVector3D(1.95f,0.1f,0.125f),0);
     }
-    if(count==7)
+    if(count)
     {
         Rotation_Player(90,0);
         Player_animation(QVector3D(1.95f,0.1f,-1.7f),0);
 
     }
-    if(count==8)
+    if(count)
     {
         Rotation_Player(180,0);
         Player_animation(QVector3D(-5.80f,0.1f,-1.7f),0);
     }
-    if(count==9)
+    if(count)
     {
         Rotation_Player(90,0);
         Player_animation(QVector3D(-5.80f,0.1f,-1.7f-1.866f),0);
     }
-    if(count==10)
+    if(count)
     {
         Rotation_Player(0,0);
         Player_animation(QVector3D(5.8f,0.1f,-1.7f-1.866f),0);
     }
-    if(count==11)
+    if(count)
     {
         Rotation_Player(90,0);
         Player_animation(QVector3D(5.8f,0.1f,-1.7f-3.8f),0);
     }
-    if(count==12)
+    if(count)
     {
         Rotation_Player(180,0);
         Player_animation(QVector3D(1.9f,0.1f,-1.7f-3.8f),0);
     }
-    if(count==13)
+    if(count)
     {
         Rotation_Player(-90,0);
         Player_animation(QVector3D(1.9f,0.1f,-1.7f-2.8f),0);
     }
-    if(count==14)
+    if(count)
     {
         Rotation_Player(180,0);
         Player_animation(QVector3D(-4.5f,0.1f,-1.7f-2.8f),0);
 
     }
-    if(count==15)
+    if(count)
     {
         Rotation_Player(90,0);
         Player_animation(QVector3D(-4.5f,0.1f,-1.7f-4.1f),0);
 
     }
-    if(count==16)
+    if(count)
     {
         Rotation_Player(0,0);
         Player_animation(QVector3D(2.0f,0.1f,-1.7f-4.1f),0);
     }
-    if(count==17)
+    if(count)
     {
         Rotation_Player(90,0);
         Player_animation(QVector3D(2.0f,0.1f,-1.7f-6.1f),0);
@@ -532,3 +597,14 @@ void Base_ui::fun()
     }
 
 }
+
+
+//dice  = 5
+//count = 0
+//position = 3
+//data[] =
+//        10
+//for(int i=10; <index+5)
+//if()
+// move(data[i])
+

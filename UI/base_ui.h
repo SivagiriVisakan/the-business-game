@@ -40,9 +40,10 @@ private:
     Qt3DCore::QEntity *lightEntity ;
     Qt3DExtras::QFirstPersonCameraController *camController;
     QVector3D Player_Position[2],Camera_Position[2],Camera_Viewcenter[2];
-    QPropertyAnimation * Playeranimation,* Cameraanimation,* Cameraanimation1;
+    QPropertyAnimation * Playeranimation,* Cameraanimation,* Cameraanimation1,*Rotationplayer,*Rotationcamera,*Rotationcamera1;
     QTimer timer;
     int count;
+    QSequentialAnimationGroup *Animation;
 };
 
 #endif // BASE_UI_H

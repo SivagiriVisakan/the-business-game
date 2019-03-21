@@ -44,8 +44,11 @@
      <height>150</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font: 26pt &quot;Segoe Print&quot;;</string>
+   </property>
    <property name="text">
-    <string>Chance</string>
+    <string>?</string>
    </property>
   </widget>
   <widget class="QPushButton" name="map2">
