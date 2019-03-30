@@ -15,6 +15,9 @@ public:
     explicit Token(QWidget *parent = nullptr);
     ~Token();
 
+private slots:
+    void on_BuySell_clicked();
+
 private:
     Ui::Token *ui;
 };

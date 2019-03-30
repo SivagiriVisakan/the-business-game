@@ -14,3 +14,13 @@ Token::~Token()
 {
     delete ui;
 }
+
+void Token::on_BuySell_clicked()
+{
+    QString source;
+
+   source="qrc:/board_";
+   source+=char(1+'0');
+   source+=".obj";
+    ui->Companyname->setText(source);
+}

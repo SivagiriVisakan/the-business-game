@@ -23,6 +23,15 @@ public:
     void Player_animation(QVector3D Final_pos, int Player_number );
 
     void Rotation_Player(int degree,int Player_Number);
+
+
+
+
+    QVector3D function_getpos();
+     QVector3D function_getview();
+
+     void function_setpos(QVector3D,QVector3D);
+
     ~Base_ui();
 
      Qt3DExtras::Qt3DWindow *view;
@@ -30,8 +39,10 @@ private:
     Resources_ui *Prison,*Ufo,*Stadium,*Nuclear,*Buildingnearnuclear,*Buildingnearstadium,*smallchest,*chest,*Buildingnearprison,*buldingnearchest,*buldingneartrain;
     Resources_ui *City;
     Resources_ui *Player[2];
+    Resources_ui *Board[34];
 private slots:
-    void fun();
+    void Focus_fun();
+    void Animation_fun();
 private:
 
     Qt3DCore::QEntity *sceneRoot ;
@@ -41,8 +52,7 @@ private:
     Qt3DExtras::QFirstPersonCameraController *camController;
     QVector3D Player_Position[2],Camera_Position[2],Camera_Viewcenter[2];
     QPropertyAnimation * Playeranimation,* Cameraanimation,* Cameraanimation1,*Rotationplayer,*Rotationcamera,*Rotationcamera1;
-    QTimer timer;
-    int count;
+    int count,Position,player;
     QSequentialAnimationGroup *Animation;
 };
 

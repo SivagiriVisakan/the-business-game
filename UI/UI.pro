@@ -39,7 +39,11 @@ SOURCES += \
     map.cpp \
 #    ../core/Company.cpp \
     ../core/player.cpp \
-    token.cpp
+    token.cpp \
+    ../core/Board.cpp \
+    ../core/Company.cpp \
+    ../core/Field.cpp \
+    ../core/GameManager.cpp
 
 HEADERS += \
     resources_ui.h \
@@ -53,7 +57,11 @@ HEADERS += \
 #    ../core/BaseField.h \
     ../core/Company.h \
     ../core/player.h \
-    token.h
+    token.h \
+    ../core/Board.h \
+    ../core/Company.h \
+    ../core/Field.h \
+    ../core/GameManager.h
 
 FORMS += \
     mainwindow.ui \

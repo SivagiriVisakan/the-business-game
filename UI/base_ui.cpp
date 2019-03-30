@@ -1,9 +1,13 @@
 #include "base_ui.h"
+#include<string>
+
 
 Base_ui::Base_ui()
 {
     sceneRoot = new Qt3DCore::QEntity();
     City=new Resources_ui(sceneRoot);
+    Animation= new QSequentialAnimationGroup(this);
+
 
     City-> Resources_ui_mesh->setSource(QUrl(QStringLiteral("qrc:/new/prefix1/cityfinal_.obj")));
 
@@ -157,7 +161,29 @@ Base_ui::Base_ui()
 
     buldingneartrain->Add_resources_components();
 
-    Animation= new QSequentialAnimationGroup(this);
+
+  for(int i=1;i<12;i++)
+   {
+
+       Board[i]=new Resources_ui(City->Resources_Entity);
+
+        QString source;
+
+       source="qrc:/board_";
+       source+=QString::number(i);
+       source+=".obj";
+       Board[i]-> Resources_ui_mesh->setSource(QUrl(QString(source)));
+
+       Board[i]->Resources_transform->setScale(1.0f);       // size
+       Board[i]->Resources_transform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(1.0f, 0.0f, 0.0f), 0.0f)); // x,y,z axis and degree rotation
+       Board[i]->Resources_transform->setTranslation(QVector3D(0.0f, 0.0f, -0.0f));
+
+       Board[i]->Texture_loader->setSource(QUrl(QStringLiteral("qrc:/Logos/Airport.jpg")));
+
+       Board[i]->Add_resources_components();
+
+   }
+
 }
 
 void Base_ui::Setup_ui()
@@ -238,33 +264,41 @@ void Base_ui::Players_ui_creater()
 
 }
 
-void Base_ui::Player_movement(int Position, int Player_number)
+void Base_ui::Player_movement(int Position , int Player_number)
 {
-    Player_animation(QVector3D(-6.62f,0.1f,0.125f),0);
-
     count=1;
-    fun();
+    this->Position=1;
+    delete Animation;
+    Animation= new QSequentialAnimationGroup(this);
+
+    Animation_fun();
 
     Animation->start();
+    QObject::connect(Animation,SIGNAL(finished()),this,SLOT(Focus_fun()));
+
 }
 
 void Base_ui::Player_animation(QVector3D Final_pos, int Player_number)
 {
+//    delete Playeranimation;
     Playeranimation =new QPropertyAnimation(Player[Player_number]->Resources_transform,"translation");
     Playeranimation->setDuration(5000);
     Playeranimation->setStartValue(Player_Position[Player_number]);
     Playeranimation->setEndValue(Final_pos);
 
+//    delete Cameraanimation;
     Cameraanimation =new QPropertyAnimation(cameraEntity,"viewCenter");
     Cameraanimation->setDuration(5000);
     Cameraanimation->setStartValue(Camera_Viewcenter[Player_number]);
     Cameraanimation->setEndValue((Final_pos-Player_Position[Player_number])+Camera_Viewcenter[Player_number]);
 
+//    delete Cameraanimation1;
     Cameraanimation1 =new QPropertyAnimation(cameraEntity,"position");
     Cameraanimation1->setDuration(5000);
     Cameraanimation1->setStartValue(Camera_Position[Player_number]);
     Cameraanimation1->setEndValue((Final_pos-Player_Position[Player_number])+Camera_Position[Player_number]);
 
+//    delete group;
     group = new QParallelAnimationGroup(this);
     group->addAnimation(Playeranimation);
     group->addAnimation(Cameraanimation);
@@ -280,14 +314,17 @@ void Base_ui::Player_animation(QVector3D Final_pos, int Player_number)
 
 void Base_ui::Rotation_Player(int degree,int Player_Number)
 {
+//    delete Rotationplayer;
     Rotationplayer=new QPropertyAnimation(Player[Player_Number]->Resources_transform,"rotationY");
     Rotationplayer->setDuration(100);
     Rotationplayer->setStartValue(0);
 
+//    delete Rotationcamera;
     Rotationcamera =new QPropertyAnimation(cameraEntity,"viewCenter");
     Rotationcamera->setDuration(100);
     Rotationcamera->setStartValue(Camera_Viewcenter[Player_Number]);
 
+//    delete Rotationcamera1;
     Rotationcamera1 =new QPropertyAnimation(cameraEntity,"position");
     Rotationcamera1->setDuration(100);
     Rotationcamera1->setStartValue(Camera_Position[Player_Number]);
@@ -302,6 +339,7 @@ void Base_ui::Rotation_Player(int degree,int Player_Number)
 
        Rotationcamera1->setEndValue(Player_Position[Player_Number]+QVector3D(-3.5f,1.10f,0));
 
+//        delete group;
         group = new QParallelAnimationGroup(this);
         group->addAnimation(Rotationplayer);
         group->addAnimation(Rotationcamera);
@@ -324,6 +362,7 @@ void Base_ui::Rotation_Player(int degree,int Player_Number)
 
         Rotationcamera1->setEndValue(Player_Position[Player_Number]+QVector3D(0,1.10f,3.5f));
 
+//        delete group;
         group = new QParallelAnimationGroup(this);
         group->addAnimation(Rotationplayer);
         group->addAnimation(Rotationcamera);
@@ -346,6 +385,7 @@ void Base_ui::Rotation_Player(int degree,int Player_Number)
 
      Rotationcamera1->setEndValue(Player_Position[Player_Number]+QVector3D(0,1.10f,-3.5f));
 
+//     delete group;
      group = new QParallelAnimationGroup(this);
      group->addAnimation(Rotationplayer);
      group->addAnimation(Rotationcamera);
@@ -367,6 +407,7 @@ void Base_ui::Rotation_Player(int degree,int Player_Number)
 
         Rotationcamera1->setEndValue(Player_Position[Player_Number]+QVector3D(3.5f,1.10f,0));
 
+//        delete group;
         group = new QParallelAnimationGroup(this);
         group->addAnimation(Rotationplayer);
         group->addAnimation(Rotationcamera);
@@ -383,6 +424,37 @@ void Base_ui::Rotation_Player(int degree,int Player_Number)
 
     }
 }
+
+void Base_ui::Focus_fun()
+{
+        QVector3D camera,viewcenter;
+        if(Position==1)
+        {             
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        cameraEntity->setPosition(camera);
+        cameraEntity->setViewCenter(viewcenter);
+}
+
+QVector3D Base_ui::function_getpos()
+{
+    return cameraEntity->position();
+}
+
+QVector3D Base_ui::function_getview()
+{
+    return cameraEntity->viewCenter();
+}
+
+void Base_ui::function_setpos(QVector3D m,QVector3D n)
+{
+    cameraEntity->setPosition(m);
+    cameraEntity->setViewCenter(n);
+}
+
+
+
 
 // Camera Note important:
 //     Object Car in 0,0,0
@@ -497,8 +569,14 @@ Base_ui::~Base_ui()
     delete Cameraanimation1;
 }
 
-void Base_ui::fun()
+void Base_ui::Animation_fun()
 {
+    if(count<=Position)
+    {
+       Player_animation(QVector3D(-6.62f,0.1f,0.125f),0);
+        count++;
+        count=0;
+    }
     if(count)
   {
     Rotation_Player(-90,0);
@@ -593,18 +671,11 @@ void Base_ui::fun()
     {
         Rotation_Player(90,0);
         Player_animation(QVector3D(2.0f,0.1f,-1.7f-6.1f),0);
-         timer.stop();
+
     }
 
 }
 
 
-//dice  = 5
-//count = 0
-//position = 3
-//data[] =
-//        10
-//for(int i=10; <index+5)
-//if()
-// move(data[i])
+
 
