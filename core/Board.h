@@ -26,17 +26,18 @@ public:
      * Automatically handles the case where the diceMoves goes over all the places(starts from the first again)
      */
     Company updatePlayerPosition(const Player& player, int diceMoves);
+    Field* updatePlayerPosition(const int player, int diceMoves);
 
-    const Company& operator [](int i)
+    const Field* operator [](int i)
     {
         return allCompanies[i];
     }
 
     void setPlayerPosition(int playerIndex, int companyPositionIndex);
-    Company getPlayerCurrentPosition(int playerId);
+    Company& getPlayerCurrentCompany(int playerId);
 
 private:
-    std::vector<Company> allCompanies;
+    std::vector<Field*> allCompanies;
 
     int playerPositions[2]; // Hold the current company to hold the position of the players
 
