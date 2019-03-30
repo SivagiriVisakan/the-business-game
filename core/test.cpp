@@ -1,3 +1,12 @@
+/**
+ * Test program for checking the correctness and as well as demonstrate the usage
+ * of the classes
+
+ * ------------------------------------------------------------------------------------------
+ * Compile with command: g++ test.cpp Company.cpp Field.cpp Board.cpp GameManager.cpp player.cpp
+ * ------------------------------------------------------------------------------------------------
+ */
+
 #include "Company.h"
 #include "Board.h"
 #include "GameManager.h"
