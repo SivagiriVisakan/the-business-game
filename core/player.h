@@ -2,7 +2,7 @@
 #define PLAYER_H
 
 
-#include "Field.h"
+//#include "Field.h"
 
 
 class Player
@@ -36,7 +36,7 @@ public:
     * TODO: Write implementation of this. It should check for the money and modify the `field` to set owner
     *       and add the `field` to the players collection of fields and modify the money
     */
-    void buyField(Field &field);
+    // void buyField(Field &field);
 
     /**
     * This function should be called all the time whenever the moneyOwned is to be
@@ -49,11 +49,12 @@ public:
     */
     void changeMoneyOwned(int change);
 
+    char* getName() { return name;}
     /**
     * Checks if the given field is in the possession of the player
     * TODO: Implement this. (Search for the given field in the fieldsOwned array)
     */
-    bool hasField(const Field &field);
+    // bool hasField(const Field &field);
 
     
 private:

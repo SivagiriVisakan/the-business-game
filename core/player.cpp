@@ -13,4 +13,11 @@ Player::Player(char *n)
     else {
         throw "Player name too long";
     }
+
+    moneyOwned = 10000;
+}
+
+void Player::changeMoneyOwned(int change)
+{
+    moneyOwned += change;
 }
