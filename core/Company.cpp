@@ -2,14 +2,17 @@
 #include "Company.h"
 
 
-Company::Company(char *name, int cost, CompanyCategory category): Field(name)
+Company::Company(char *name, int cost, CompanyCategory category): BuyableField(name)
 {
     setCost(cost);
     level = LevelOne;
     this->category = category;
     calculateRent();
 }
-
+Company::~Company()
+{
+    //Nothing to do 
+}
 void Company::setCost(int c)
 {
     this->cost = c;
