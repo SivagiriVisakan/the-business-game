@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>990</width>
+    <width>1470</width>
     <height>1000</height>
    </rect>
   </property>
@@ -14,15 +14,16 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(85, 255, 255);</string>
+   <string notr="true">background-color: rgb(85, 255, 255);
+background-color: rgb(255, 255, 255);</string>
   </property>
   <property name="modal">
    <bool>false</bool>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="ok">
    <property name="geometry">
     <rect>
-     <x>790</x>
+     <x>1030</x>
      <y>930</y>
      <width>111</width>
      <height>41</height>
@@ -38,9 +39,9 @@
   <widget class="QPushButton" name="map1">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>259</x>
      <y>10</y>
-     <width>150</width>
+     <width>151</width>
      <height>150</height>
     </rect>
    </property>
@@ -54,7 +55,7 @@
   <widget class="QPushButton" name="map2">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>420</x>
      <y>10</y>
      <width>150</width>
      <height>150</height>
@@ -70,72 +71,92 @@
   <widget class="QPushButton" name="map7">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>260</x>
      <y>170</y>
      <width>150</width>
      <height>150</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/Electronics/Samsung.png);</string>
+   </property>
    <property name="text">
-    <string>Chance</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="map8">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>420</x>
      <y>170</y>
      <width>150</width>
      <height>150</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/food/cadbury.jpg);</string>
+   </property>
    <property name="text">
-    <string>Chance</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="map3">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>580</x>
      <y>10</y>
      <width>150</width>
      <height>150</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/Logos/Train.jpg);</string>
+   </property>
    <property name="text">
-    <string>Chance</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="map4">
    <property name="geometry">
     <rect>
-     <x>500</x>
+     <x>740</x>
      <y>10</y>
      <width>150</width>
      <height>150</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/cars/Rollsroyce.png);
+</string>
+   </property>
    <property name="text">
-    <string>Chance</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="map5">
    <property name="geometry">
     <rect>
-     <x>660</x>
+     <x>900</x>
      <y>10</y>
      <width>150</width>
      <height>150</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">
+
+
+
+border-image : url(:/software/Amazon.png)</string>
+   </property>
    <property name="text">
-    <string>Chance</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="map28">
    <property name="geometry">
     <rect>
-     <x>500</x>
+     <x>740</x>
      <y>650</y>
      <width>150</width>
      <height>150</height>
@@ -148,7 +169,7 @@
   <widget class="QPushButton" name="map34">
    <property name="geometry">
     <rect>
-     <x>500</x>
+     <x>740</x>
      <y>810</y>
      <width>150</width>
      <height>150</height>
@@ -161,7 +182,7 @@
   <widget class="QPushButton" name="map33">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>580</x>
      <y>810</y>
      <width>150</width>
      <height>150</height>
@@ -174,7 +195,7 @@
   <widget class="QPushButton" name="map32">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>420</x>
      <y>810</y>
      <width>150</width>
      <height>150</height>
@@ -187,7 +208,7 @@
   <widget class="QPushButton" name="map31">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>260</x>
      <y>810</y>
      <width>150</width>
      <height>150</height>
@@ -200,7 +221,7 @@
   <widget class="QPushButton" name="map27">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>580</x>
      <y>650</y>
      <width>150</width>
      <height>150</height>
@@ -213,7 +234,7 @@
   <widget class="QPushButton" name="map26">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>420</x>
      <y>650</y>
      <width>150</width>
      <height>150</height>
@@ -226,7 +247,7 @@
   <widget class="QPushButton" name="map25">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>260</x>
      <y>650</y>
      <width>150</width>
      <height>150</height>
@@ -239,7 +260,7 @@
   <widget class="QPushButton" name="map23">
    <property name="geometry">
     <rect>
-     <x>660</x>
+     <x>900</x>
      <y>490</y>
      <width>150</width>
      <height>150</height>
@@ -252,7 +273,7 @@
   <widget class="QPushButton" name="map24">
    <property name="geometry">
     <rect>
-     <x>820</x>
+     <x>1060</x>
      <y>490</y>
      <width>150</width>
      <height>150</height>
@@ -265,7 +286,7 @@
   <widget class="QPushButton" name="map30">
    <property name="geometry">
     <rect>
-     <x>820</x>
+     <x>1060</x>
      <y>650</y>
      <width>150</width>
      <height>150</height>
@@ -278,7 +299,7 @@
   <widget class="QPushButton" name="map29">
    <property name="geometry">
     <rect>
-     <x>660</x>
+     <x>900</x>
      <y>650</y>
      <width>150</width>
      <height>150</height>
@@ -291,7 +312,7 @@
   <widget class="QPushButton" name="map22">
    <property name="geometry">
     <rect>
-     <x>500</x>
+     <x>740</x>
      <y>490</y>
      <width>150</width>
      <height>150</height>
@@ -304,7 +325,7 @@
   <widget class="QPushButton" name="map21">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>580</x>
      <y>490</y>
      <width>150</width>
      <height>150</height>
@@ -317,7 +338,7 @@
   <widget class="QPushButton" name="map20">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>420</x>
      <y>490</y>
      <width>150</width>
      <height>150</height>
@@ -330,7 +351,7 @@
   <widget class="QPushButton" name="map19">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>260</x>
      <y>490</y>
      <width>150</width>
      <height>150</height>
@@ -343,137 +364,156 @@
   <widget class="QPushButton" name="map9">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>580</x>
      <y>170</y>
      <width>150</width>
      <height>150</height>
     </rect>
    </property>
    <property name="text">
-    <string>Chance</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="map10">
    <property name="geometry">
     <rect>
-     <x>500</x>
+     <x>740</x>
      <y>170</y>
      <width>150</width>
      <height>150</height>
     </rect>
    </property>
    <property name="text">
-    <string>Chance</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="map12">
    <property name="geometry">
     <rect>
-     <x>820</x>
+     <x>1060</x>
      <y>170</y>
      <width>150</width>
      <height>150</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/software/Google.png);</string>
+   </property>
    <property name="text">
-    <string>Chance</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="map11">
    <property name="geometry">
     <rect>
-     <x>660</x>
+     <x>900</x>
      <y>170</y>
      <width>150</width>
      <height>150</height>
     </rect>
    </property>
    <property name="text">
-    <string>chance</string>
+    <string>Community chest</string>
    </property>
   </widget>
   <widget class="QPushButton" name="map6">
    <property name="geometry">
     <rect>
-     <x>820</x>
+     <x>1060</x>
      <y>10</y>
      <width>150</width>
      <height>150</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">
+border-image: url(:/Fashion/HandM.png);</string>
+   </property>
    <property name="text">
-    <string>Chance</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="map13">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>260</x>
      <y>330</y>
      <width>150</width>
      <height>150</height>
     </rect>
    </property>
    <property name="text">
-    <string>Chance</string>
+    <string>Prison</string>
    </property>
   </widget>
   <widget class="QPushButton" name="map14">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>420</x>
      <y>330</y>
      <width>150</width>
      <height>150</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/cars/Tesla.png);</string>
+   </property>
    <property name="text">
-    <string>Chance</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="map16">
    <property name="geometry">
     <rect>
-     <x>500</x>
+     <x>740</x>
      <y>330</y>
      <width>150</width>
      <height>150</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/Fashion/adidas.png);</string>
+   </property>
    <property name="text">
-    <string>Chance</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="map17">
    <property name="geometry">
     <rect>
-     <x>660</x>
+     <x>900</x>
      <y>330</y>
      <width>150</width>
      <height>150</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/Electronics/Apple.png);</string>
+   </property>
    <property name="text">
-    <string>Chance</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="map15">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>580</x>
      <y>330</y>
      <width>150</width>
      <height>150</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/software/facebook.png);</string>
+   </property>
    <property name="text">
-    <string>Chance</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="map18">
    <property name="geometry">
     <rect>
-     <x>820</x>
+     <x>1060</x>
      <y>330</y>
      <width>150</width>
      <height>150</height>
@@ -487,7 +527,7 @@
  <resources/>
  <connections>
   <connection>
-   <sender>pushButton</sender>
+   <sender>ok</sender>
    <signal>clicked()</signal>
    <receiver>Map</receiver>
    <slot>close()</slot>

@@ -31,6 +31,9 @@
    </property>
    <item>
     <widget class="QWidget" name="Dice_widget" native="true">
+     <property name="focusPolicy">
+      <enum>Qt::StrongFocus</enum>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(0, 85, 255);</string>
      </property>

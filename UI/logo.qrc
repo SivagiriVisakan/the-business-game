@@ -3,5 +3,33 @@
         <file>Logos/Airport.jpg</file>
         <file>photos/icons8-delete-64.png</file>
         <file>photos/Moneybag.jpg.png</file>
+        <file>cars/Rollsroyce.png</file>
+        <file>Logos/Train.jpg</file>
+        <file>software/Amazon.png</file>
+        <file>Fashion/adidas.png</file>
+        <file>Fashion/Gucci.png</file>
+        <file>Fashion/nike.png</file>
+        <file>Fashion/HandM.png</file>
+        <file>Electronics/Apple.png</file>
+        <file>Electronics/Intel.png</file>
+        <file>Electronics/Samsung.png</file>
+        <file>Electronics/sony.png</file>
+        <file>Electronics/Xiomi.png</file>
+        <file>food/burger.png</file>
+        <file>food/cadbury.jpg</file>
+        <file>food/Dominos_Pizza_logo.png</file>
+        <file>food/Kfc_logo-2.png</file>
+        <file>food/mcdonalds_PNG9.png</file>
+        <file>cars/BMW-01.png</file>
+        <file>cars/fiat.png</file>
+        <file>cars/ford.png</file>
+        <file>cars/jeep.png</file>
+        <file>cars/renault.png</file>
+        <file>cars/Tesla.png</file>
+        <file>cars/volkswagen.png</file>
+        <file>software/facebook.png</file>
+        <file>software/Google.png</file>
+        <file>software/Microsoft.png</file>
+        <file>software/twitter.png</file>
     </qresource>
 </RCC>

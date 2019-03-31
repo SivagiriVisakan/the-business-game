@@ -15,6 +15,13 @@ public:
     explicit Map(QWidget *parent = nullptr);
     ~Map();
 
+private slots:
+    void on_ok_clicked();
+
+signals:
+    void close_();
+
+
 private:
     Ui::Map *ui;
 };

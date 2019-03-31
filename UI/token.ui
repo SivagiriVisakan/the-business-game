@@ -32,30 +32,36 @@ background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0.189
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 0, 0);</string>
+    <string notr="true">background-color: rgb(255, 0, 0);
+
+background-color: rgba(170, 255, 255, 255);
+</string>
    </property>
    <widget class="QLabel" name="Companyname">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>241</width>
-      <height>101</height>
+      <x>0</x>
+      <y>0</y>
+      <width>261</width>
+      <height>121</height>
      </rect>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::NoContextMenu</enum>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 75 18pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
-     <string>Company Name</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Company Name&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="Companylogo">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>140</y>
-      <width>151</width>
+      <x>40</x>
+      <y>160</y>
+      <width>171</width>
       <height>161</height>
      </rect>
     </property>
@@ -70,13 +76,26 @@ background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0.189
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>380</y>
+      <y>410</y>
       <width>181</width>
-      <height>41</height>
+      <height>61</height>
      </rect>
     </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::NoContextMenu</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:30px;
+background-color: rgb(236, 236, 236);</string>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
     <property name="text">
-     <string>Cost</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Cost&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
@@ -89,20 +108,28 @@ background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0.189
      <height>491</height>
     </rect>
    </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::NoContextMenu</enum>
+   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgba(254, 254, 254, 255);</string>
+    <string notr="true">background-color: rgba(254, 254, 254, 255);
+background-color: rgba(222, 222, 222,150);</string>
    </property>
    <widget class="QLabel" name="Rent">
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>35</y>
+      <y>20</y>
       <width>351</width>
-      <height>31</height>
+      <height>51</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(170, 255, 255, 150);
+border-radius:20px;</string>
+    </property>
     <property name="text">
-     <string>Rent</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Rent&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QPushButton" name="BuySell">
@@ -164,6 +191,12 @@ background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0.189
       <height>201</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::WheelFocus</enum>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::PreventContextMenu</enum>
+    </property>
     <property name="text">
      <string>Remaining</string>
     </property>
@@ -179,8 +212,13 @@ background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0.189
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/photos/icons8-delete-64.png);
-background-color:transparent;</string>
+    <string notr="true">QPushButton{
+border-image: url(:/photos/icons8-delete-64.png);
+background-color:transparent;
+}
+QPushButton: hover{
+background-color:black;
+}</string>
    </property>
    <property name="text">
     <string/>

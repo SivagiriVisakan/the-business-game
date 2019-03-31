@@ -28,6 +28,9 @@ private slots:
 
     void on_pushButton_clicked();
 
+signals:
+    void close_();
+
 private:
     Ui::MusicControls *ui;
     QMediaPlayer* player1,* player2;

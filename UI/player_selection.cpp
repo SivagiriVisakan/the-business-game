@@ -1,13 +1,13 @@
 #include "player_selection.h"
 #include "ui_player_selection.h"
 
-Player_selection::Player_selection(QWidget *parent) :
+Player_selection::Player_selection(MusicControls &m,QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Player_selection)
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::FramelessWindowHint);
-    Ui_Window=new MainWindow();
+    Ui_Window=new MainWindow(m);
     Ui_Window->Gameplay_ui();
     Ui_Window->hide();
 

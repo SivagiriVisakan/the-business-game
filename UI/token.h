@@ -13,13 +13,14 @@ class Token : public QDialog
 
 public:
     explicit Token(QWidget *parent = nullptr);
+    void setCompanyName(QString);
     ~Token();
 
-private slots:
-    void on_BuySell_clicked();
 
 private:
     Ui::Token *ui;
+
+    friend class Base_ui;
 };
 
 #endif // TOKEN_H

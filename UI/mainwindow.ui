@@ -27,6 +27,9 @@
       <height>1000</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::ClickFocus</enum>
+    </property>
    </widget>
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
@@ -43,7 +46,7 @@
     <widget class="QWidget" name="widget_2" native="true">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>-40</x>
        <y>0</y>
        <width>451</width>
        <height>540</height>
@@ -193,7 +196,7 @@ background-color: rgb(85, 255, 0);
      <string>MAP</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="minimize">
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -210,7 +213,7 @@ background-color: rgb(85, 255, 0);</string>
      <string>minimize</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="quit">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -227,7 +230,7 @@ background-color: rgb(85, 255, 0);</string>
      <string>quit</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="Sell_button">
     <property name="geometry">
      <rect>
       <x>700</x>
@@ -261,7 +264,7 @@ background-color: rgb(85, 255, 0);</string>
      <string>MORTAGE</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="Build_button">
     <property name="geometry">
      <rect>
       <x>520</x>
@@ -278,7 +281,7 @@ background-color: rgb(85, 255, 0);</string>
      <string>BUILD</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="Volume_button">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -506,7 +509,7 @@ font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
  </resources>
  <connections>
   <connection>
-   <sender>pushButton</sender>
+   <sender>quit</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
    <slot>close()</slot>
@@ -522,7 +525,7 @@ font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_2</sender>
+   <sender>minimize</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
    <slot>showMinimized()</slot>

@@ -5,6 +5,7 @@
 #include"mainwindow.h"
 #include "resources_ui.h"
 #include<QPropertyAnimation>
+#include"musiccontrols.h"
 namespace Ui {
 class Player_selection;
 }
@@ -14,7 +15,7 @@ class Player_selection : public QDialog
     Q_OBJECT
 
 public:
-    explicit Player_selection(QWidget *parent = nullptr);
+    explicit Player_selection(MusicControls &,QWidget *parent = nullptr);
     ~Player_selection();
 
 

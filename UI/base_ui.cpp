@@ -1,12 +1,15 @@
 #include "base_ui.h"
 #include<string>
+#include<QDebug>
 
 
-Base_ui::Base_ui()
+Base_ui::Base_ui(GameManager & Game)
 {
     sceneRoot = new Qt3DCore::QEntity();
     City=new Resources_ui(sceneRoot);
     Animation= new QSequentialAnimationGroup(this);
+    token=new Token();
+    this->Game=&Game;
 
 
     City-> Resources_ui_mesh->setSource(QUrl(QStringLiteral("qrc:/new/prefix1/cityfinal_.obj")));
@@ -162,7 +165,7 @@ Base_ui::Base_ui()
     buldingneartrain->Add_resources_components();
 
 
-  for(int i=1;i<12;i++)
+  for(int i=1;i<34;i++)
    {
 
        Board[i]=new Resources_ui(City->Resources_Entity);
@@ -219,6 +222,18 @@ void Base_ui::Setup_ui()
     camController->setCamera(cameraEntity);
 
     view->setRootEntity(sceneRoot);
+
+}
+
+void Base_ui::tokenFunction()
+{
+
+    QString m=Game->getPlayerFromId(0).getName();
+
+    token->setCompanyName(m);
+
+    token->show();
+
 
 }
 
@@ -435,6 +450,10 @@ void Base_ui::Focus_fun()
         }
         cameraEntity->setPosition(camera);
         cameraEntity->setViewCenter(viewcenter);
+
+
+        tokenFunction();
+
 }
 
 QVector3D Base_ui::function_getpos()

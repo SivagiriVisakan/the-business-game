@@ -6,15 +6,19 @@
 #include<QVector3D>
 #include<QParallelAnimationGroup>
 #include<QSequentialAnimationGroup>
+#include"../core/GameManager.h"
+#include"token.h"
 
 class Base_ui: public QObject
 {
     Q_OBJECT
 
 public:
-     explicit Base_ui();
+    Base_ui(GameManager &);
 
     void Setup_ui();
+
+    void tokenFunction();
 
     void Players_ui_creater();
 
@@ -54,6 +58,8 @@ private:
     QPropertyAnimation * Playeranimation,* Cameraanimation,* Cameraanimation1,*Rotationplayer,*Rotationcamera,*Rotationcamera1;
     int count,Position,player;
     QSequentialAnimationGroup *Animation;
+    Token *token;
+    GameManager *Game;
 };
 
 #endif // BASE_UI_H

@@ -54,5 +54,6 @@ void MusicControls::on_sliderVolume_sliderMoved(int position)
 
 void MusicControls::on_pushButton_clicked()
 {
+    emit close_();
     this->hide();
 }

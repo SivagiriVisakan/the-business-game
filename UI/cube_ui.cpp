@@ -9,6 +9,7 @@ Cube_ui::Cube_ui(QWidget *parent) :
 
     sceneRoot = new Qt3DCore::QEntity();
 
+    this->setWindowFlags(Qt::FramelessWindowHint);
 
     Dice1=new Resources_ui(sceneRoot);
 

@@ -8,10 +8,15 @@ Map::Map(QWidget *parent) :
     ui->setupUi(this);
     this->setGeometry(235,0,990,1000);
     this->setWindowFlags(Qt::FramelessWindowHint);
-
 }
 
 Map::~Map()
 {
     delete ui;
+}
+
+void Map::on_ok_clicked()
+{
+    this->close();
+    emit close_();
 }
