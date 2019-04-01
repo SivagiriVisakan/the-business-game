@@ -44,6 +44,29 @@ Company& GameManager::getCurrentPlayerCompany()
     return board.getPlayerCurrentCompany(0);
 }
 
+/**
+ * Returns a pointer to the Field that the current player is positioned in.
+ * The client-side code should make checks and convert it to appropriate objects of Company, Utility etc.
+ * 
+ * Example usage:
+ * ```cpp
+ * 
+ * Field* f = gm.getFieldOfCurrentPlayer();
+ * 
+ * if(dynamic_cast<Company*> (f))
+ * {
+ *      Company *c = dynamic_cast<Company*> (f);
+ *      // Do things for Company type 
+ * }
+ *      // Similarly perform else-if checks and handle the Field appropriately.
+ * 
+ * ```
+ */ 
+Field* GameManager::getFieldOfCurrentPlayer()
+{
+    return board.getCurrentFieldOfPlayer(currentPlayerTurnIndex);
+}
+
 Player GameManager::getPlayerFromId(int id)
 {
     if(id < players.size()-1)

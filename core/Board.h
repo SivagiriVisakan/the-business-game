@@ -36,6 +36,7 @@ public:
     void setPlayerPosition(int playerIndex, int companyPositionIndex);
     Company& getPlayerCurrentCompany(int playerId);
 
+    Field* getCurrentFieldOfPlayer(int playerId);
 private:
     std::vector<Field*> allCompanies;
 

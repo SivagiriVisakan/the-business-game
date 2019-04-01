@@ -26,6 +26,12 @@ Company& Board::getPlayerCurrentCompany(int playerId)
     return *c;
 }
 
+Field* Board::getCurrentFieldOfPlayer(int playerId)
+{
+    int index = playerPositions[playerId];
+    Field *f = allCompanies[index];
+    return f;
+}
 Field* Board::updatePlayerPosition(const int player, int diceMoves)
 {
     int totalLength = allCompanies.size();

@@ -2,6 +2,10 @@
 #include "BuyableField.h"
 #include <string.h>
 
+
+/**
+ * Initializes the BuyableField with the given name
+ */ 
 BuyableField::BuyableField(char *name): Field(name)
 {
     ownerId = -1;
