@@ -8,6 +8,7 @@
 #define GAME_MANAGER_H
 
 #include <vector>
+#include "BuyableField.h"
 #include "Company.h"
 #include "player.h"
 #include "Board.h"
@@ -28,7 +29,8 @@ public:
     Field* getFieldOfCurrentPlayer();
     Player getPlayerFromId(int playerId);
     Player& getCurrentPlayer() { return *players[currentPlayerTurnIndex];}
-    void buyCompany(int playerId, Company& company);
+    void buyCompany(int playerId, BuyableField& company);
+    void sellField(int playerId, BuyableField& company);
 private:
     Board board;
     std::vector<Player*> players;

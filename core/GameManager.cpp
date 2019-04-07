@@ -41,7 +41,7 @@ Company GameManager::updateCurrentPlayerPosition(int dice)
 
 Company& GameManager::getCurrentPlayerCompany()
 {
-    return board.getPlayerCurrentCompany(0);
+    return board.getPlayerCurrentCompany(currentPlayerTurnIndex);
 }
 
 /**
@@ -67,6 +67,10 @@ Field* GameManager::getFieldOfCurrentPlayer()
     return board.getCurrentFieldOfPlayer(currentPlayerTurnIndex);
 }
 
+/**
+ * Get the Player with the specified ID.
+ * Else throws an exception
+ */ 
 Player GameManager::getPlayerFromId(int id)
 {
     if(id < players.size()-1)
@@ -79,10 +83,16 @@ Player GameManager::getPlayerFromId(int id)
     }
     
 }
-
-void GameManager::buyCompany(int playerId, Company& company)
+/**
+ * Buys the given BuyableField i.e checks if the current player
+ */ 
+void GameManager::buyCompany(int playerId, BuyableField& company)
 {
     Player *player = players[playerId];
+    if(company.getOwnerId() != -1)
+    {
+        throw "Field not for sale.";
+    }
     if(player->moneyOwned >= company.getCost())
     {
         company.setOwner(playerId);
@@ -93,4 +103,27 @@ void GameManager::buyCompany(int playerId, Company& company)
         throw "Not enough money to buy";
     }
     
+}
+
+
+/**
+ * Sells the given BuyableField i.e check if the player is the owner, if yes then add money into his account
+ * and set the owner to none.
+ * ```cpp
+ * gm.sellField(gm.getCurrentPlayerId, gm.board[2])
+ * ``` 
+ */
+void GameManager::sellField(int playerId, BuyableField& company)
+{
+    Player *player = players[playerId];
+    if(company.getOwnerId() == playerId)
+    {
+        company.setOwner(-1);
+        player->changeMoneyOwned(company.getCost()*0.8*company.getCurrentLevel()); // Adds the 80% of original cost on selling
+    }
+    else
+    {
+        throw "Not owned by player";
+    }
+
 }
