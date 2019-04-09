@@ -18,7 +18,7 @@ public:
 
     void Setup_ui();
 
-    void tokenFunction();
+
 
     void Players_ui_creater();
 
@@ -46,7 +46,8 @@ private:
     Resources_ui *Board[34];
 private slots:
     void Focus_fun();
-    void Animation_fun();
+    void tokenFunction();
+    void Animation_fun(int );
 private:
 
     Qt3DCore::QEntity *sceneRoot ;
@@ -60,6 +61,7 @@ private:
     QSequentialAnimationGroup *Animation;
     Token *token;
     GameManager *Game;
+    QTimer *timer;
 };
 
 #endif // BASE_UI_H

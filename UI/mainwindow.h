@@ -46,6 +46,8 @@ private:
     Base_ui *Board;
     GameManager game;
     Cube_ui *cube;
+    int dice1,dice2;
+    int array[2];
 };
 
 #endif // UI_FOR_MAINWINDOW_H

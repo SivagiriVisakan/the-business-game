@@ -16,6 +16,8 @@ Resources_ui::Resources_ui(Qt3DCore::QEntity *rootEntity)
     Material = new Qt3DExtras::QTextureMaterial(Resources_Entity);
     Material->setTexture(Texture_loader);
 
+
+
     Qt3DExtras::QPhongMaterial *phongMaterial = new Qt3DExtras::QPhongMaterial();
     phongMaterial->setDiffuse(QColor(75, 75, 75)); // Safari Yellow #cccd4b
     phongMaterial->setSpecular(Qt::white);

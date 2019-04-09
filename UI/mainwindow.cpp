@@ -17,6 +17,9 @@ MainWindow::MainWindow(MusicControls &m,QWidget *parent) :
 
     setGraphicsEffect(effect);
     effect->setEnabled(false);
+
+    array[0]=0;
+    array[1]=1;
 }
 
 MainWindow::~MainWindow()
@@ -66,8 +69,8 @@ void MainWindow::on_RollDIces_clicked()
     cube->setWindowState(Qt::WindowActive);
     cube->setFocus();
 
-    int dice1 = game.rollDice();
-    int dice2= game.rollDice();
+    dice1 = game.rollDice();
+    dice2= game.rollDice();
 
     cube->Roll_Dices(dice1,dice2);    
 
@@ -85,6 +88,7 @@ void MainWindow::on_Map_Button_clicked()
     map->show();
 
      connect(map,SIGNAL(close_()),this,SLOT(off_blurness()));
+
 }
 
 void MainWindow::Dice_fun()
@@ -93,8 +97,9 @@ void MainWindow::Dice_fun()
     cube->close();
     effect->setEnabled(false);
     delete cube;
-    Board->Player_movement(0,0);
-    game.updateCurrentPlayerPosition(1+1);
+    Board->Player_movement(dice1+dice2-1,array[0]);
+    game.updateCurrentPlayerPosition(dice1+dice2);
+    array[0]=1;
 }
 
 void MainWindow::on_pushButton_7_clicked()

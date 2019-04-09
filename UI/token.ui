@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>778</width>
-    <height>591</height>
+    <width>731</width>
+    <height>533</height>
    </rect>
   </property>
   <property name="focusPolicy">
@@ -20,13 +20,16 @@
    <string notr="true">
 background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0.189055 rgba(8, 174, 234, 255), stop:0.776119 rgba(42, 245, 142, 255));
 
+
+background-color: rgb(255, 255, 255)
+
 </string>
   </property>
   <widget class="QWidget" name="Headwidget" native="true">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>49</y>
+     <x>20</x>
+     <y>20</y>
      <width>261</width>
      <height>491</height>
     </rect>
@@ -102,8 +105,8 @@ background-color: rgb(236, 236, 236);</string>
   <widget class="QWidget" name="Tailwidget" native="true">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>49</y>
+     <x>280</x>
+     <y>20</y>
      <width>431</width>
      <height>491</height>
     </rect>
@@ -112,7 +115,7 @@ background-color: rgb(236, 236, 236);</string>
     <enum>Qt::NoContextMenu</enum>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgba(254, 254, 254, 255);
+    <string notr="true">
 background-color: rgba(222, 222, 222,150);</string>
    </property>
    <widget class="QLabel" name="Rent">
@@ -188,7 +191,7 @@ border-radius:20px;</string>
       <x>40</x>
       <y>110</y>
       <width>341</width>
-      <height>201</height>
+      <height>241</height>
      </rect>
     </property>
     <property name="focusPolicy">
@@ -198,15 +201,15 @@ border-radius:20px;</string>
      <enum>Qt::PreventContextMenu</enum>
     </property>
     <property name="text">
-     <string>Remaining</string>
+     <string/>
     </property>
    </widget>
   </widget>
   <widget class="QPushButton" name="Closebutton">
    <property name="geometry">
     <rect>
-     <x>720</x>
-     <y>30</y>
+     <x>690</x>
+     <y>10</y>
      <width>31</width>
      <height>31</height>
     </rect>

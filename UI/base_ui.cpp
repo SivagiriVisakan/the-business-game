@@ -8,9 +8,11 @@ Base_ui::Base_ui(GameManager & Game)
     sceneRoot = new Qt3DCore::QEntity();
     City=new Resources_ui(sceneRoot);
     Animation= new QSequentialAnimationGroup(this);
+    timer=new QTimer();
     token=new Token();
     this->Game=&Game;
-
+    count=1;
+    Position=0;
 
     City-> Resources_ui_mesh->setSource(QUrl(QStringLiteral("qrc:/new/prefix1/cityfinal_.obj")));
 
@@ -229,11 +231,9 @@ void Base_ui::tokenFunction()
 {
 
     QString m=Game->getPlayerFromId(0).getName();
-
     token->setCompanyName(m);
-
+    timer->stop();
     token->show();
-
 
 }
 
@@ -246,10 +246,9 @@ void Base_ui::Players_ui_creater()
     Camera_Viewcenter[0]=QVector3D(-7,-0.05f,0.125f);
 
 
-    Player_Position[1]=QVector3D(0,0.1f,0);
-    Camera_Position[1]=QVector3D(-0.5,0.25f,0);
-    Camera_Viewcenter[1]=QVector3D(1,0,0);
-
+    Player_Position[1]=QVector3D(-8,0.1f,0.1f);
+    Camera_Position[1]=QVector3D(-11.5,1.20f,0.1f);
+    Camera_Viewcenter[1]=QVector3D(-7,-0.05f,0.1f);
 
             Player[0]=new Resources_ui(City->Resources_Entity);
 
@@ -276,20 +275,6 @@ void Base_ui::Players_ui_creater()
             Player[1]->Texture_loader->setSource(QUrl(QStringLiteral("qrc:/new/prefix1/Palette.jpg")));
 
             Player[1]->Add_resources_components();
-
-}
-
-void Base_ui::Player_movement(int Position , int Player_number)
-{
-    count=1;
-    this->Position=1;
-    delete Animation;
-    Animation= new QSequentialAnimationGroup(this);
-
-    Animation_fun();
-
-    Animation->start();
-    QObject::connect(Animation,SIGNAL(finished()),this,SLOT(Focus_fun()));
 
 }
 
@@ -448,11 +433,14 @@ void Base_ui::Focus_fun()
             camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
             viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
         }
+
         cameraEntity->setPosition(camera);
         cameraEntity->setViewCenter(viewcenter);
 
 
-        tokenFunction();
+        timer->start(1500);
+
+        connect(timer,SIGNAL(timeout()),this,SLOT(tokenFunction()));
 
 }
 
@@ -588,109 +576,133 @@ Base_ui::~Base_ui()
     delete Cameraanimation1;
 }
 
-void Base_ui::Animation_fun()
+void Base_ui::Player_movement(int Position , int Player_number)  //Get the current player position and final position
+{
+
+    this->Position+=Position;
+    delete Animation;
+    Animation= new QSequentialAnimationGroup(this);
+
+    Animation_fun(Player_number);
+
+    Animation->start();
+    QObject::connect(Animation,SIGNAL(finished()),this,SLOT(Focus_fun()));
+
+}
+
+
+void Base_ui::Animation_fun(int Number)
 {
     if(count<=Position)
     {
-       Player_animation(QVector3D(-6.62f,0.1f,0.125f),0);
+       Player_animation(QVector3D(-6.62f,0.1f,0.125f),Number);
+       count++;
+    }
+    if(count<=Position)
+    {
+        Rotation_Player(-90,Number);
+        Player_animation(QVector3D(-6.62f,0.1f,0.125f+3.8f),Number);
         count++;
-        count=0;
-    }
-    if(count)
-  {
-    Rotation_Player(-90,0);
-    Player_animation(QVector3D(-6.62f,0.1f,0.125f+3.8f),0);
-
     }
 
-    if(count)
+    if(count<=Position)
     {
-        Rotation_Player(0,0);
-        Player_animation(QVector3D(1.55f,0.1f,0.125f+3.8f),0);
-
+        Rotation_Player(0,Number);
+        Player_animation(QVector3D(1.55f,0.1f,0.125f+3.8f),Number);
+        count++;
      }
-    if(count)
+    if(count<=Position)
     {
-        Rotation_Player(90,0);
-        Player_animation(QVector3D(1.55f,0.1f,0.125f+3.8f-1.8f),0);
-
-
-    }
-    if(count)
-    {
-        Rotation_Player(180,0);
-        Player_animation(QVector3D(-1.7f,0.1f,0.125f+3.8f-1.8f),0);
+        Rotation_Player(90,Number);
+        Player_animation(QVector3D(1.55f,0.1f,0.125f+3.8f-1.8f),Number);
+        count++;
 
     }
-    if(count)
+    if(count<=Position)
     {
-        Rotation_Player(90,0);
-        Player_animation(QVector3D(-1.7f,0.1f,0.125f),0);
+        Rotation_Player(180,Number);
+        Player_animation(QVector3D(-1.7f,0.1f,0.125f+3.8f-1.8f),Number);
+        count++;
+    }
+    if(count<=Position)
+    {
+        Rotation_Player(90,Number);
+        Player_animation(QVector3D(-1.7f,0.1f,0.125f),Number);
+        count++;
+    }
+    if(count<=Position)
+    {
+        Rotation_Player(0,Number);
+        Player_animation(QVector3D(1.95f,0.1f,0.125f),Number);
+        count++;
 
     }
-    if(count)
+    if(count<=Position)
     {
-        Rotation_Player(0,0);
-        Player_animation(QVector3D(1.95f,0.1f,0.125f),0);
+        Rotation_Player(90,Number);
+        Player_animation(QVector3D(1.95f,0.1f,-1.7f),Number);
+        count++;
     }
-    if(count)
+    if(count<=Position)
     {
-        Rotation_Player(90,0);
-        Player_animation(QVector3D(1.95f,0.1f,-1.7f),0);
+        Rotation_Player(180,Number);
+        Player_animation(QVector3D(-5.80f,0.1f,-1.7f),Number);
+        count++;
+    }
+    if(count<=Position)
+    {
+        Rotation_Player(90,Number);
+        Player_animation(QVector3D(-5.80f,0.1f,-1.7f-1.866f),Number);
+        count++;
 
     }
-    if(count)
+    if(count<=Position)
     {
-        Rotation_Player(180,0);
-        Player_animation(QVector3D(-5.80f,0.1f,-1.7f),0);
+        Rotation_Player(0,Number);
+        Player_animation(QVector3D(5.8f,0.1f,-1.7f-1.866f),Number);
+        count++;
     }
-    if(count)
+    if(count<=Position)
     {
-        Rotation_Player(90,0);
-        Player_animation(QVector3D(-5.80f,0.1f,-1.7f-1.866f),0);
+        Rotation_Player(90,Number);
+        Player_animation(QVector3D(5.8f,0.1f,-1.7f-3.8f),Number);
+        count++;
     }
-    if(count)
+    if(count<=Position)
     {
-        Rotation_Player(0,0);
-        Player_animation(QVector3D(5.8f,0.1f,-1.7f-1.866f),0);
+        Rotation_Player(180,Number);
+        Player_animation(QVector3D(1.9f,0.1f,-1.7f-3.8f),Number);
+        count++;
     }
-    if(count)
+    if(count<=Position)
     {
-        Rotation_Player(90,0);
-        Player_animation(QVector3D(5.8f,0.1f,-1.7f-3.8f),0);
+        Rotation_Player(-90,Number);
+        Player_animation(QVector3D(1.9f,0.1f,-1.7f-2.8f),Number);
+        count++;
     }
-    if(count)
+    if(count<=Position)
     {
-        Rotation_Player(180,0);
-        Player_animation(QVector3D(1.9f,0.1f,-1.7f-3.8f),0);
+        Rotation_Player(180,Number);
+        Player_animation(QVector3D(-4.5f,0.1f,-1.7f-2.8f),Number);
+        count++;
     }
-    if(count)
+    if(count<=Position)
     {
-        Rotation_Player(-90,0);
-        Player_animation(QVector3D(1.9f,0.1f,-1.7f-2.8f),0);
+        Rotation_Player(90,Number);
+        Player_animation(QVector3D(-4.5f,0.1f,-1.7f-4.1f),Number);
+        count++;
     }
-    if(count)
+    if(count<=Position)
     {
-        Rotation_Player(180,0);
-        Player_animation(QVector3D(-4.5f,0.1f,-1.7f-2.8f),0);
-
+        Rotation_Player(0,Number);
+        Player_animation(QVector3D(2.0f,0.1f,-1.7f-4.1f),Number);
+        count++;
     }
-    if(count)
+    if(count<=Position)
     {
-        Rotation_Player(90,0);
-        Player_animation(QVector3D(-4.5f,0.1f,-1.7f-4.1f),0);
-
-    }
-    if(count)
-    {
-        Rotation_Player(0,0);
-        Player_animation(QVector3D(2.0f,0.1f,-1.7f-4.1f),0);
-    }
-    if(count)
-    {
-        Rotation_Player(90,0);
-        Player_animation(QVector3D(2.0f,0.1f,-1.7f-6.1f),0);
-
+        Rotation_Player(90,Number);
+        Player_animation(QVector3D(2.0f,0.1f,-1.7f-6.1f),Number);
+        count++;
     }
 
 }
