@@ -27,7 +27,8 @@ int main(int argc, char const *argv[])
     std::cout << "Updating player position...\n" ;
     game.updateCurrentPlayerPosition(dice);
     
-    std::cout << "Player position : " << game.getCurrentPlayerCompany().getName() << std::endl;
+    Company *c = dynamic_cast<Company*> (game.getFieldOfCurrentPlayer());
+    std::cout << "Player position through pointer : " << c->getCategory() << std::endl;
     std::cout << "Player position : " << game.updateCurrentPlayerPosition(dice).getName() << std::endl;
     std::cout << "Player position : " << game.updateCurrentPlayerPosition(dice).getName() << std::endl;
 

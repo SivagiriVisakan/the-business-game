@@ -1,6 +1,6 @@
 #ifndef COMPANY_H
 #define COMPANY_H
-#include "Field.h"
+#include "BuyableField.h"
 
 enum CompanyCategory{
     SOCIAL_MEDIA = 1,
@@ -10,16 +10,20 @@ enum CompanyCategory{
     RETAIL_INDUSTRY = 5
 };
 
-class Company : public Field
+class Company : public BuyableField
 {
 public:
     Company(char *name, int cost, CompanyCategory category);
+    ~Company();
     void setCost(int c);
     void calculateRent();
 
     /**
      * Expanding a company will upgrade it after checking if it can be upgraded and
      * changes the currentLevel
+     * ```
+     * main()
+     * ```
     */
     void upgradeCompany();
     CompanyCategory getCategory(){ return category; }

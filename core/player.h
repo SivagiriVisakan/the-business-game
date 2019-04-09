@@ -42,6 +42,8 @@ public:
     * This function should be called all the time whenever the moneyOwned is to be
     * increased or decreased.
     * Specify a negative amount to decrement the balance.
+    * 
+    * @param change - the amount to change
     */
     /* TODO: Write the implementation. It should also check for the case of moneyOwned going below zero
        i.e the player has gone bankrupt and the game should end.
