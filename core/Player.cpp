@@ -1,9 +1,12 @@
-#include "player.h"
+#include "Player.h"
 #include <exception>
 #include <string.h>
+
+int Player::TOTAL_ID = 0;
 Player::Player()
 {
     strcpy(name, "\0");
+    id = TOTAL_ID++;
 }
 
 Player::Player(char *n)
@@ -15,6 +18,7 @@ Player::Player(char *n)
     }
 
     moneyOwned = 10000;
+    id = TOTAL_ID++;
 }
 
 void Player::changeMoneyOwned(int change)

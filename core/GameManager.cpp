@@ -36,7 +36,7 @@ int GameManager::rollDice()
 
 Company GameManager::updateCurrentPlayerPosition(int dice)
 {
-    return *(Company*)board.updatePlayerPosition(0, dice);
+    return *(Company*)board.updatePlayerPosition(currentPlayerTurnIndex, dice);
 }
 
 Company& GameManager::getCurrentPlayerCompany()

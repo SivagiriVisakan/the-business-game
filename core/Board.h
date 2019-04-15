@@ -13,7 +13,7 @@
 
 #include <vector>
 #include "Company.h"
-#include "player.h"
+#include "Player.h"
 
 
 class Board
@@ -37,6 +37,17 @@ public:
     Company& getPlayerCurrentCompany(int playerId);
 
     Field* getCurrentFieldOfPlayer(int playerId);
+
+    /**
+     * Returns the index (starting from zero) of the given field in the arrangement of the board.
+     * 
+     * ```
+     * Field *f = getCurrentFieldOfPlayer(0);
+     * int index = board.getIndexOfField(f);
+     * cout << index;
+     * ```
+     */
+    int getIndexOfField(Field *f);
 private:
     std::vector<Field*> allCompanies;
 

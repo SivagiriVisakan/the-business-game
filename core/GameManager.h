@@ -10,7 +10,7 @@
 #include <vector>
 #include "BuyableField.h"
 #include "Company.h"
-#include "player.h"
+#include "Player.h"
 #include "Board.h"
 
 
@@ -31,6 +31,7 @@ public:
     Player& getCurrentPlayer() { return *players[currentPlayerTurnIndex];}
     void buyCompany(int playerId, BuyableField& company);
     void sellField(int playerId, BuyableField& company);
+    Board& getBoard(){return board;}
 private:
     Board board;
     std::vector<Player*> players;

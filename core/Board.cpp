@@ -1,5 +1,5 @@
 #include "Board.h"
-
+#include <string.h>
 Board::Board()
 {
     char c[20] = "Google";
@@ -14,6 +14,18 @@ void Board::addCompany(char* name, int cost, CompanyCategory category)
     allCompanies.push_back(c);
 }
 
+int Board::getIndexOfField(Field *f)
+{
+    int i;
+    for( i = 0; i < allCompanies.size(); i++)
+    {
+        if(strcmp(f->getName(), allCompanies[i]->getName()) == 0)
+            return i;
+    }
+
+    return -1;
+    
+}
 void Board::setPlayerPosition(int playerIndex, int companyPositionIndex)
 {
     playerPositions[playerIndex] = companyPositionIndex;

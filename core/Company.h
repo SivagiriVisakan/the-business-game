@@ -22,7 +22,7 @@ public:
      * Expanding a company will upgrade it after checking if it can be upgraded and
      * changes the currentLevel
      * ```
-     * main()
+     * 
      * ```
     */
     void upgradeCompany();
