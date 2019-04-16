@@ -127,10 +127,10 @@ font: 16pt &quot;Segoe Print&quot;;</string>
        <string notr="true">font: 12pt &quot;Segoe Print&quot;;</string>
       </property>
       <property name="text">
-       <string>Current Token</string>
+       <string>Details</string>
       </property>
      </widget>
-     <widget class="QLabel" name="Money_3">
+     <widget class="QLabel" name="field_name_1">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -233,10 +233,10 @@ font: 16pt &quot;Segoe Print&quot;;</string>
        <string notr="true">font: 12pt &quot;Segoe Print&quot;;</string>
       </property>
       <property name="text">
-       <string>Current Token</string>
+       <string>Details</string>
       </property>
      </widget>
-     <widget class="QLabel" name="Money_4">
+     <widget class="QLabel" name="field_name_2">
       <property name="geometry">
        <rect>
         <x>0</x>
