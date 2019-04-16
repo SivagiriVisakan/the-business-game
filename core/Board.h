@@ -48,6 +48,7 @@ public:
      * ```
      */
     int getIndexOfField(Field *f);
+    std::vector<Field*> getAllFields(){ return allCompanies;}
 private:
     std::vector<Field*> allCompanies;
 
