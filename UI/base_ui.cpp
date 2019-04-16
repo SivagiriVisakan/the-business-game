@@ -480,118 +480,118 @@ void Base_ui::Focus_fun()
         }
         else if(Position==11)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(0.767038,1.89839,3.91843);
+            viewcenter=QVector3D(0.816497,-0.260814,-5.89662);
         }
         else if(Position==12)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(3.83725,2.12004,-6.60825);
+            viewcenter=QVector3D(4.18172,-1.10816,2.90282);
         }
         else if(Position==13)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(3.55948,1.52994,-0.367244);
+            viewcenter=QVector3D(-4.04476,-1.36256,-6.26721);
         }
         else if(Position==14)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(-0.121579,1.12314,-0.821237);
+            viewcenter=QVector3D(-7.0059,-2.55552,-7.15179);
         }
         else if(Position==15)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(-4.4301,1.27764,-6.60172);
+            viewcenter=QVector3D(-5.962,-0.799368,3.11122);
         }
         else if(Position==16)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(-2.04428,1.58185,-4.94547);
+            viewcenter=QVector3D(-11.6201,-1.27764,-3.88356);
         }
         else if(Position==17)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(-2.9829,0.737188,-3.96037);
+            viewcenter=QVector3D(-12.1066,-3.44596,-4.47023);
         }
         else if(Position==18)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(-3.09001,0.649038,-2.70574);
+            viewcenter=QVector3D(-3.30165,-2.19055,-12.3438);
         }
         else if(Position==19)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(-0.661295,0.804417,-4.17732);
+            viewcenter=QVector3D(-9.48275,-3.96527,-3.52032);
         }
         else if(Position==20)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(-0.787485,0.466134,-2.7973);
+            viewcenter=QVector3D(-1.36356,-1.2575,-12.6815);
         }
         else if(Position==21)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(1.36574,0.648306,-3.99323 );
+            viewcenter=QVector3D(-7.99514,-3.00347,-4.18418);
         }
         else if(Position==22)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(1.23533,0.284254,-2.70672);
+            viewcenter=QVector3D(1.299,0.166743,-12.7556);
         }
         else if(Position==23)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(-0.00480022,1.06998,-4.02715);
+            viewcenter=QVector3D(9.65029,-0.707407,-6.17595);
         }
         else if(Position==24)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(2.90591,0.502012,-4.1377);
+            viewcenter=QVector3D(-5.60886,-1.1464,-9.21503);
         }
         else if(Position==25)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(1.99336,0.772804,-4.61329);
+            viewcenter=QVector3D(-7.4361,-2.18237,-6.44362);
         }
         else if(Position==26)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(0.0567086,0.437845,-3.85513);
+            viewcenter=QVector3D(-6.33851,-0.721688,-11.5203);
         }
         else if(Position==27)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(-3.32188,0.498531,-4.50355);
+            viewcenter=QVector3D(6.0745,-0.871058,-7.79468);
         }
         else if(Position==28)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(-1.54411,0.464574,-4.51213);
+            viewcenter=QVector3D(-11.2606,-2.56041,-9.34027);
         }
         else if(Position==29)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            camera=QVector3D(-3.12112,0.656287,-4.40034);
             viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
         }
         else if(Position==30)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(-1.53784,1.12576,-4.57018);
+            viewcenter=QVector3D(-9.54724,-0.212723,-10.4914);
         }
         else if(Position==31)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(-1.95341,1.3927,-2.18263);
+            viewcenter=QVector3D(-2.27149,-0.395029,-12.0673);
         }
         else if(Position==32)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(0.870971,1.58411,-3.09956);
+            viewcenter=QVector3D(1.06022,-1.01318,-12.8063);
         }
         else if(Position==33)
         {
-            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
-            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+            camera=QVector3D(4.60635,1.41334,-2.4292);
+            viewcenter=QVector3D(3.67184,-0.376278,-12.2743);
         }
 
         cameraEntity->setPosition(camera);

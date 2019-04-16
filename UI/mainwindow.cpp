@@ -195,6 +195,12 @@ void MainWindow::on_CurrentToken_1_clicked()
         Company *c=dynamic_cast<Company*>(f);
         token->setDetails(*c, game.getCurrentPlayer().getId() == 0);
         token->show();
+//    if(dynamic_cast<Company*>(f))
+//    {
+//        Company *c=dynamic_cast<Company*>(f);
+//        token->setDetails(*c, game.getCurrentPlayer().getId() == 0);
+//        token->show();
+//      }
     if(dynamic_cast<BuyableField*>(f))
     {
 
