@@ -79,7 +79,7 @@ void MainWindow::on_RollDIces_clicked()
     dice1 = game.rollDice();
     dice2= game.rollDice();
 
-    cube->Roll_Dices(dice1,dice2);    
+    cube->Roll_Dices(dice1,dice2);
 
     DicesTimer=new QTimer(cube);
     DicesTimer->start(3500);

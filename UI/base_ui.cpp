@@ -428,12 +428,171 @@ void Base_ui::Rotation_Player(int degree,int Player_Number)
 void Base_ui::Focus_fun()
 {
         QVector3D camera,viewcenter;
-//        if(Position==1)
+        if(Position==1)
         {             
             camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
             viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
         }
-
+        else if(Position==2)
+        {
+            camera=QVector3D(-9.86903f,0.907853f,1.60327f);
+            viewcenter=QVector3D(0.148583f,0.103621f,1.58552f);
+        }
+        else if(Position==3)
+        {
+            camera=QVector3D(1.32027,1.13159,2.96968);
+            viewcenter=QVector3D(-8.61664 , -0.366024 , 2.85075);
+        }
+        else if(Position==4)
+        {
+            camera=QVector3D(1.11162,0.615859,3.18632);
+            viewcenter=QVector3D(-8.3078,-1.97612,0.829338);
+        }
+        else if(Position==5)
+        {
+            camera=QVector3D(0.957589,0.61731,5.66483);
+            viewcenter=QVector3D(0.560174,-1.01106,-5.60963);
+        }
+        else if(Position==6)
+        {
+            camera=QVector3D(3.1634,0.384199,1.21364);
+            viewcenter=QVector3D(-8.19258,-0.575477,1.41997);
+        }
+        else if(Position==7)
+        {
+            camera=QVector3D(-0.758443,1.06487,3.80751);
+            viewcenter=QVector3D(-0.773723,-2.56131,-6.99859);
+        }
+        else if(Position==8)
+        {
+            camera=QVector3D(2.00864,1.34568,2.46504);
+            viewcenter=QVector3D(-8.43265,0.467119,-2.02143);
+        }
+        else if(Position==9)
+        {
+            camera=QVector3D(-4.94334,2.19515,4.97319);
+            viewcenter=QVector3D(-5.34813,-0.286287,-6.14438);
+        }
+        else if(Position==10)
+        {
+            camera=QVector3D(0.168288,1.49312,2.77687);
+            viewcenter=QVector3D(-5.135,-0.686269,-5.47697);
+        }
+        else if(Position==11)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==12)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==13)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==14)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==15)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==16)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==17)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==18)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==19)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==20)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==21)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==22)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==23)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==24)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==25)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==26)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==27)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==28)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==29)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==30)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==31)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==32)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
+        else if(Position==33)
+        {
+            camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
+            viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
+        }
 
         cameraEntity->setPosition(camera);
         cameraEntity->setViewCenter(viewcenter);

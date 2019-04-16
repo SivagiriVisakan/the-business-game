@@ -43,7 +43,8 @@ SOURCES += \
     ../core/Board.cpp \
     ../core/Company.cpp \
     ../core/Field.cpp \
-    ../core/GameManager.cpp
+    ../core/GameManager.cpp \
+    ../core/Utility.cpp
 
 HEADERS += \
     resources_ui.h \
@@ -62,7 +63,8 @@ HEADERS += \
     ../core/Board.h \
     ../core/Company.h \
     ../core/Field.h \
-    ../core/GameManager.h
+    ../core/GameManager.h \
+    ../core/Utility.h
 
 FORMS += \
     mainwindow.ui \

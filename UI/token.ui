@@ -91,7 +91,7 @@ border-radius:20px;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 255, 255);
-font: 20pt &quot;Segoe Print&quot;;
+font: 16pt &quot;Segoe Print&quot;;
 border-radius:20px;</string>
     </property>
     <property name="frameShadow">
