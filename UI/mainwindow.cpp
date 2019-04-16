@@ -5,6 +5,7 @@ MainWindow::MainWindow(MusicControls &m,QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    token=new Token(this);
     ui->setupUi(this);
 
     music=&m;
@@ -18,8 +19,10 @@ MainWindow::MainWindow(MusicControls &m,QWidget *parent) :
     setGraphicsEffect(effect);
     effect->setEnabled(false);
 
-    array[0]=0;
-    array[1]=1;
+    message=new QMessageBox(this);
+    message->setStyleSheet("background-color:white");
+    connect(token,&Token::buySignal,this,&MainWindow::buyclicked);
+
 }
 
 MainWindow::~MainWindow()
@@ -42,24 +45,28 @@ void MainWindow::Gameplay_ui()
     ui->Ui_board->setMaximumSize(screenSize);
 
     ui->Ui_board->show();
-
-
-
     this->show();
+}
+
+void MainWindow::UpdateMoney()
+{
+    ui->Money_1->setText(QString::number(game.getPlayerFromId(0).getMoney()));
+    ui->Money_2->setText(QString::number(game.getPlayerFromId(1).getMoney()));
 }
 
 void MainWindow::Updatefun(QString Name1, QString Name2)
 {
-    game.addPlayer("hi");
-    game.addPlayer("bye");
-    ui->label->setText(Name1);
-    ui->label_2->setText(Name2);
+    game.addPlayer(Name1.toStdString());
+    game.addPlayer(Name2.toStdString());
+    ui->Name_1->setText(Name1);
+    ui->Name_2->setText(Name2);
     game.initializeGame(); // Call this method to reset the game.
 }
 
 
 void MainWindow::on_RollDIces_clicked()
 {
+
     cube=new Cube_ui (this);
 
     effect->setEnabled(true);
@@ -77,7 +84,6 @@ void MainWindow::on_RollDIces_clicked()
     DicesTimer=new QTimer(cube);
     DicesTimer->start(3500);
     connect(DicesTimer,SIGNAL(timeout()),this,SLOT(Dice_fun()));
-
 }
 
 void MainWindow::on_Map_Button_clicked()
@@ -97,45 +103,14 @@ void MainWindow::Dice_fun()
     cube->close();
     effect->setEnabled(false);
     delete cube;
-    Board->Player_movement(dice1+dice2-1,array[0]);
-    game.updateCurrentPlayerPosition(dice1+dice2);
-    array[0]=1;
-}
-
-void MainWindow::on_pushButton_7_clicked()
-{
-
-    Board->function_setpos(QVector3D((ui->lineEdit->displayText()).toFloat(),(ui->lineEdit_3->displayText()).toFloat(),(ui->lineEdit_4->displayText()).toFloat()),QVector3D((ui->lineEdit_2->displayText()).toFloat(),(ui->lineEdit_5->displayText()).toFloat(),(ui->lineEdit_6->displayText()).toFloat()));
-}
-
-void MainWindow::on_pushButton_8_clicked()
-{
-    QVector3D m=Board->function_getpos();
-
-    QString n="x=";
-    n+=QString::number(m.x());
-    n+="\ny=";
-    n+=QString::number(m.y());
-    n+="\nz=";
-    n+=QString::number(m.z());
-
-
-    ui->label_8->setText(QString(n));
-    ui->label_8->setTextInteractionFlags(Qt::TextSelectableByMouse);
-
-    QVector3D k=Board->function_getview();
-
-    QString l="x=";
-    l+=QString::number(k.x());
-    l+="\ny=";
-    l+=QString::number(k.y());
-    l+="\nz=";
-    l+=QString::number(k.z());
-
-    ui->label_9->setText(QString(l));
-    ui->label_9->setTextInteractionFlags(Qt::TextSelectableByMouse);
+    int b = game.getBoard().getIndexOfField(game.getFieldOfCurrentPlayer());
+    game.updateCurrentPlayerPosition(dice1+dice2-1);
+    int m=game.getBoard().getIndexOfField(game.getFieldOfCurrentPlayer());
+    Board->Player_movement(b+1,m,game.getCurrentPlayer().getId());
 
 }
+
+
 
 void MainWindow::on_Volume_button_clicked()
 {
@@ -145,7 +120,80 @@ void MainWindow::on_Volume_button_clicked()
 
 }
 
+void MainWindow::buyclicked()
+{
+    try{
+
+    Field *f=game.getFieldOfCurrentPlayer();
+    if(dynamic_cast<BuyableField*>(f))
+    {
+        BuyableField *bf = dynamic_cast<BuyableField*>(f);
+
+         game.buyCompany(game.getCurrentPlayer().getId(), *bf);
+
+         message->setText("Congrats You Have Succesfully Bought "+QString(bf->getName()));
+         message->show();
+
+         }
+    }
+        catch(int i){
+            if(i == 1)
+            {
+                message->setText("Sorry,Not Buyable (Already Owned)");
+                message->show();
+            }
+            else if (i==2) {
+
+                message->setText("Sorry You Don't Have Sufficient Balance");
+                message->show();
+
+            }
+        }
+        catch(...)
+        {
+            message->setText("Sufficient Balance");
+            message->show();
+
+        }
+        UpdateMoney();
+
+
+
+}
+
 void MainWindow::off_blurness()
 {
       effect->setEnabled(false);
+}
+
+void MainWindow::on_Turn_button_clicked()
+{
+    game.changeTurn();
+}
+
+
+void MainWindow::on_CurrentToken_1_clicked()
+{
+    Field *f=game.getBoard().getCurrentFieldOfPlayer(0);
+    if(dynamic_cast<Company*>(f))
+    {
+
+        Company *c=dynamic_cast<Company*>(f);
+        token->setDetails(*c, game.getCurrentPlayer().getId() == 0);
+        token->show();
+
+    }
+}
+
+
+void MainWindow::on_CurrentToken_2_clicked()
+{
+    Field *f=game.getBoard().getCurrentFieldOfPlayer(1);
+    if(dynamic_cast<Company*>(f))
+    {
+
+        Company *c=dynamic_cast<Company*>(f);
+        token->setDetails(*c, game.getCurrentPlayer().getId() == 1);
+        token->show();
+    }
 }

@@ -3,12 +3,13 @@
 #include <ctime>
 #include <cstdlib>
 using namespace std;
+
 GameManager::GameManager(): board()
 {
     // TODO: Change this for the Go! place.
 }
 
-void GameManager::addPlayer(char *name)
+void GameManager::addPlayer(std::string name)
 {
     Player *p = new Player(name);
     players.push_back(p);
@@ -78,13 +79,13 @@ Field* GameManager::getFieldOfCurrentPlayer()
  */ 
 Player GameManager::getPlayerFromId(int id)
 {
-    if(id < players.size()-1)
+    if(id < players.size())
     {
         return *players[id];
     } 
     else
     {
-        throw "Player index out of range";
+        throw 1;
     }
     
 }
@@ -96,7 +97,7 @@ void GameManager::buyCompany(int playerId, BuyableField& company)
     Player *player = players[playerId];
     if(company.getOwnerId() != -1)
     {
-        throw "Field not for sale.";
+        throw 1;
     }
     if(player->moneyOwned >= company.getCost())
     {
@@ -105,7 +106,7 @@ void GameManager::buyCompany(int playerId, BuyableField& company)
     }
     else
     {
-        throw "Not enough money to buy";
+        throw 2;
     }
     
 }

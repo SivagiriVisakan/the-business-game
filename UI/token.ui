@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>731</width>
+    <width>732</width>
     <height>533</height>
    </rect>
   </property>
@@ -53,7 +53,9 @@ background-color: rgba(170, 255, 255, 255);
      <enum>Qt::NoContextMenu</enum>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 75 18pt &quot;MS Shell Dlg 2&quot;;</string>
+     <string notr="true">background-color: rgba(170, 255, 255, 150);
+font: 18pt &quot;Segoe Print&quot;;
+border-radius:20px;</string>
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Company Name&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -88,8 +90,9 @@ background-color: rgba(170, 255, 255, 255);
      <enum>Qt::NoContextMenu</enum>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-radius:30px;
-background-color: rgb(236, 236, 236);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);
+font: 20pt &quot;Segoe Print&quot;;
+border-radius:20px;</string>
     </property>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
@@ -129,6 +132,7 @@ background-color: rgba(222, 222, 222,150);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgba(170, 255, 255, 150);
+font: 20pt &quot;Segoe Print&quot;;
 border-radius:20px;</string>
     </property>
     <property name="text">
@@ -138,70 +142,46 @@ border-radius:20px;</string>
    <widget class="QPushButton" name="BuySell">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>420</y>
-      <width>93</width>
-      <height>28</height>
+      <x>130</x>
+      <y>407</y>
+      <width>151</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true"> QPushButton {
      background-color: transparent;
-	border-radius:10px
+	border-radius:10px;
+	
+	font: 18pt &quot;Segoe Print&quot;;
  }
  QPushButton:pressed {
      background-color: rgb(224, 0, 0);     
  }
  QPushButton:hover {
-     background-color:  rgb(0, 0, 0);
+     background-color: rgb(170, 255, 255);
  }</string>
     </property>
     <property name="text">
-     <string>Buy/Sell</string>
+     <string>BUY</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Upgrade">
+   <widget class="QLabel" name="OwnerLabel">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>420</y>
-      <width>93</width>
-      <height>28</height>
+      <x>50</x>
+      <y>160</y>
+      <width>351</width>
+      <height>121</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> QPushButton {
-     background-color: transparent;
-	border-radius:10px
- }
- QPushButton:pressed {
-     background-color: rgb(224, 0, 0);     
- }
- QPushButton:hover {
-     background-color:  rgb(0, 0, 0);
- }</string>
+     <string notr="true">background-color: rgba(170, 255, 255, 150);
+font: 20pt &quot;Segoe Print&quot;;
+border-radius:20px;</string>
     </property>
     <property name="text">
-     <string>Upgrade</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Levels">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>110</y>
-      <width>341</width>
-      <height>241</height>
-     </rect>
-    </property>
-    <property name="focusPolicy">
-     <enum>Qt::WheelFocus</enum>
-    </property>
-    <property name="contextMenuPolicy">
-     <enum>Qt::PreventContextMenu</enum>
-    </property>
-    <property name="text">
-     <string/>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Owner&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
   </widget>
@@ -234,7 +214,7 @@ background-color:black;
    <sender>Closebutton</sender>
    <signal>clicked()</signal>
    <receiver>Token</receiver>
-   <slot>close()</slot>
+   <slot>hide()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>733</x>

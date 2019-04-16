@@ -22,7 +22,7 @@ public:
 
     void Players_ui_creater();
 
-    void Player_movement(int Position,int Player_number);
+    void Player_movement(int Position,int End,int Player_number);
 
     void Player_animation(QVector3D Final_pos, int Player_number );
 

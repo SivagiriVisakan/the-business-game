@@ -1,12 +1,13 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+#include<string>
 
 class Player
 {
 public:
     Player();
-    Player(char *n);
+    Player(std::string n);
 
     /**
     * The amount of money currently owned by a player at any given time.
@@ -26,12 +27,13 @@ public:
     */
     void changeMoneyOwned(int change);
 
-    char* getName() { return name;}
+    std::string getName() { return name;}
 
     int getId() { return id; }
+    int getMoney() { return moneyOwned; }
     
 private:
-    char name[20];
+    std::string name;
     static int TOTAL_ID;
     int id;
 };

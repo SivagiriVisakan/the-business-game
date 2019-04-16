@@ -37,8 +37,8 @@ SOURCES += \
     musiccontrols.cpp \
     cube_ui.cpp \
     map.cpp \
-#    ../core/Company.cpp \
-    ../core/player.cpp \
+    ../core/BuyableField.cpp \
+    ../core/Player.cpp \
     token.cpp \
     ../core/Board.cpp \
     ../core/Company.cpp \
@@ -55,8 +55,9 @@ HEADERS += \
     cube_ui.h \
     map.h \
 #    ../core/BaseField.h \
+    ../core/BuyableField.h \
     ../core/Company.h \
-    ../core/player.h \
+    ../core/Player.h \
     token.h \
     ../core/Board.h \
     ../core/Company.h \

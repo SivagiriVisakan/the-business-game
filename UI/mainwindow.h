@@ -11,6 +11,8 @@
 #include <iostream>
 #include"musiccontrols.h"
 #include<QGraphicsBlurEffect>
+#include<QMessageBox>
+
 
 namespace Ui {
 class MainWindow;
@@ -26,19 +28,29 @@ public:
 
     void Gameplay_ui();
      Map *map;
-    void Updatefun(QString,QString);
+
+     void UpdateMoney();
+     void Updatefun(QString,QString);
 private slots:
     void on_RollDIces_clicked();
     void on_Map_Button_clicked();
     void Dice_fun();
-    void on_pushButton_7_clicked();
-    void on_pushButton_8_clicked();
     void off_blurness();
     void on_Volume_button_clicked();
+    void buyclicked();
+    void on_Turn_button_clicked();
+
+
+//    void on_pushButton_clicked();
+
+    void on_CurrentToken_1_clicked();
+
+    void on_CurrentToken_2_clicked();
 
 private:
     Ui::MainWindow *ui;
-
+    QMessageBox *message;
+    Token *token;
     QGraphicsBlurEffect *effect;
     MusicControls *music;
     QWidget *Ui_board ;

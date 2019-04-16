@@ -230,7 +230,7 @@ void Base_ui::Setup_ui()
 void Base_ui::tokenFunction()
 {
 
-    QString m=Game->getPlayerFromId(0).getName();
+    QString m=QString::fromStdString(Game->getPlayerFromId(0).getName());
     token->setCompanyName(m);
     timer->stop();
     token->show();
@@ -428,19 +428,20 @@ void Base_ui::Rotation_Player(int degree,int Player_Number)
 void Base_ui::Focus_fun()
 {
         QVector3D camera,viewcenter;
-        if(Position==1)
+//        if(Position==1)
         {             
             camera=QVector3D(-10.6091f,1.18844f,-1.09134f);
             viewcenter=QVector3D(-0.743342f,-0.724871f,-1.0214f);
         }
 
+
         cameraEntity->setPosition(camera);
         cameraEntity->setViewCenter(viewcenter);
 
 
-        timer->start(1500);
+//        timer->start(1500);
 
-        connect(timer,SIGNAL(timeout()),this,SLOT(tokenFunction()));
+//        connect(timer,SIGNAL(timeout()),this,SLOT(tokenFunction()));
 
 }
 
@@ -576,23 +577,28 @@ Base_ui::~Base_ui()
     delete Cameraanimation1;
 }
 
-void Base_ui::Player_movement(int Position , int Player_number)  //Get the current player position and final position
+void Base_ui::Player_movement(int Position , int End,int Player_number)  //Get the current player position and final position
 {
 
-    this->Position+=Position;
+    this->Position=End;
+    this->count=Position;
     delete Animation;
     Animation= new QSequentialAnimationGroup(this);
 
-    Animation_fun(Player_number);
+//    Animation_fun(Player_number);
 
-    Animation->start();
-    QObject::connect(Animation,SIGNAL(finished()),this,SLOT(Focus_fun()));
+//    Animation->start();
+//    QObject::connect(Animation,SIGNAL(finished()),this,SLOT(Focus_fun()));
+    Focus_fun();
 
 }
 
 
 void Base_ui::Animation_fun(int Number)
 {
+    int Position;
+    Position=this->Position;
+
     if(count<=Position)
     {
        Player_animation(QVector3D(-6.62f,0.1f,0.125f),Number);
@@ -602,6 +608,7 @@ void Base_ui::Animation_fun(int Number)
     {
         Rotation_Player(-90,Number);
         Player_animation(QVector3D(-6.62f,0.1f,0.125f+3.8f),Number);
+        Position-=1;
         count++;
     }
 

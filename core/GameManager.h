@@ -12,7 +12,7 @@
 #include "Company.h"
 #include "Player.h"
 #include "Board.h"
-
+#include <string>
 
 class GameManager
 {
@@ -21,7 +21,7 @@ public:
 
     void initializeGame();
     int rollDice();
-    void addPlayer(char* name);
+    void addPlayer(std::string name);
     void changeTurn();
     Company updateCurrentPlayerPosition(int dice);
     Company& getCurrentPlayerCompany();

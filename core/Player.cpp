@@ -1,22 +1,16 @@
 #include "Player.h"
 #include <exception>
-#include <string.h>
+#include <string>
 
 int Player::TOTAL_ID = 0;
 Player::Player()
 {
-    strcpy(name, "\0");
     id = TOTAL_ID++;
 }
 
-Player::Player(char *n)
+Player::Player(std::string n)
 {
-    if(strlen(n) <= 20)
-        strcpy(name, n);
-    else {
-        throw "Player name too long";
-    }
-
+    name=n;
     moneyOwned = 10000;
     id = TOTAL_ID++;
 }

@@ -1,6 +1,7 @@
 #ifndef TOKEN_H
 #define TOKEN_H
 
+#include "../core/Company.h"
 #include <QDialog>
 
 namespace Ui {
@@ -15,6 +16,15 @@ public:
     explicit Token(QWidget *parent = nullptr);
     void setCompanyName(QString);
     ~Token();
+
+    void setDetails(Company,bool);
+
+
+private slots:
+    void on_BuySell_clicked();
+
+signals:
+    void buySignal();
 
 
 private:
