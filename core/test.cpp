@@ -51,6 +51,9 @@ int main(int argc, char const *argv[])
     game.changeTurn();
     std::cout<< game.getCurrentPlayer().moneyOwned << std::endl;
 
+    Board &b = game.getBoard();
+    int i = b.getIndexOfField(game.getFieldOfCurrentPlayer());
+    std::cout << i <<std::endl;
     return 0;
 }
 

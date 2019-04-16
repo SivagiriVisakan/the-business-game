@@ -441,6 +441,8 @@ void Base_ui::Focus_fun()
         timer->start(1500);
 
         connect(timer,SIGNAL(timeout()),this,SLOT(tokenFunction()));
+        tokenFunction();
+        token->setDetails(Game->getCurrentPlayerCompany());
 
 }
 

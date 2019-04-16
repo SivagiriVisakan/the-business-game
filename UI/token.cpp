@@ -15,6 +15,13 @@ void Token::setCompanyName(QString m)
     ui->Companyname->setText(m);
 }
 
+void Token::setDetails(Company c)
+{
+    ui->Companyname->setText(c.getName());
+    ui->Cost->setText("Cost: $ "+QString::number(c.getCost()));
+    ui->Rent->setText("Rent: $ "+QString::number(c.getRent()));
+
+}
 Token::~Token()
 {
     delete ui;

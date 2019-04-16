@@ -28,7 +28,8 @@ CONFIG += c++11
 CONFIG += resources_big
 
 SOURCES += \
-        main.cpp \
+    token.cpp \
+    main.cpp \
     resources_ui.cpp \
     base_ui.cpp \
     mainwindow.cpp \
@@ -37,15 +38,16 @@ SOURCES += \
     musiccontrols.cpp \
     cube_ui.cpp \
     map.cpp \
-#    ../core/Company.cpp \
-    ../core/player.cpp \
-    token.cpp \
     ../core/Board.cpp \
+    ../core/BuyableField.cpp \
     ../core/Company.cpp \
     ../core/Field.cpp \
-    ../core/GameManager.cpp
+    ../core/GameManager.cpp \
+    ../core/player.cpp
+#    ../core/Company.cpp \
 
 HEADERS += \
+    token.h \
     resources_ui.h \
     base_ui.h \
     mainwindow.h \
@@ -54,15 +56,15 @@ HEADERS += \
     musiccontrols.h \
     cube_ui.h \
     map.h \
-#    ../core/BaseField.h \
-    ../core/Company.h \
-    ../core/player.h \
-    token.h \
     ../core/Board.h \
+    ../core/BuyableField.h \
     ../core/Company.h \
     ../core/Field.h \
-    ../core/GameManager.h
+    ../core/GameManager.h \
+    ../core/player.h
+#    ../core/BaseField.h \
 
+INCLUDEPATH += "/media/ghostfox/NewVolume/projects/QT/wows/"
 FORMS += \
     mainwindow.ui \
     player_selection.ui \

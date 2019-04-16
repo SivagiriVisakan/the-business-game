@@ -2,7 +2,7 @@
 #define TOKEN_H
 
 #include <QDialog>
-
+#include "../core/Company.h"
 namespace Ui {
 class Token;
 }
@@ -14,6 +14,7 @@ class Token : public QDialog
 public:
     explicit Token(QWidget *parent = nullptr);
     void setCompanyName(QString);
+    void setDetails(Company c);
     ~Token();
 
 

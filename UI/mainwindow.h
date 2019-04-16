@@ -5,8 +5,8 @@
 #include"base_ui.h"
 #include"map.h"
 #include "cube_ui.h"
-#include     "../core/Board.h "
-#include "../core/Company.h "
+#include"/media/ghostfox/NewVolume/projects/QT/wows/core/Board.h"
+#include "/media/ghostfox/NewVolume/projects/QT/wows/core/Company.h"
 #include "../core/GameManager.h"
 #include <iostream>
 #include"musiccontrols.h"
@@ -48,6 +48,8 @@ private:
     Cube_ui *cube;
     int dice1,dice2;
     int array[2];
+    //Company c;
+    class Board b;
 };
 
 #endif // UI_FOR_MAINWINDOW_H
