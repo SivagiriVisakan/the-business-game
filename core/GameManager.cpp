@@ -51,6 +51,8 @@ void GameManager::updateCurrentPlayerPosition(int dice)
      {
          // The player doesn't own the field, so reduce his money.
          getCurrentPlayer().changeMoneyOwned(-(bf->getRent()));
+         // Add the rent into the owner's account.
+         getPlayerFromId(bf->getOwnerId()).changeMoneyOwned(bf->getRent());
      }
     }
     else if(dynamic_cast<NonBuyableField*> (f))
@@ -95,7 +97,7 @@ Field* GameManager::getFieldOfCurrentPlayer()
  * Get the Player with the specified ID.
  * Else throws an exception
  */ 
-Player GameManager::getPlayerFromId(int id)
+Player& GameManager::getPlayerFromId(int id)
 {
     if(id < players.size())
     {
