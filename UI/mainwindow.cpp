@@ -30,7 +30,8 @@ MainWindow::~MainWindow()
     delete ui;
     delete Ui_board;
     delete map;
-
+    delete token;
+    delete message;
 }
 
 void MainWindow::Gameplay_ui()
@@ -104,7 +105,7 @@ void MainWindow::Dice_fun()
     effect->setEnabled(false);
     delete cube;
     int b = game.getBoard().getIndexOfField(game.getFieldOfCurrentPlayer());
-    game.updateCurrentPlayerPosition(dice1+dice2-1);
+    game.updateCurrentPlayerPosition(dice1+dice2);
     int m=game.getBoard().getIndexOfField(game.getFieldOfCurrentPlayer());
     Board->Player_movement(b+1,m,game.getCurrentPlayer().getId());
 

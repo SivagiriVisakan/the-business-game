@@ -44,7 +44,9 @@ SOURCES += \
     ../core/Company.cpp \
     ../core/Field.cpp \
     ../core/GameManager.cpp \
-    ../core/Utility.cpp
+    ../core/Utility.cpp \
+    ../core/LuckField.cpp \
+    ../core/NonBuyableField.cpp
 
 HEADERS += \
     resources_ui.h \
@@ -64,7 +66,9 @@ HEADERS += \
     ../core/Company.h \
     ../core/Field.h \
     ../core/GameManager.h \
-    ../core/Utility.h
+    ../core/Utility.h \
+    ../core/LuckField.h \
+    ../core/NonBuyableField.h
 
 FORMS += \
     mainwindow.ui \
