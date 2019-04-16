@@ -1,5 +1,8 @@
 #include "GameManager.h"
 #include <iostream>
+#include <time.h>
+#include <stdlib.h>
+using namespace std;
 GameManager::GameManager(): board()
 {
     // TODO: Change this for the Go! place.
@@ -29,9 +32,10 @@ void GameManager::changeTurn()
 
 int GameManager::rollDice()
 {
-    int dice= 1; // Randomize this
-    return dice;
-
+    int lower = 1, upper = 6;
+	srand(time(0));
+    int num = (rand() %(upper - lower + 1)) + lower;
+    return num;
 }
 
 Company GameManager::updateCurrentPlayerPosition(int dice)
