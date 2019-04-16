@@ -33,6 +33,8 @@ public:
     void buyCompany(int playerId, BuyableField& company);
     void sellField(int playerId, BuyableField& company);
     Board& getBoard(){return board;}
+
+    std::vector<BuyableField*> getFieldsOwnedByPlayer(int id);
 private:
     Board board;
     std::vector<Player*> players;
