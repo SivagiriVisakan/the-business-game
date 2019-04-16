@@ -9,7 +9,6 @@
 BuyableField::BuyableField(char *name): Field(name)
 {
     ownerId = -1;
-
 }
 
 BuyableField::BuyableField(const BuyableField& bf): Field(bf)

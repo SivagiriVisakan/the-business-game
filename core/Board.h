@@ -14,7 +14,7 @@
 #include <vector>
 #include "Company.h"
 #include "Player.h"
-
+#include "Utility.h"
 
 class Board
 {
@@ -48,6 +48,7 @@ public:
      * ```
      */
     int getIndexOfField(Field *f);
+    std::vector<Field*> getAllFields(){ return allCompanies;}
 private:
     std::vector<Field*> allCompanies;
 
@@ -57,6 +58,12 @@ private:
      * Utitlity method for initially adding companies into the vector about the companies
      */
     void addCompany(char *name, int cost, CompanyCategory category);
+
+    /**
+     * Utitlity method for initially adding `Utilities` into the vector about the companies
+     */
+    void addUtility(char *name, int cost);
+
 };
 
 #endif // BOARD_H

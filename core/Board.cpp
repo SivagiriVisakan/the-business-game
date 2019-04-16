@@ -2,16 +2,51 @@
 #include <string.h>
 Board::Board()
 {
-    char c[20] = "Google";
-    addCompany(c, 200, TECH_INDUSTRY);
-    addCompany("Facebook", 175, TECH_INDUSTRY);
-    addCompany("Gucci", 175, TECH_INDUSTRY);
+    //chance
+    addUtility("Airport", 300);
+    addUtility("Railway", 250);
+    addCompany("Rolls Royce", 290, AUTOMOTIVES);
+    addCompany("Samsung", 270, ELECTRONICS);
+    addCompany("Cadbury", 250, FOOD);
+    addCompany("H & M", 150 , FASHION);
+    addCompany("Amazon", 275,SOFTWARE);
+    addCompany("Tesla", 175, AUTOMOTIVES);
+    //community chest
+    addCompany("Google",300,SOFTWARE);
+    //prison
+    addCompany("Apple", 280, ELECTRONICS);
+    addCompany("Adidas",250, FASHION);
+    addCompany("Facebook",150, SOFTWARE);
+    addCompany("Microsoft", 250, SOFTWARE);
+    addCompany("Domino's", 175, FOOD);
+    addCompany("Intel", 300 , ELECTRONICS);
+    //community chest
+    //water tax
+    addCompany("Benz",250, AUTOMOTIVES);
+    addCompany("McDonalds",190, FOOD);
+    addUtility("Transports", 250);
+    addCompany("KFC", 120, FOOD);
+    addCompany("Nike",120, FASHION);
+    addCompany("Xiaomi",250, ELECTRONICS);
+    addCompany("Audi", 300, AUTOMOTIVES);
+    addCompany("Gucci", 280, FASHION);
+    //chance
+    addUtility("Power Plant", 190);
+    //income tax
+    addUtility("Stadium", 200);
+    addUtility("Space station", 400);
 }
 
 void Board::addCompany(char* name, int cost, CompanyCategory category)
 {
     Company *c = new Company(name, cost, category);
     allCompanies.push_back(c);
+}
+
+void Board::addUtility(char* name, int cost)
+{
+    Utility *u = new Utility(name, cost);
+    allCompanies.push_back(u);
 }
 
 int Board::getIndexOfField(Field *f)

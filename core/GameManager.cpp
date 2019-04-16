@@ -40,9 +40,20 @@ int GameManager::rollDice()
     return num;
 }
 
-Company GameManager::updateCurrentPlayerPosition(int dice)
+void GameManager::updateCurrentPlayerPosition(int dice)
 {
-    return *(Company*)board.updatePlayerPosition(currentPlayerTurnIndex, dice);
+    board.updatePlayerPosition(currentPlayerTurnIndex, dice);
+    Field *f = getFieldOfCurrentPlayer();
+    if(dynamic_cast<BuyableField*> (f))
+    {
+     BuyableField *bf = dynamic_cast<BuyableField*> (f);
+     if(bf->getOwnerId() != -1 && bf->getOwnerId() != getCurrentPlayer().getId())
+     {
+         // The player doesn't own the field, so reduce his money.
+         getCurrentPlayer().changeMoneyOwned(-(bf->getRent()));
+     }
+    }
+
 }
 
 Company& GameManager::getCurrentPlayerCompany()
@@ -67,7 +78,7 @@ Company& GameManager::getCurrentPlayerCompany()
  *      // Similarly perform else-if checks and handle the Field appropriately.
  * 
  * ```
- */ 
+ */
 Field* GameManager::getFieldOfCurrentPlayer()
 {
     return board.getCurrentFieldOfPlayer(currentPlayerTurnIndex);

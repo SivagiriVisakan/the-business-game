@@ -18,4 +18,8 @@ Player::Player(std::string n)
 void Player::changeMoneyOwned(int change)
 {
     moneyOwned += change;
+    if(moneyOwned <= 0)
+    {
+        throw 2; // Two is for bankruptcy
+    }
 }

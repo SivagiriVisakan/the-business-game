@@ -3,11 +3,11 @@
 #include "BuyableField.h"
 
 enum CompanyCategory{
-    SOCIAL_MEDIA = 1,
-    TECH_INDUSTRY = 2,
-    AUTOMOTIVE_INDUSTRY = 3,
-    GAMING = 4,
-    RETAIL_INDUSTRY = 5
+    ELECTRONICS = 1,
+    SOFTWARE = 2,
+    AUTOMOTIVES = 3,
+    FASHION = 4,
+    FOOD = 5
 };
 
 class Company : public BuyableField
