@@ -104,16 +104,27 @@ void MainWindow::Dice_fun()
     cube->close();
     effect->setEnabled(false);
     delete cube;
+    if(game.getCurrentPlayer().getId()==0)
+            ui->details_label_1->setText("Dice roll: " + QString::number(dice1+dice2));
+    else if(game.getCurrentPlayer().getId()==1)
+            ui->details_label_2->setText("Dice roll: " + QString::number(dice1+dice2));
+
     int b = game.getBoard().getIndexOfField(game.getFieldOfCurrentPlayer());
     game.updateCurrentPlayerPosition(dice1+dice2);
     int m=game.getBoard().getIndexOfField(game.getFieldOfCurrentPlayer());
     Board->Player_movement(b+1,m,game.getCurrentPlayer().getId());
     UpdateMoney();
     if(game.getCurrentPlayer().getId()==0)
+    {
         ui->field_name_1->setText(game.getFieldOfCurrentPlayer()->getName());
+        ui->details_label_1->setText(ui->details_label_1->text()+"\nLanded at "+QString(game.getFieldOfCurrentPlayer()->getName()));
+    }
     else if(game.getCurrentPlayer().getId()==1)
+    {
         ui->field_name_2->setText(game.getFieldOfCurrentPlayer()->getName());
+        ui->details_label_2->setText(ui->details_label_2->text()+"\nLanded at "+QString(game.getFieldOfCurrentPlayer()->getName()));
 
+    }
     Field *f=game.getFieldOfCurrentPlayer();
     if(dynamic_cast<NonBuyableField*>(f))
     {

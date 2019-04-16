@@ -151,3 +151,26 @@ void GameManager::sellField(int playerId, BuyableField& company)
     }
 
 }
+
+/**
+ * Returns the fields which have been bought by the player with the given ID.
+ */
+vector<BuyableField*> GameManager::getFieldsOwnedByPlayer(int id)
+{
+    std::vector<Field*> all = board.getAllFields();
+    std::vector<BuyableField*> owned;
+
+    for(int i = 0; i < all.size(); i++)
+    {
+        Field *f = all[i];
+        if(dynamic_cast<BuyableField*> (f))
+        {
+            BuyableField *bf = dynamic_cast<BuyableField*> (f);
+            if(bf->getOwnerId() == id)
+            {
+                owned.push_back(bf);
+            }
+        }
+    }
+    return owned;
+}
