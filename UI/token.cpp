@@ -44,6 +44,16 @@ void Token::setDetails(Company c,bool id)
 }
 
 
+void Token::setDetails(NonBuyableField *nbf)
+{
+    ui->Companyname->setText(nbf->getName());
+    ui->Cost->setText("");
+    ui->Rent->setText("Rent: $ "+QString::number(nbf->getRent()));
+    ui->OwnerLabel->setText(nbf->getHelpText());
+\
+}
+
+
 void Token::on_BuySell_clicked()
 {
     emit buySignal();

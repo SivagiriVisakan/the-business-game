@@ -107,7 +107,7 @@ void MainWindow::Dice_fun()
     game.updateCurrentPlayerPosition(dice1+dice2-1);
     int m=game.getBoard().getIndexOfField(game.getFieldOfCurrentPlayer());
     Board->Player_movement(b+1,m,game.getCurrentPlayer().getId());
-
+    UpdateMoney();
 }
 
 
@@ -181,7 +181,13 @@ void MainWindow::on_CurrentToken_1_clicked()
         Company *c=dynamic_cast<Company*>(f);
         token->setDetails(*c, game.getCurrentPlayer().getId() == 0);
         token->show();
+    }
+    else if(dynamic_cast<NonBuyableField*>(f))
+    {
 
+        NonBuyableField *nbf=dynamic_cast<NonBuyableField*>(f);
+        token->setDetails(nbf);
+        token->show();
     }
 }
 
@@ -194,6 +200,13 @@ void MainWindow::on_CurrentToken_2_clicked()
 
         Company *c=dynamic_cast<Company*>(f);
         token->setDetails(*c, game.getCurrentPlayer().getId() == 1);
+        token->show();
+    }
+    else if(dynamic_cast<NonBuyableField*>(f))
+    {
+
+        NonBuyableField *nbf=dynamic_cast<NonBuyableField*>(f);
+        token->setDetails(nbf);
         token->show();
     }
 }

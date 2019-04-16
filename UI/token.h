@@ -2,6 +2,7 @@
 #define TOKEN_H
 
 #include "../core/Company.h"
+#include "../core/NonBuyableField.h"
 #include <QDialog>
 
 namespace Ui {
@@ -18,7 +19,7 @@ public:
     ~Token();
 
     void setDetails(Company,bool);
-
+    void setDetails(NonBuyableField*);
 
 private slots:
     void on_BuySell_clicked();
