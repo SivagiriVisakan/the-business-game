@@ -84,6 +84,8 @@ void MainWindow::on_RollDIces_clicked()
 
     DicesTimer=new QTimer(cube);
     DicesTimer->start(3500);
+    ui->RollDIces->hide();
+    ui->Turn_button->show();
     connect(DicesTimer,SIGNAL(timeout()),this,SLOT(Dice_fun()));
 }
 
@@ -194,6 +196,8 @@ void MainWindow::off_blurness()
 void MainWindow::on_Turn_button_clicked()
 {
     game.changeTurn();
+    ui->RollDIces->show();
+    ui->Turn_button->hide();
 }
 
 
