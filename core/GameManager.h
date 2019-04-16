@@ -23,7 +23,7 @@ public:
     int rollDice();
     void addPlayer(char* name);
     void changeTurn();
-    Company updateCurrentPlayerPosition(int dice);
+    void updateCurrentPlayerPosition(int dice);
     Company& getCurrentPlayerCompany();
 
     Field* getFieldOfCurrentPlayer();
