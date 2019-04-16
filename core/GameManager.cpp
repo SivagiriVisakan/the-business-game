@@ -1,7 +1,7 @@
 #include "GameManager.h"
 #include <iostream>
-#include <time.h>
-#include <stdlib.h>
+#include <ctime>
+#include <cstdlib>
 using namespace std;
 GameManager::GameManager(): board()
 {
@@ -32,9 +32,10 @@ void GameManager::changeTurn()
 
 int GameManager::rollDice()
 {
-    int lower = 1, upper = 6;
-	srand(time(0));
-    int num = (rand() %(upper - lower + 1)) + lower;
+    int num;
+    int min = 1, max = 6;
+    srand(time(0));
+    num = (min + (rand() % (int)(max - min + 1)));
     return num;
 }
 
