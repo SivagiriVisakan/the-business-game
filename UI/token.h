@@ -18,7 +18,7 @@ public:
     void setCompanyName(QString);
     ~Token();
 
-    void setDetails(Company,bool);
+    void setDetails(BuyableField*,bool);
     void setDetails(NonBuyableField*);
 
 private slots:

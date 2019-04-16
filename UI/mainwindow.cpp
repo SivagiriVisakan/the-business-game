@@ -108,6 +108,19 @@ void MainWindow::Dice_fun()
     int m=game.getBoard().getIndexOfField(game.getFieldOfCurrentPlayer());
     Board->Player_movement(b+1,m,game.getCurrentPlayer().getId());
     UpdateMoney();
+    if(game.getCurrentPlayer().getId()==0)
+        ui->field_name_1->setText(game.getFieldOfCurrentPlayer()->getName());
+    else if(game.getCurrentPlayer().getId()==1)
+        ui->field_name_2->setText(game.getFieldOfCurrentPlayer()->getName());
+
+    Field *f=game.getFieldOfCurrentPlayer();
+    if(dynamic_cast<NonBuyableField*>(f))
+    {
+        NonBuyableField *nbf = dynamic_cast<NonBuyableField*>(f);
+         message->setText(QString(nbf->getHelpText()));
+         message->show();
+     }
+
 }
 
 
@@ -175,11 +188,11 @@ void MainWindow::on_Turn_button_clicked()
 void MainWindow::on_CurrentToken_1_clicked()
 {
     Field *f=game.getBoard().getCurrentFieldOfPlayer(0);
-    if(dynamic_cast<Company*>(f))
+    if(dynamic_cast<BuyableField*>(f))
     {
 
-        Company *c=dynamic_cast<Company*>(f);
-        token->setDetails(*c, game.getCurrentPlayer().getId() == 0);
+        BuyableField *c=dynamic_cast<BuyableField*>(f);
+        token->setDetails(c, game.getCurrentPlayer().getId() == 0);
         token->show();
     }
     else if(dynamic_cast<NonBuyableField*>(f))
@@ -195,11 +208,11 @@ void MainWindow::on_CurrentToken_1_clicked()
 void MainWindow::on_CurrentToken_2_clicked()
 {
     Field *f=game.getBoard().getCurrentFieldOfPlayer(1);
-    if(dynamic_cast<Company*>(f))
+    if(dynamic_cast<BuyableField*>(f))
     {
 
-        Company *c=dynamic_cast<Company*>(f);
-        token->setDetails(*c, game.getCurrentPlayer().getId() == 1);
+        BuyableField *c=dynamic_cast<BuyableField*>(f);
+        token->setDetails(c, game.getCurrentPlayer().getId() == 1);
         token->show();
     }
     else if(dynamic_cast<NonBuyableField*>(f))

@@ -20,12 +20,12 @@ Token::~Token()
     delete ui;
 }
 
-void Token::setDetails(Company c,bool id)
+void Token::setDetails(BuyableField *c,bool id)
 {
-    ui->Companyname->setText(c.getName());
-    ui->Cost->setText("Cost: $ "+QString::number(c.getCost()));
-    ui->Rent->setText("Rent: $ "+QString::number(c.getRent()));
-    if(c.getOwnerId()!=-1 || !id)
+    ui->Companyname->setText(c->getName());
+    ui->Cost->setText("Cost: $ "+QString::number(c->getCost()));
+    ui->Rent->setText("Rent: $ "+QString::number(c->getRent()));
+    if(c->getOwnerId()!=-1 || !id)
     {
         ui->BuySell->hide();
     }
@@ -33,12 +33,12 @@ void Token::setDetails(Company c,bool id)
     {
          ui->BuySell->show();
     }
-    if(c.getOwnerId()==-1)
+    if(c->getOwnerId()==-1)
     {
         ui->OwnerLabel->setText("Not Yet Bought");
     }
     else {
-        ui->OwnerLabel->setText("Owned by Player " + QString::number(c.getOwnerId()));
+        ui->OwnerLabel->setText("Owned by Player " + QString::number(c->getOwnerId()));
     }
 
 }
@@ -50,6 +50,7 @@ void Token::setDetails(NonBuyableField *nbf)
     ui->Cost->setText("");
     ui->Rent->setText("Rent: $ "+QString::number(nbf->getRent()));
     ui->OwnerLabel->setText(nbf->getHelpText());
+    ui->BuySell->hide();
 \
 }
 
