@@ -3,6 +3,9 @@
 Board::Board()
 {
     //chance
+    LuckField *lf = new LuckField("Chance", 100);
+    allCompanies.push_back(lf);
+
     addUtility("Airport", 300);
     addUtility("Railway", 250);
     addCompany("Rolls Royce", 290, AUTOMOTIVES);
@@ -11,7 +14,11 @@ Board::Board()
     addCompany("H & M", 150 , FASHION);
     addCompany("Amazon", 275,SOFTWARE);
     addCompany("Tesla", 175, AUTOMOTIVES);
+    
     //community chest
+    lf = new LuckField("CommunityChest", 100);
+    allCompanies.push_back(lf);
+
     addCompany("Google",300,SOFTWARE);
     //prison
     addCompany("Apple", 280, ELECTRONICS);
@@ -20,8 +27,14 @@ Board::Board()
     addCompany("Microsoft", 250, SOFTWARE);
     addCompany("Domino's", 175, FOOD);
     addCompany("Intel", 300 , ELECTRONICS);
+    
     //community chest
+    lf = new LuckField("CommunityChest", 100);
+    allCompanies.push_back(lf);
+
     //water tax
+    NonBuyableField *nbf = new NonBuyableField("WaterTax", 50);
+    allCompanies.push_back(nbf);
     addCompany("Benz",250, AUTOMOTIVES);
     addCompany("McDonalds",190, FOOD);
     addUtility("Transports", 250);
@@ -30,9 +43,16 @@ Board::Board()
     addCompany("Xiaomi",250, ELECTRONICS);
     addCompany("Audi", 300, AUTOMOTIVES);
     addCompany("Gucci", 280, FASHION);
+
     //chance
+    lf = new LuckField("Chance", 100);
+    allCompanies.push_back(lf);
+
     addUtility("Power Plant", 190);
+
     //income tax
+    nbf = new NonBuyableField("IncomeTax", 50);
+    allCompanies.push_back(nbf);
     addUtility("Stadium", 200);
     addUtility("Space station", 400);
 }

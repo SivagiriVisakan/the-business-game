@@ -53,7 +53,14 @@ void GameManager::updateCurrentPlayerPosition(int dice)
          getCurrentPlayer().changeMoneyOwned(-(bf->getRent()));
      }
     }
-
+    else if(dynamic_cast<NonBuyableField*> (f))
+    {
+        // It is not a BuyAble Field, so we try if it is a NonBuyableField.
+        // If it is so, then reduce the money based.
+        NonBuyableField *nbf = dynamic_cast<NonBuyableField*> (f);
+        nbf->calculateRent();
+        getCurrentPlayer().changeMoneyOwned(-(nbf->getRent()));
+    }
 }
 
 Company& GameManager::getCurrentPlayerCompany()

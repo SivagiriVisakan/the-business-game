@@ -15,7 +15,8 @@
 #include "Company.h"
 #include "Player.h"
 #include "Utility.h"
-
+#include "NonBuyableField.h"
+#include "LuckField.h"
 class Board
 {
 public:
@@ -63,6 +64,11 @@ private:
      * Utitlity method for initially adding `Utilities` into the vector about the companies
      */
     void addUtility(char *name, int cost);
+
+    /**
+     * Utitlity method for initially adding `NonBuyableField` into the vector about the companies
+     */
+    void addNonBuyableField(char *name, int rent);
 
 };
 

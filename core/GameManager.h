@@ -13,6 +13,7 @@
 #include "Player.h"
 #include "Board.h"
 #include <string>
+#include "NonBuyableField.h"
 
 class GameManager
 {
