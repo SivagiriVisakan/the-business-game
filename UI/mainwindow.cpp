@@ -176,13 +176,12 @@ void MainWindow::on_Turn_button_clicked()
 void MainWindow::on_CurrentToken_1_clicked()
 {
     Field *f=game.getBoard().getCurrentFieldOfPlayer(0);
+
     if(dynamic_cast<Company*>(f))
     {
-
         Company *c=dynamic_cast<Company*>(f);
         token->setDetails(*c, game.getCurrentPlayer().getId() == 0);
         token->show();
-
     }
 }
 

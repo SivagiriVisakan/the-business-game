@@ -220,8 +220,8 @@ void Base_ui::Setup_ui()
    lightEntity->addComponent(lightTransform);
 
 //    For camera controls
-    camController = new Qt3DExtras::QFirstPersonCameraController(sceneRoot);
-    camController->setCamera(cameraEntity);
+//    camController = new Qt3DExtras::QFirstPersonCameraController(sceneRoot);
+//    camController->setCamera(cameraEntity);
 
     view->setRootEntity(sceneRoot);
 
