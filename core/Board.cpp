@@ -21,6 +21,8 @@ Board::Board()
 
     addCompany("Google",300,SOFTWARE);
     //prison
+    NonBuyableField *nbf = new NonBuyableField("Prison", 1000);
+    allCompanies.push_back(nbf);
     addCompany("Apple", 280, ELECTRONICS);
     addCompany("Adidas",250, FASHION);
     addCompany("Facebook",150, SOFTWARE);
@@ -33,7 +35,7 @@ Board::Board()
     allCompanies.push_back(lf);
 
     //water tax
-    NonBuyableField *nbf = new NonBuyableField("WaterTax", 50);
+    nbf = new NonBuyableField("WaterTax", 50);
     allCompanies.push_back(nbf);
     addCompany("Benz",250, AUTOMOTIVES);
     addCompany("McDonalds",190, FOOD);
