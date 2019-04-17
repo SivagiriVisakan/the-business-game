@@ -166,6 +166,23 @@ font: 12pt &quot;Segoe Print&quot;;</string>
        <string/>
       </property>
      </widget>
+     <widget class="QLabel" name="player_turn_1">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>10</y>
+        <width>41</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/photos/untitled1.png);
+font: 16pt &quot;Segoe Print&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="widget_3" native="true">
      <property name="geometry">
@@ -290,13 +307,30 @@ font: 12pt &quot;Segoe Print&quot;;</string>
        <string/>
       </property>
      </widget>
+     <widget class="QLabel" name="player_turn_2">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>10</y>
+        <width>41</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/photos/untitled.png);
+font: 16pt &quot;Segoe Print&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </widget>
    </widget>
    <widget class="QPushButton" name="RollDIces">
     <property name="geometry">
      <rect>
-      <x>950</x>
-      <y>1000</y>
+      <x>1260</x>
+      <y>1010</y>
       <width>171</width>
       <height>66</height>
      </rect>
@@ -312,8 +346,8 @@ background-color: rgb(85, 255, 0);</string>
    <widget class="QPushButton" name="Map_Button">
     <property name="geometry">
      <rect>
-      <x>510</x>
-      <y>1005</y>
+      <x>820</x>
+      <y>1010</y>
       <width>93</width>
       <height>66</height>
      </rect>
@@ -324,7 +358,7 @@ background-color: rgb(85, 255, 0);
 </string>
     </property>
     <property name="text">
-     <string>MAP</string>
+     <string>Map</string>
     </property>
    </widget>
    <widget class="QPushButton" name="minimize">
@@ -341,7 +375,7 @@ background-color: rgb(85, 255, 0);
 background-color: rgb(85, 255, 0);</string>
     </property>
     <property name="text">
-     <string>minimize</string>
+     <string>Minimize</string>
     </property>
    </widget>
    <widget class="QPushButton" name="quit">
@@ -358,7 +392,7 @@ background-color: rgb(85, 255, 0);</string>
 background-color: rgb(85, 255, 0);</string>
     </property>
     <property name="text">
-     <string>quit</string>
+     <string>Quit</string>
     </property>
    </widget>
    <widget class="QPushButton" name="Volume_button">
@@ -375,24 +409,7 @@ background-color: rgb(85, 255, 0);</string>
 background-color: rgb(85, 255, 0);</string>
     </property>
     <property name="text">
-     <string>VOLUME</string>
-    </property>
-   </widget>
-   <widget class="Line" name="line">
-    <property name="geometry">
-     <rect>
-      <x>620</x>
-      <y>1000</y>
-      <width>5</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">
-background-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
+     <string>Volume</string>
     </property>
    </widget>
    <widget class="Line" name="line_3">
@@ -415,8 +432,8 @@ background-color: rgb(255, 255, 255);</string>
    <widget class="QPushButton" name="Turn_button">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>1000</y>
+      <x>980</x>
+      <y>1010</y>
       <width>231</width>
       <height>66</height>
      </rect>
@@ -427,23 +444,6 @@ background-color: rgb(85, 255, 0);</string>
     </property>
     <property name="text">
      <string>Change Turn</string>
-    </property>
-   </widget>
-   <widget class="Line" name="line_2">
-    <property name="geometry">
-     <rect>
-      <x>920</x>
-      <y>1000</y>
-      <width>5</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">
-background-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
     </property>
    </widget>
   </widget>

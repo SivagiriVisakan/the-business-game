@@ -183,7 +183,8 @@ Base_ui::Base_ui(GameManager & Game)
        Board[i]->Resources_transform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(1.0f, 0.0f, 0.0f), 0.0f)); // x,y,z axis and degree rotation
        Board[i]->Resources_transform->setTranslation(QVector3D(0.0f, 0.0f, -0.0f));
 
-       Board[i]->Texture_loader->setSource(QUrl(QStringLiteral("qrc:/Logos/Airport.jpg")));
+       QString path = "qrc:/new/prefix1/Logos/" + QString::number(i-1) +".png";
+       Board[i]->Texture_loader->setSource(QUrl(path));
 
        Board[i]->Add_resources_components();
 
@@ -206,7 +207,7 @@ void Base_ui::Setup_ui()
     cameraEntity->setUpVector(QVector3D(0.0f, 1.0f,0.0f));
     cameraEntity->setViewCenter(QVector3D(0.0f, 0.0f, 0.0f));
 //    cameraEntity->setPosition(QVector3D(0.0f, 10.0f, -35.0f));
-    cameraEntity->setPosition(QVector3D(0.0f, 10.0f, 1.0f));
+    cameraEntity->setPosition(QVector3D(-25.0f, 10.0f, 1.0f));
 
     //Add A Starting Animation To the close up car
 

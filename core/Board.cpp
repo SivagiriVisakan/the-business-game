@@ -2,6 +2,11 @@
 #include <string.h>
 Board::Board()
 {
+
+
+    //GO
+    NonBuyableField *nbf = new NonBuyableField("Start", -50);
+    allCompanies.push_back(nbf);
     //chance
     LuckField *lf = new LuckField("Chance", 100);
     allCompanies.push_back(lf);
@@ -21,7 +26,7 @@ Board::Board()
 
     addCompany("Google",300,SOFTWARE);
     //prison
-    NonBuyableField *nbf = new NonBuyableField("Prison", 1000);
+    nbf = new NonBuyableField("Prison", 1000);
     allCompanies.push_back(nbf);
     addCompany("Apple", 280, ELECTRONICS);
     addCompany("Adidas",250, FASHION);

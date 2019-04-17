@@ -29,7 +29,7 @@ public:
     Company updatePlayerPosition(const Player& player, int diceMoves);
     Field* updatePlayerPosition(const int player, int diceMoves);
 
-    const Field* operator [](int i)
+    Field* operator [](int i)
     {
         return allCompanies[i];
     }

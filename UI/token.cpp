@@ -48,7 +48,15 @@ void Token::setDetails(NonBuyableField *nbf)
 {
     ui->Companyname->setText(nbf->getName());
     ui->Cost->setText("");
-    ui->Rent->setText("Rent: $ "+QString::number(nbf->getRent()));
+    if(nbf->getRent() < 0)
+    {
+        ui->Rent->setText("Rent: $ "+QString::number(nbf->getRent()));
+
+    }
+    else {
+        ui->Rent->setText("You earned: $ "+QString::number(-nbf->getRent()));
+
+    }
     ui->OwnerLabel->setText(nbf->getHelpText());
     ui->BuySell->hide();
 \

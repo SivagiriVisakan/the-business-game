@@ -2,7 +2,7 @@
 #define MAP_H
 
 #include <QDialog>
-
+#include <QPushButton>
 namespace Ui {
 class Map;
 }
@@ -21,9 +21,9 @@ private slots:
 signals:
     void close_();
 
-
 private:
     Ui::Map *ui;
+    QPushButton *btns[34];
 };
 
 #endif // MAP_H

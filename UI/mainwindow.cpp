@@ -23,6 +23,11 @@ MainWindow::MainWindow(MusicControls &m,QWidget *parent) :
     message->setStyleSheet("background-color:white");
     connect(token,&Token::buySignal,this,&MainWindow::buyclicked);
 
+    ui->player_turn_1->show();
+    ui->player_turn_2->hide();
+    ui->Turn_button->hide();
+
+
 }
 
 MainWindow::~MainWindow()
@@ -62,6 +67,7 @@ void MainWindow::Updatefun(QString Name1, QString Name2)
     ui->Name_1->setText(Name1);
     ui->Name_2->setText(Name2);
     game.initializeGame(); // Call this method to reset the game.
+    UpdateMoney();
 }
 
 
@@ -112,7 +118,13 @@ void MainWindow::Dice_fun()
             ui->details_label_2->setText("Dice roll: " + QString::number(dice1+dice2));
 
     int b = game.getBoard().getIndexOfField(game.getFieldOfCurrentPlayer());
-    game.updateCurrentPlayerPosition(dice1+dice2);
+    try {
+        game.updateCurrentPlayerPosition(dice1+dice2);
+    } catch (int i) {
+        message->setText("You have gone bankrupt ! Game has ended.");
+        message->show();
+    }
+
     int m=game.getBoard().getIndexOfField(game.getFieldOfCurrentPlayer());
     Board->Player_movement(b+1,m,game.getCurrentPlayer().getId());
     UpdateMoney();
@@ -160,6 +172,7 @@ void MainWindow::buyclicked()
 
          message->setText("Congrats You Have Succesfully Bought "+QString(bf->getName()));
          message->show();
+         token->setDetails(bf, 0);
 
          }
     }
@@ -198,6 +211,17 @@ void MainWindow::on_Turn_button_clicked()
     game.changeTurn();
     ui->RollDIces->show();
     ui->Turn_button->hide();
+    int t = game.getCurrentPlayer().getId();
+    if(t==0)
+    {
+        ui->player_turn_1->show();
+        ui->player_turn_2->hide();
+    }
+    else if(t==1)
+    {
+        ui->player_turn_2->show();
+        ui->player_turn_1->hide();
+    }
 }
 
 
@@ -246,3 +270,4 @@ void MainWindow::on_CurrentToken_2_clicked()
         token->show();
     }
 }
+

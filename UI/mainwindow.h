@@ -5,8 +5,8 @@
 #include"base_ui.h"
 #include"map.h"
 #include "cube_ui.h"
-#include     "../core/Board.h "
-#include "../core/Company.h "
+//#include     "../core/Board.h "
+//#include "../core/Company.h "
 #include "../core/GameManager.h"
 #include <iostream>
 #include"musiccontrols.h"
@@ -46,7 +46,6 @@ private slots:
     void on_CurrentToken_1_clicked();
 
     void on_CurrentToken_2_clicked();
-
 private:
     Ui::MainWindow *ui;
     QMessageBox *message;

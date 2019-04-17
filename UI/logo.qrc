@@ -1,10 +1,8 @@
 <RCC>
     <qresource prefix="/">
-        <file>Logos/Airport.jpg</file>
         <file>photos/icons8-delete-64.png</file>
         <file>photos/Moneybag.jpg.png</file>
         <file>cars/Rollsroyce.png</file>
-        <file>Logos/Train.jpg</file>
         <file>software/Amazon.png</file>
         <file>Fashion/adidas.png</file>
         <file>Fashion/Gucci.png</file>
