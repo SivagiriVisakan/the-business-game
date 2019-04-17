@@ -28,7 +28,7 @@ public:
     Company& getCurrentPlayerCompany();
 
     Field* getFieldOfCurrentPlayer();
-    Player getPlayerFromId(int playerId);
+    Player& getPlayerFromId(int playerId);
     Player& getCurrentPlayer() { return *players[currentPlayerTurnIndex];}
     void buyCompany(int playerId, BuyableField& company);
     void sellField(int playerId, BuyableField& company);
