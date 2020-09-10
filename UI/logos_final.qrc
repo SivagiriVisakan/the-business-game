@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>Logos/0.png</file>
+        <file>Logos/1.png</file>
+        <file>Logos/2.png</file>
+        <file>Logos/3.png</file>
+        <file>Logos/4.png</file>
+        <file>Logos/5.png</file>
+        <file>Logos/6.png</file>
+        <file>Logos/7.png</file>
+        <file>Logos/8.png</file>
+        <file>Logos/9.png</file>
+        <file>Logos/10.png</file>
+        <file>Logos/11.png</file>
+        <file>Logos/12.png</file>
+        <file>Logos/13.png</file>
+        <file>Logos/14.png</file>
+        <file>Logos/15.png</file>
+        <file>Logos/16.png</file>
+        <file>Logos/17.png</file>
+        <file>Logos/18.png</file>
+        <file>Logos/19.png</file>
+        <file>Logos/20.png</file>
+        <file>Logos/21.png</file>
+        <file>Logos/22.png</file>
+        <file>Logos/23.png</file>
+        <file>Logos/24.png</file>
+        <file>Logos/25.png</file>
+        <file>Logos/26.png</file>
+        <file>Logos/27.png</file>
+        <file>Logos/28.png</file>
+        <file>Logos/29.png</file>
+        <file>Logos/30.png</file>
+        <file>Logos/31.png</file>
+        <file>Logos/32.png</file>
+    </qresource>
+</RCC>

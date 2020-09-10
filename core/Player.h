@@ -14,16 +14,13 @@ public:
     * This is `int` because we use all the prices as whole numbers.
     */
     int moneyOwned;
+
     /**
-    * This function should be called all the time whenever the moneyOwned is to be
+    * This function suld be called all the time whenever the moneyOwned is to be
     * increased or decreased.
     * Specify a negative amount to decrement the balance.
     * 
     * @param change - the amount to change
-    */
-    /* TODO: Write the implementation. It should also check for the case of moneyOwned going below zero
-       i.e the player has gone bankrupt and the game should end.
-       Still have to figure out how to specify the game ending from here.
     */
     void changeMoneyOwned(int change);
 

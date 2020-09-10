@@ -112,15 +112,7 @@ Field* Board::updatePlayerPosition(const int player, int diceMoves)
     int currentPosition = playerPositions[player];
     int positionToUpdate = currentPosition + diceMoves;
 
-    // if(positionToUpdate <= totalLength)
-    // {
-    //     setPlayerPosition(player, positionToUpdate);
-    //     return allCompanies[positionToUpdate];
-    // }
-    // else
-    {
         int exactPositionToUpdate = positionToUpdate % totalLength;
         setPlayerPosition(player, exactPositionToUpdate);
         return allCompanies[exactPositionToUpdate];
-    }
 }

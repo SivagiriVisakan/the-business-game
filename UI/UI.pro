@@ -44,12 +44,10 @@ SOURCES += \
     ../core/Company.cpp \
     ../core/Field.cpp \
     ../core/GameManager.cpp \
-    ../core/Utility.cpp
     ../core/Player.cpp \
     ../core/Utility.cpp \
     ../core/NonBuyableField.cpp \
     ../core/LuckField.cpp
-
 
 HEADERS += \
     token.h \
@@ -66,7 +64,6 @@ HEADERS += \
     ../core/Company.h \
     ../core/Field.h \
     ../core/GameManager.h \
-    ../core/Utility.h
     ../core/Player.h \
     ../core/Utility.h \
     ../core/NonBuyableField.h \
@@ -89,7 +86,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     k.qrc \
-    logo.qrc
+    logo.qrc \
+    logos_final.qrc
 
 DISTFILES += \
     ../core/README.md
