@@ -4,3 +4,5 @@
 build-*
 *.out
 .vscode/
+
+UI/UI.pro.user
